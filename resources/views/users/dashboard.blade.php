@@ -21,7 +21,7 @@
                         {{ session('status') }}
                     </div>
                     @endif
-
+                    
                     {{ __('You are logged in!') }}
                     <br><br>
                     Example Tampilan Untuk Siswa

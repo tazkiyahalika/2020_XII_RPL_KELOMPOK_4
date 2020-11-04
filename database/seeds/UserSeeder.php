@@ -40,27 +40,17 @@ class UserSeeder extends Seeder
         $siswa->assignRole('student');
 
         $guru = User::create([
-            'usr_name' => 'Teacher',
-            'usr_email' => 'teacher@example.com',
+            'usr_name' => 'coach',
+            'usr_email' => 'coach@example.com',
             'usr_phone' => '08213456789',
-            'usr_password' => Hash::make('teacher123'),
+            'usr_password' => Hash::make('coach123'),
             'usr_email_verified_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'usr_verification_token' => str_replace('/', '', Hash::make(Str::random(12))),
             'usr_is_active' => true,
         ]);
 
-        $guru->assignRole('teacher');
+        $guru->assignRole('coach');
 
-        $staff_TU = User::create([
-            'usr_name' => 'Staff TU',
-            'usr_email' => 'staff@example.com',
-            'usr_phone' => '08213456789',
-            'usr_password' => Hash::make('staff123'),
-            'usr_email_verified_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'usr_verification_token' => str_replace('/', '', Hash::make(Str::random(12))),
-            'usr_is_active' => true,
-        ]);
-
-        $staff_TU->assignRole('staff');
+       
     }
 }
