@@ -21,16 +21,29 @@
                         {{ session('status') }}
                     </div>
                     @endif
-                    
+
                     {{ __('You are logged in!') }}
+                  
                     <br><br>
+                    <tr>
+                        <td>Name</td>
+                        <td>:</td>
+                        <td>{{ Auth()->user()->usr_name }}</td>
+                    </tr>
+                    <br>
+                    <td>
+                        <tr>Role</tr>
+                        <tr>:</tr>
+                        <tr>Student</tr>
+                    </td>
+                    <br>
                     Example Tampilan Untuk Siswa
                 </div>
             </div>
-            @elseif(Auth()->user()->hasRole('teacher'))
+            @elseif(Auth()->user()->hasRole('coach'))
 
             <div class="card">
-                <div class="card-header" style="background: grey">{{ __('Dashboard Guru') }}</div>
+                <div class="card-header" style="background: grey">{{ __('Dashboard coach') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -41,14 +54,26 @@
 
                     {{ __('You are logged in!') }}
                     <br><br>
-                    Example Tampilan Untuk Guru
+                    <tr>
+                        <td>Name</td>
+                        <td>:</td>
+                        <td>{{ Auth()->user()->usr_name }}</td>
+                    </tr>
+                    <br>
+                    <td>
+                        <tr>Role</tr>
+                        <tr>:</tr>
+                        <tr>Coach</tr>
+                    </td>
+                    <br>
+                    Example Tampilan Untuk Coach
                 </div>
             </div>
 
-            @elseif(Auth()->user()->hasRole('staff'))
+            @elseif(Auth()->user()->hasRole('admin'))
 
             <div class="card">
-                <div class="card-header" style="background: blue">{{ __('Dashboard Staff') }}</div>
+                <div class="card-header" style="background: blue">{{ __('Dashboard Admin') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -59,7 +84,19 @@
 
                     {{ __('You are logged in!') }}
                     <br><br>
-                    Example Tampilan Untuk Staff
+                    <tr>
+                        <td>Name</td>
+                        <td>:</td>
+                        <td>{{ Auth()->user()->usr_name }}</td>
+                    </tr>
+                    <br>
+                    <td>
+                        <tr>Role</tr>
+                        <tr>:</tr>
+                        <tr>Admin</tr>
+                    </td>
+                    <br>
+                    Example Tampilan Untuk Admin
                 </div>
             </div>
 

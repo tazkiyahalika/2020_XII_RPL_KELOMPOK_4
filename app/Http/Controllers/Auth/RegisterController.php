@@ -29,14 +29,14 @@ class RegisterController extends Controller
         return view('auth.register-student');
     }
 
-    public function registerTeacher()
+    public function registerCoach()
     {
-        return view('auth.register-teacher');
+        return view('auth.register-coach');
     }
 
-    public function registerStaff()
+    public function registerAdmin()
     {
-        return view('auth.register-staff');
+        return view('auth.register-admin');
     }
 
     use RegistersUsers;
@@ -95,10 +95,10 @@ class RegisterController extends Controller
             $user->assignRole('student');
             $user->created_by = $user->usr_id;
         } elseif ($data['role'] == 2) {
-            $user->assignRole('teacher');
+            $user->assignRole('coach');
             $user->created_by = $user->usr_id;
         } elseif ($data['role'] == 3) {
-            $user->assignRole('staff');
+            $user->assignRole('admin');
             $user->created_by = $user->usr_id;
         }
 
