@@ -13,11 +13,23 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+ Route::get('/', function () {
+     return view('welcome');
+ });
+
+Route::get('/logout' ,function() {
+	Auth::logout();
+	return redirect('login');
 });
 
+// Route::get('/dashboard', function () {
+// 	return view('coba');
+//    });
+
 Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/cek_role', 'AuthController@roles');
 
 Route::get('/account/{userId}/{userVerificationToken}/activate', 'Auth\AccountController@verifyToken');
 Route::get('/account/waiting-verification', 'Auth\AccountController@waitingVerification');
@@ -35,6 +47,16 @@ Route::get('/register-coach', 'Auth\RegisterController@registerCoach');
 Route::get('/register-staff', 'Auth\RegisterController@registerStaff');
 
 //Route Untuk Admin, Student, Teacher, Staff TU, jika register dan login maka akan ke halaman ini 
-Route::group(['middleware' => ['auth', 'verified']], function () {
-    Route::get('/dashboard', 'User\UserController@index')->name('dashboard.users');
+Route::group(['middleware' => ['role:admin']], function () {
+	Route::get('/admin/dashboard','AdminController@index')->name('dashboard.admin');
 });
+
+
+Route::group(['middleware' => ['role:student']], function () {
+	Route::get('/student/dashboard','StudentController@index')->name('dashboard.student');
+});
+
+Route::group(['middleware' => ['role:coach']], function () {
+	Route::get('/coach/dashboard','CoachController@index')->name('dashboard.coach');
+});
+

@@ -54,7 +54,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ url('register-student') }}">Siswa</a>
-                                <a class="dropdown-item" href="{{ url('register-coach') }}">Coach</a>
+                                <a class="dropdown-item" href="{ { url('register-coach') }}">Coach</a>
                                 <a class="dropdown-item" href="{{ url('register-staff') }}">Admin</a>
                             </div>
                         </li>
@@ -106,6 +106,9 @@
             });
         });
     </script>
+
+
+    
 </body>
 
 </html>
