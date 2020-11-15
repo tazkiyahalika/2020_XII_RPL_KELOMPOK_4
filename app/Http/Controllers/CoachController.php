@@ -19,5 +19,9 @@ class CoachController extends Controller
     {
     	return view('coach.dashboard');
     }
+     public function ListStudent()
+    {
+    	return view('coach.data-member');
+    }
 
  }

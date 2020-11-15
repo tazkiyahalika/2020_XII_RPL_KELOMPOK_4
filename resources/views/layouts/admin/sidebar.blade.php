@@ -13,49 +13,29 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item has-treeview">
-            <a href="" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Kelola Ekstrakulikuler
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{ url('/pramuka') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Pramuka</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ url('/voli') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Voli</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ url('/senitari') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Seni Tari</p>
-                </a>
-              </li>
-            </ul>
-          </li>
           <li class="nav-item">
-            <a href="{{ url('/datapembina') }}" class="nav-link">
+            <a href="{{ url('/admin/extracurricular') }}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Data Pembina
+                List Extracurricular
                 
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="{{ url('/admin/coach') }}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                List Coach
+                
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url('admin/extracurricular/create') }}" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
               <p>
-                Anggota Ekstrakulikuler
+                Add Extracurricular
               </p>
             </a>
 

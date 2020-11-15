@@ -19,5 +19,16 @@ class AdminController extends Controller
     {
     	return view('admin.dashboard');
     }
-
+    public function list()
+    {
+    	return view('admin.extracurricular');
+    }
+    public function Coach()
+    {
+    	return view('admin.list-pembina');
+    }
+    public function create()
+    {
+        return view('admin.add-extracurricular');
+    }
  }

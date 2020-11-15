@@ -49,14 +49,21 @@ Route::get('/register-staff', 'Auth\RegisterController@registerStaff');
 //Route Untuk Admin, Student, Teacher, Staff TU, jika register dan login maka akan ke halaman ini 
 Route::group(['middleware' => ['role:admin']], function () {
 	Route::get('/admin/dashboard','AdminController@index')->name('dashboard.admin');
+	Route::get('admin/extracurricular', 'AdminController@list');
+	Route::get('admin/coach', 'AdminController@coach');
+	Route::get('admin/extracurricular/create', 'AdminController@create');
 });
 
 
 Route::group(['middleware' => ['role:student']], function () {
 	Route::get('/student/dashboard','StudentController@index')->name('dashboard.student');
+	Route::get('student/extracurricular', 'StudentController@StudentEkskul');
+	Route::get('student/coach', 'StudentController@StudentList');
+	Route::get('student/extracurricular/create', 'StudentController@createEkskul');
 });
 
 Route::group(['middleware' => ['role:coach']], function () {
 	Route::get('/coach/dashboard','CoachController@index')->name('dashboard.coach');
+	Route::get('coach/student','CoachController@ListStudent');
 });
 

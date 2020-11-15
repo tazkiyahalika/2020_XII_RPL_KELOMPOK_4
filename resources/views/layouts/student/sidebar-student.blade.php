@@ -14,36 +14,19 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview">
-            <a href="" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+            <li class="nav-item">
+            <a href="{{ url('/student/extracurricular') }}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
               <p>
-                Ekstrakulikuler
-                <i class="right fas fa-angle-left"></i>
+               List Ekstrakulikuler
+                
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="../index.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Pramuka</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../index2.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Voli</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../index3.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Seni Tari</p>
-                </a>
-              </li>
-            </ul>
+          </li>
+            
           </li>
           <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="{{ url('/student/extracurricular/create') }}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Daftar Ekstrakulikuler
@@ -52,14 +35,15 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="{{ url('/student/coach') }}" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
               <p>
-                Detail Pembina
+                List Pembina
               </p>
             </a>
 
           </li>
+
          
           
 
