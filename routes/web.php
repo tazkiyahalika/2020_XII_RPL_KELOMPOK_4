@@ -58,7 +58,6 @@ Route::group(['middleware' => ['role:admin']], function () {
 Route::group(['middleware' => ['role:student']], function () {
 	Route::get('/student/dashboard','StudentController@index')->name('dashboard.student');
 	Route::get('student/extracurricular', 'StudentController@StudentEkskul');
-	Route::get('student/coach', 'StudentController@StudentList');
 	Route::get('student/extracurricular/create', 'StudentController@createEkskul');
 });
 

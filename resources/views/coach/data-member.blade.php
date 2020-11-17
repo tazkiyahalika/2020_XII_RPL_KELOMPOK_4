@@ -20,32 +20,14 @@
                   </thead>
                   <tbody>
                   <tr>
-                    <td>Misc</td>
-                    <td>Links</td>
-                    <td>Text only</td>
-                    <td>-</td>
-                    <td>Text only</td>
-                    <td>-</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>Misc</td>
-                    <td>Lynx</td>
-                    <td>Text only</td>
-                    <td>-</td>
-                    <td>Text only</td>
-                    <td>-</td>
-                    <td></td>
-                  </tr>
-                  
-                  <tr>
-                    <td>Other browsers</td>
-                    <td>All others</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td></td>
+                    <td>1</td>
+                    <td>Rismawati</td>
+                    <td>X RPL 1</td>
+                    <td>Landean</td>
+                    <td>Perempuan</td>
+                    <td>ima@gmail.com</td>
+                    <td><a href="" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onclick="return confirm('Yakin Mau hapus gussss?');"> <i class="fa fa-trash"></i></a></td>
+                    
                   </tr>
                   </tbody>
                 </table>

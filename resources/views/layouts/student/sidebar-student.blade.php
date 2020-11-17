@@ -34,16 +34,6 @@
               </p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="{{ url('/student/coach') }}" class="nav-link">
-              <i class="nav-icon fas fa-chart-pie"></i>
-              <p>
-                List Pembina
-              </p>
-            </a>
-
-          </li>
-
          
           
 

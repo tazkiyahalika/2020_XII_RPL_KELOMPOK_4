@@ -27,11 +27,6 @@ class StudentController extends Controller
     {
     	return view('student.student-extracurricular');
     }
-
-     public function StudentList()
-    {
-    	return view('student.student-list');
-    }
     public function createEkskul()
     {
     	return view('student.create-extracurricular');
