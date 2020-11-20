@@ -12,7 +12,7 @@
 
                 <ul class="list-group list-group-unbordered mb-3">
                   <li class="list-group-item">
-                    <b>Tempat Tanggal Lahir</b> <a class="float-right">1992</a>
+                    <b>Tempat Tanggal Lahir</b> <a class="float-right">1998</a>
                   </li>
                   <li class="list-group-item">
                     <b>Jenis Kelamin</b> <a class="float-right">Perempuan</a>

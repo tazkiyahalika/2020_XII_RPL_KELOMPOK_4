@@ -1,6 +1,5 @@
 @extends('layouts.student-master')
 @section('content')
-
 <div class="card">
   <div class="card-header">
 
@@ -75,16 +74,15 @@
                     <!-- Post -->
                   
                       <!-- /.user-block -->
-                      <div class="row mb-3">
-                        <div class="col-sm-6">
-                          <img class="img-fluid" src="../../dist/img/pramuka/pramuka1.jpg" alt="Photo">
+                      <div class="row mb-2">
+                        <div class="col-sm-4">
+                          <img class="img-fluid" src="../../dist/img/Voli/Kegiatan2.jpg" alt="Photo">
                         </div>
                         <!-- /.col -->
                         <div class="col-sm-6">
                           <div class="row">
-                            <div class="col-sm-6">
-                              <img class="img-fluid mb-3" src="../../dist/img/pramuka/pramuka2.jpg" alt="Photo">
-                            
+                            <div class="col-sm-8">
+                              <img class="img-fluid" src="../../dist/img/Voli/Kegiatan3.jpg" alt="Photo">
                             </div>
                             <!-- /.col -->
                            
@@ -121,7 +119,7 @@
   </div>
 
 
-<div class="card card-primary card-outline">
+          <div class="card card-primary card-outline">
               <div class="card-body box-profile">
                 <div class="text-center">
                   <img class="profile-user-img img-fluid img-circle" src="../../dist/img/Voli/Bu annisa.jpg" alt="User profile picture">

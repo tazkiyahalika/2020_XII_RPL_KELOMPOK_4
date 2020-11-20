@@ -20,13 +20,13 @@
                     <td>1</td>
                     <td>Pramuka</td>
                     <td>Eman Sulaeman</td>
-                    <td><a href="{{ url('student/extracurricular/detail')}}" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a></td>
+                    <td><a href="{{ url('student/extracurricular/detail-pramuka')}}" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a></td>
                   </tr>
                   <tr>
                     <td>2</td>
                     <td>Volley ball</td>
                     <td>Annisa Komalasari</td>
-                    <td><a href="{{ url('student/extracurricular/detail')}}" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a></td>
+                    <td><a href="{{ url('student/extracurricular/detail-voli')}}" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a></td>
                   </tr>
                   
                   </tbody>

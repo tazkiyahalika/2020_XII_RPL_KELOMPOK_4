@@ -54,7 +54,7 @@
                     <!-- Post -->
                     <div class="post">
                       <div class="user-block">
-                        <img class="img-circle img-bordered-sm" src="../../dist/img/Voli/Bu annisa.jpg" alt="user image">
+                        <img class="img-circle img-bordered-sm" src="../../dist/img/pramuka/Kak Eman.jpg" alt="user image">
                         <span class="username">
                           <a href="#">Eman Sulaeman</a>
                           
@@ -76,14 +76,14 @@
                     <!-- Post -->
                   
                       <!-- /.user-block -->
-                      <div class="row mb-3">
-                        <div class="col-sm-6">
+                      <div class="row mb-2">
+                        <div class="col-sm-4">
                           <img class="img-fluid" src="../../dist/img/pramuka/pramuka1.jpg" alt="Photo">
                         </div>
                         <!-- /.col -->
-                        <div class="col-sm-6">
+                        <div class="col-sm-8">
                           <div class="row">
-                            <div class="col-sm-6">
+                            <div class="col-sm-8">
                               <img class="img-fluid mb-3" src="../../dist/img/pramuka/pramuka2.jpg" alt="Photo">
 
                               
