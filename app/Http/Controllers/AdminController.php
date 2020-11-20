@@ -31,4 +31,45 @@ class AdminController extends Controller
     {
         return view('admin.add-extracurricular');
     }
+
+    public function addpembina()
+    {
+        return view('admin.add-pembina');
+    }
+
+     public function addEkskul()
+    {
+        return redirect('admin/extracurricular');
+    }
+    public function addcoach()
+    {
+        return redirect('admin/coach');
+    }
+    public function updateEkskul()
+    {
+        return view('admin.update-extracurricular');
+    }
+    public function detailEkskulPramuka()
+    {
+        return view('admin.detail-extracurricular-pramuka');
+    }
+
+    public function detailEkskulVoli()
+    {
+        return view('admin.detail-extracurricular-voli');
+    }
+
+     public function detailPembinaPramuka()
+    {
+        return view('admin.detail-pembina-pramuka');
+    }
+     public function detailPembinaVoli()
+    {
+        return view('admin.detail-pembina-voli');
+    }
+     public function updatePembina()
+    {
+        return view('admin.update-pembina');
+    }
+    
  }

@@ -51,14 +51,29 @@ Route::group(['middleware' => ['role:admin']], function () {
 	Route::get('/admin/dashboard','AdminController@index')->name('dashboard.admin');
 	Route::get('admin/extracurricular', 'AdminController@list');
 	Route::get('admin/coach', 'AdminController@coach');
+	Route::post('admin/extracurricular', 'AdminController@addEkskul');
 	Route::get('admin/extracurricular/create', 'AdminController@create');
+	Route::get('admin/extracurricular/add-coach', 'AdminController@addpembina');
+	Route::post('admin/coach', 'AdminController@addcoach');
+	Route::get('admin/coach/detail-pembina-pramuka', 'AdminController@detailPembinaPramuka');
+	Route::get('admin/coach/detail-pembina-voli', 'AdminController@detailPembinaVoli');
+	Route::get('admin/extracurricular/update', 'AdminController@updateEkskul');
+	Route::get('admin/extracurricular/detail', 'AdminController@detailEkskulPramuka');
+	Route::get('admin/coach/update', 'AdminController@updatePembina');
+	Route::get('admin/extracurricular/detail-extracurricular-voli', 'AdminController@detailEkskulVoli');
+
 });
 
 
 Route::group(['middleware' => ['role:student']], function () {
 	Route::get('/student/dashboard','StudentController@index')->name('dashboard.student');
 	Route::get('student/extracurricular', 'StudentController@StudentEkskul');
+	Route::post('student/extracurricular', 'StudentController@saveEkskul');
 	Route::get('student/extracurricular/create', 'StudentController@createEkskul');
+	Route::get('student/extracurricular/detail', 'StudentController@detailPramuka');
+	Route::get('student/extracurricular/detail', 'StudentController@detailVoli');
+
+
 });
 
 Route::group(['middleware' => ['role:coach']], function () {

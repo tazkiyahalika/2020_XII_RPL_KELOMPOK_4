@@ -31,4 +31,16 @@ class StudentController extends Controller
     {
     	return view('student.create-extracurricular');
     }
-  }
+    public function saveEkskul()
+    {
+        return redirect('student/extracurricular');
+    }
+     public function detailPramuka()
+    {
+        return view('student.detail-pramuka');
+    }
+    public function detailVoli()
+    {
+        return view('student.detail-voli');
+    }
+}

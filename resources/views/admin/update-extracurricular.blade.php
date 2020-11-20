@@ -14,9 +14,10 @@
                     <input type="name" class="form-control" placeholder="name coach">
                   </div>
                   <div class="form-group">
-                    <label>Jumlah Anggota</label>
+                    <label>Jumlah Anggota </label>
                     <input type="name" class="form-control" placeholder="name coach">
                   </div>
+                  
                  
                 <!-- /.card-body -->
 

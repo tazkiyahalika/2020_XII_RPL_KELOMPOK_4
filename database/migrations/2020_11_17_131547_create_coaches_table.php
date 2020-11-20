@@ -18,7 +18,6 @@ class CreateCoachesTable extends Migration
             $table->string('coc_name');
             $table->string('coc_gender');
             $table->foreignId('coc_esc_id');
-            $table->foreignId('coc_std_id');
             $table->timestamps();
         });
     }

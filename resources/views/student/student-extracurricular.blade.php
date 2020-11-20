@@ -20,26 +20,15 @@
                     <td>1</td>
                     <td>Pramuka</td>
                     <td>Eman Sulaeman</td>
-                    <td><a href="" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a></td>
+                    <td><a href="{{ url('student/extracurricular/detail')}}" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a></td>
                   </tr>
                   <tr>
                     <td>2</td>
                     <td>Volley ball</td>
                     <td>Annisa Komalasari</td>
-                    <td><a href="" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a></td>
+                    <td><a href="{{ url('student/extracurricular/detail')}}" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a></td>
                   </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>Rekayasa Perangkat Lunak</td>
-                    <td>Dede Suryana</td>
-                    <td><a href="" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a></td>
-                  </tr>
-                  <tr>
-                    <td>4</td>
-                    <td>Multimedia</td>
-                    <td>Yusuf maulana Arifin</td>
-                    <td><a href="" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a></td>
-                  </tr>
+                  
                   </tbody>
                 </table>
               </div>
