@@ -6,7 +6,7 @@
                   <img class="profile-user-img img-fluid img-circle" src="../../dist/img/pramuka/Kak Eman.jpg" alt="User profile picture">
                 </div>
 
-                <h3 class="profile-username text-center">Eman Sulaeman</h3>
+                <h3 class="profile-username text-center">Eman Sulaeman, S.Pd</h3>
 
                 <p class="text-muted text-center">Pembina Pramuka</p>
 
@@ -18,7 +18,13 @@
                     <b>Jenis Kelamin</b> <a class="float-right">Laki-Laki</a>
                   </li>
                   <li class="list-group-item">
-                    <b>Alamat</b> <a class="float-right">Jalan cincin</a>
+                    <b>Pendidikan</b> <a class="float-right">S1 Jurusan Olahraga(PJKR) STKIP Cimahi Pasundan Bandung</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b>Pekerjaan</b> <a class="float-right">TNI AU</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b>Alamat</b> <a class="float-right">Perumahan.Cincin permata indah Blok E Rt 05/Rw 11. Desa Cingcin Kec. Soreang Kab. Bandung No. 26</a>
                   </li>
                 </ul>
 

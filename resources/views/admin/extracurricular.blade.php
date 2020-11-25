@@ -25,18 +25,18 @@
                     <td class="text-center">
                     <a href="{{ url('admin/extracurricular/detail')}}" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a>
                     <a href="{{ url('admin/extracurricular/update')}}" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Edit"> <i class="fa fa-edit"></i></a>
-                    <a href="" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onclick="return confirm('Yakin Mau hapus gussss?');"> <i class="fa fa-trash"></i></a>
+                    <a href="" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onclick="return confirm('Yakin Mau hapus?');"> <i class="fa fa-trash"></i></a>
                     </td>
                   </tr>
                   <tr>
                     <td>2</td>
+                    <td>Volley Ball</td>
                     <td>Annisa Komalasari</td>
-                    <td>Volley ball</td>
                     <td>20 Orang</td>
                     <td class="text-center">
                     <a href="{{ url('admin/extracurricular/detail-extracurricular-voli') }}" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a>
                     <a href="{{ url('admin/extracurricular/update')}}" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Edit"> <i class="fa fa-edit"></i></a>
-                    <a href="" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onclick="return confirm('Yakin Mau hapus gussss?');"> <i class="fa fa-trash"></i></a>
+                    <a href="" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onclick="return confirm('Yakin Mau hapus?');"> <i class="fa fa-trash"></i></a>
                     </td>
                   </tr>
                   </tbody>

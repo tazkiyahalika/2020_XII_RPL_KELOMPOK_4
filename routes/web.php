@@ -40,13 +40,13 @@ Route::post('/account/forgot-password', 'Auth\AccountController@sendEmailForgotP
 Route::get('/account/{resetVerificationToken}/forgot-password', 'Auth\AccountController@verifyForgotToken');
 Route::post('/account/reset-password', 'Auth\AccountController@updatePassword')->name('password-reset');
 
-//Route untuk register teacher dan staff
+//Route untuk register student, coach 
 
 Route::get('/register-student', 'Auth\RegisterController@registerStudent');
 Route::get('/register-coach', 'Auth\RegisterController@registerCoach');
-Route::get('/register-staff', 'Auth\RegisterController@registerStaff');
+Route::get('/register-admin', 'Auth\RegisterController@registerAdmin');
 
-//Route Untuk Admin, Student, Teacher, Staff TU, jika register dan login maka akan ke halaman ini 
+//Route Untuk Admin, Student, coach, jika register dan login maka akan ke halaman ini 
 Route::group(['middleware' => ['role:admin']], function () {
 	Route::get('/admin/dashboard','AdminController@index')->name('dashboard.admin');
 	Route::get('admin/extracurricular', 'AdminController@list');

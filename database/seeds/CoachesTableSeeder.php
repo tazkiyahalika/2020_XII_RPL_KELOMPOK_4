@@ -12,10 +12,10 @@ class CoachesTableSeeder extends Seeder
     public function run()
     {
     	 DB::table('coaches')->insert([
-            'coc_id' 	 => '1',
-            'coc_name'   => 'Eman Sulaeman',
-        	'coc_gender' => 'Laki - Laki',
-        	'coc_esc_id' => '1'
+            'coc_id' 	    => '1',
+            'coc_name'      => 'Eman Sulaeman',
+        	'coc_gender'    => 'Laki - Laki',
+        	'coc_esc_id'    => '1'
         ]);
 
     	 DB::table('coaches')->insert([

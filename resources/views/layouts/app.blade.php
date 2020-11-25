@@ -53,9 +53,9 @@
                                 {{ __('Register') }}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ url('register-student') }}">Siswa</a>
-                                <a class="dropdown-item" href="{ { url('register-coach') }}">Coach</a>
-                                <a class="dropdown-item" href="{{ url('register-staff') }}">Admin</a>
+                                <a class="dropdown-item" href="{{ url('register-student') }}">Student</a>
+                                <a class="dropdown-item" href="{{ url('register-coach') }}">Coach</a>
+                                <a class="dropdown-item" href="{{ url('register-admin') }}">Admin</a>
                             </div>
                         </li>
                         @endif

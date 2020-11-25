@@ -24,6 +24,18 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('index');
+       $user = Auth()->user();
+
+       if ($user->hasRole('student')) {
+        return redirect('register-student');
+       }elseif ($user->hasRole('coach')) {
+        return redirect('register-coach');
+       }elseif ($user->hasRole('admin')) {
+        return redirect('register-admin');
+       }elseif  {
+        return view('dashboard');
+       }else {
+        abort(404);
+       }
     }
 }

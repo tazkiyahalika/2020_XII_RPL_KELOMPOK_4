@@ -14,14 +14,15 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview">
-            <a href="{{ url ('coach/student')}}" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+            <li class="nav-item">
+            <a href="{{ url('/coach/student') }}" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
               <p>
-                Data Anggota
-                <i class="right fas fa-angle-left"></i>
+               Data Anggota
+                
               </p>
             </a>
-           </li>
+          </li>
           
 
           <li class="nav-item">

@@ -30,7 +30,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <a href="{{ url('admin/coach')}}" button type="submit" class="btn btn-primary" >Submit</a>
+                  <a href="{{ url('admin/coach')}}" button type="submit" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Tambah" onclick="return confirm('Tambah Pembina?'); ">Submit</a>
                 </div>
               </form>
 

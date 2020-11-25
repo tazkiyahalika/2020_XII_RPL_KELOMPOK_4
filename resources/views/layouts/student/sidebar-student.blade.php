@@ -16,7 +16,7 @@
           <li class="nav-item has-treeview">
             <li class="nav-item">
             <a href="{{ url('/student/extracurricular') }}" class="nav-link">
-              <i class="far fa-circle nav-icon"></i>
+              <i class="nav-icon fas fa-book"></i>
               <p>
                List Ekstrakulikuler
                 
@@ -27,7 +27,7 @@
           </li>
           <li class="nav-item">
             <a href="{{ url('/student/extracurricular/create') }}" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+              <i class="nav-icon far fa-plus-square"></i>
               <p>
                 Daftar Ekstrakulikuler
                 
