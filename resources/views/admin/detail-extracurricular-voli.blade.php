@@ -62,7 +62,8 @@
                       </div>
                       <!-- /.user-block -->
                       <p>
-                        Voli adalah salah satu ekstrakulikuler yang wajib di SMKS Mahaputra Cerdas Utama
+                        Voli adalah salah satu ekstrakulikuler yang wajib di SMKS Mahaputra Cerdas Utama dan juga merupakan 
+                        ekskul olahraga yang sangat diminati
                       </p>
 
                     <!-- /.post -->

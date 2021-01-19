@@ -62,7 +62,8 @@
                       </div>
                       <!-- /.user-block -->
                       <p>
-                        Pramuka adalah salah satu ekstrakulikuler yang wajib di SMKS Mahaputra Cerdas Utama
+                        Pramuka adalah salah satu ekstrakulikuler yang wajib di SMKS Mahaputra Cerdas Utama dan juga merupakan
+                        salah satu ekskul pbb yang ada di mahaputra
                       </p>
 
 

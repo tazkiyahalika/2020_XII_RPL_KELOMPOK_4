@@ -18,18 +18,7 @@
             <a href="{{ url('/student/extracurricular') }}" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>
-               List Ekstrakulikuler
-                
-              </p>
-            </a>
-          </li>
-            
-          </li>
-          <li class="nav-item">
-            <a href="{{ url('/student/extracurricular/create') }}" class="nav-link">
-              <i class="nav-icon far fa-plus-square"></i>
-              <p>
-                Daftar Ekstrakulikuler
+               Daftar Ekstrakulikuler
                 
               </p>
             </a>

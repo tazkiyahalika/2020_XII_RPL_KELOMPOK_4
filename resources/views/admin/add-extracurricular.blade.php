@@ -3,19 +3,19 @@
 
 
 
-<form role="form">
+                <form role="form">
                 <div class="card-body">
                   <div class="form-group">
                     <label>Nama Ekstrakulikuler<span style="color:red"> *</span></label>
-                   <br> <input type="name" class="form-control" placeholder="name extracurricular" required> <br>
+                    <input type="name" class="form-control" placeholder="nama ekstrakulikuler" required>
                   </div>
                   <div class="form-group">
                     <label>Nama Pembina<span style="color:red"> *</span></label>
-                    <input type="name" class="form-control" placeholder="name coach">
+                    <input type="name" class="form-control" placeholder="nama pembina">
                   </div>
                   <div class="form-group">
-                    <label>Jumlah Anggota<span style="color:red"> *</span></label>
-                    <input type="name" class="form-control" placeholder="name coach">
+                    <label>Gambar Ekstrakulikuler<span style="color:red"> *</span></label>
+                    <input type="name" class="form-control" placeholder="Gambar Ekstrakulikuler">
                   </div>
                  
                 <!-- /.card-body -->

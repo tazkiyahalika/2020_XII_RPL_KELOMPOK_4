@@ -11,7 +11,6 @@
                   <tr>
                     <th>No</th>
                     <th>Ekstrakulikuler</th>
-                    <th>Pembina</th>
                     <th>Action</th>
                   </tr>
                   </thead>
@@ -19,14 +18,16 @@
                   <tr>
                     <td>1</td>
                     <td>Pramuka</td>
-                    <td>Eman Sulaeman</td>
-                    <td><a href="{{ url('student/extracurricular/detail-pramuka')}}" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a></td>
+                    <td><a href="{{ url('student/extracurricular/detail-pramuka')}}" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a>
+                        <button type="submit" class="btn btn-success">daftar</button>
+                        <button type="submit" class="btn btn-primary">anggota</button></td>
                   </tr>
                   <tr>
                     <td>2</td>
                     <td>Volley ball</td>
-                    <td>Annisa Komalasari</td>
-                    <td><a href="{{ url('student/extracurricular/detail-voli')}}" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a></td>
+                    <td><a href="{{ url('student/extracurricular/detail-voli')}}" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a>
+                        <button type="submit" class="btn btn-success">daftar</button>
+                        <button type="submit" class="btn btn-primary">anggota</button></td>
                   </tr>
                   
                   </tbody>
