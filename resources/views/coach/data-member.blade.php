@@ -11,10 +11,9 @@
                   <tr>
                     <th>No</th>
                     <th>Nama</th>
+                    <th>Jenis Kelamin</th>
                     <th>Kelas</th>
                     <th>Alamat</th>
-                    <th>Jenis Kelamin</th>
-                    <th>Email</th>
                     <th>action</th>
                   </tr>
                   </thead>
@@ -22,20 +21,42 @@
                   <tr>
                     <td>1</td>
                     <td>Rismawati</td>
-                    <td>X RPL 1</td>
-                    <td>Landean</td>
                     <td>Perempuan</td>
-                    <td>ima@gmail.com</td>
+                    <td>XII RPL 2</td>
+                    <td>Landean</td>
                     <td><a href="" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onclick="return confirm('Yakin Mau hapus?');"> <i class="fa fa-trash"></i></a></td> 
                   </tr>
 
-                  <tr>
+                   <tr>
                     <td>2</td>
-                    <td>Elsa</td>
-                    <td>XI RPL 1</td>
-                    <td>Cembul</td>
+                    <td>Elsa Lusiani</td>
                     <td>Perempuan</td>
-                    <td>elsalsn@gmail.com</td>
+                    <td>XII RPL 2</td>
+                    <td>Bojong</td>
+                    <td><a href="" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onclick="return confirm('Yakin Mau hapus?');"> <i class="fa fa-trash"></i></a></td> 
+                  </tr>
+                   <tr>
+                    <td>3</td>
+                    <td>Alika Tazkiyah</td>
+                    <td>Perempuan</td>
+                    <td>XII RPL 2</td>
+                    <td>Junti</td>
+                    <td><a href="" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onclick="return confirm('Yakin Mau hapus?');"> <i class="fa fa-trash"></i></a></td> 
+                  </tr>
+                   <tr>
+                    <td>4</td>
+                    <td>Rizki Muhammad N</td>
+                    <td>Laki-laki</td>
+                    <td>XII RPL 2</td>
+                    <td>Bojong</td>
+                    <td><a href="" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onclick="return confirm('Yakin Mau hapus?');"> <i class="fa fa-trash"></i></a></td> 
+                  </tr>
+                   <tr>
+                    <td>5</td>
+                    <td>Asyiah Nurjanah</td>
+                    <td>Perempuan</td>
+                    <td>XII RPL 2</td>
+                    <td>Cangkudu</td>
                     <td><a href="" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onclick="return confirm('Yakin Mau hapus?');"> <i class="fa fa-trash"></i></a></td> 
                   </tr>
                   </tbody>

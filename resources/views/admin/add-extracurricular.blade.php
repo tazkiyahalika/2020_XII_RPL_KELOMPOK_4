@@ -6,6 +6,7 @@
                 <form role="form">
                 <div class="card-body">
                   <div class="form-group">
+                    <option disabled selected>Choose One!</option>
                     <label>Nama Ekstrakulikuler<span style="color:red"> *</span></label>
                     <input type="name" class="form-control" placeholder="nama ekstrakulikuler" required>
                   </div>

@@ -16,7 +16,6 @@
           <th>Nama</th>
           <th>Ekstrakulikuler</th>
           <th>Jenis Kelamin</th>
-          <th>Alamat</th>
           <th>Email</th>
           <th>Action</th>
         </tr>
@@ -25,8 +24,7 @@
         <tr>
           <td>Eman Sulaeman</td>
           <td>Pramuka</td>
-          <td>Laki laki</td>
-           <td>bojong</td>
+          <td>Laki-laki</td>
           <td>eman@gmail.com</td>
           <td class="text-center">
                 <a href="{{ url('admin/coach/detail-pembina-pramuka')}}" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a>
@@ -40,8 +38,84 @@
             <td>Annisa Komalasari</td>
             <td>Voli</td>
             <td>Perempuan</td>
-            <td>sompok</td>
             <td>annisakomalasari@gmail.com</td>
+            <td class="text-center">
+                <a href="{{ url('admin/coach/detail-pembina-voli')}}" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a>
+                <a href="{{ url('admin/coach/update')}}" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Edit"> <i class="fa fa-edit"></i></a>
+                <a href="" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onclick="return confirm('Yakin Mau hapus gussss?');"> <i class="fa fa-trash"></i></a>
+            </td>
+          </tr>
+          <tr>
+            <td>Dede Suryana</td>
+            <td>Rekayasa perangkat Lunak</td>
+            <td>Laki-Laki</td>
+            <td>dedesuryana@gmail.com</td>
+            <td class="text-center">
+                <a href="{{ url('admin/coach/detail-pembina-voli')}}" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a>
+                <a href="{{ url('admin/coach/update')}}" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Edit"> <i class="fa fa-edit"></i></a>
+                <a href="" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onclick="return confirm('Yakin Mau hapus gussss?');"> <i class="fa fa-trash"></i></a>
+            </td>
+          </tr>
+          <tr>
+            <td>Yusuf Maulana</td>
+            <td>Multimedia</td>
+            <td>Laki-laki</td>
+            <td>yusfmaulanai@gmail.com</td>
+            <td class="text-center">
+                <a href="{{ url('admin/coach/detail-pembina-voli')}}" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a>
+                <a href="{{ url('admin/coach/update')}}" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Edit"> <i class="fa fa-edit"></i></a>
+                <a href="" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onclick="return confirm('Yakin Mau hapus gussss?');"> <i class="fa fa-trash"></i></a>
+            </td>
+          </tr>
+          <tr>
+            <td>cucun</td>
+            <td>Paduan Suara</td>
+            <td>Laki-laki</td>
+            <td>cucun@gmail.com</td>
+            <td class="text-center">
+                <a href="{{ url('admin/coach/detail-pembina-voli')}}" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a>
+                <a href="{{ url('admin/coach/update')}}" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Edit"> <i class="fa fa-edit"></i></a>
+                <a href="" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onclick="return confirm('Yakin Mau hapus gussss?');"> <i class="fa fa-trash"></i></a>
+            </td>
+          </tr>
+          <tr>
+            <td>Yadi Hambali</td>
+            <td>Nampon Kiwari</td>
+            <td>Laki-laki</td>
+            <td>yadihmbli@gmail.com</td>
+            <td class="text-center">
+                <a href="{{ url('admin/coach/detail-pembina-voli')}}" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a>
+                <a href="{{ url('admin/coach/update')}}" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Edit"> <i class="fa fa-edit"></i></a>
+                <a href="" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onclick="return confirm('Yakin Mau hapus gussss?');"> <i class="fa fa-trash"></i></a>
+            </td>
+          </tr>
+          <tr>
+            <td>Hasmi</td>
+            <td>Basket</td>
+            <td>Laki-laki</td>
+            <td>hasmi@gmail.com</td>
+            <td class="text-center">
+                <a href="{{ url('admin/coach/detail-pembina-voli')}}" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a>
+                <a href="{{ url('admin/coach/update')}}" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Edit"> <i class="fa fa-edit"></i></a>
+                <a href="" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onclick="return confirm('Yakin Mau hapus gussss?');"> <i class="fa fa-trash"></i></a>
+            </td>
+          </tr>
+          <tr>
+            <td>Hilman</td>
+            <td>Panahan</td>
+            <td>Laki-laki</td>
+            <td>hilman@gmail.com</td>
+            <td class="text-center">
+                <a href="{{ url('admin/coach/detail-pembina-voli')}}" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a>
+                <a href="{{ url('admin/coach/update')}}" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Edit"> <i class="fa fa-edit"></i></a>
+                <a href="" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onclick="return confirm('Yakin Mau hapus gussss?');"> <i class="fa fa-trash"></i></a>
+            </td>
+          </tr>
+          <tr>
+            <td>Aang</td>
+            <td>Rohis</td>
+            <td>Laki-laki</td>
+            <td>aang@gmail.com</td>
             <td class="text-center">
                 <a href="{{ url('admin/coach/detail-pembina-voli')}}" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a>
                 <a href="{{ url('admin/coach/update')}}" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Edit"> <i class="fa fa-edit"></i></a>
