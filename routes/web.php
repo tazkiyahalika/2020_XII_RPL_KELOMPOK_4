@@ -58,7 +58,7 @@ Route::group(['middleware' => ['role:admin']], function () {
 	Route::get('admin/coach/detail-pembina-pramuka', 'AdminController@detailPembinaPramuka');
 	Route::get('admin/coach/detail-pembina-voli', 'AdminController@detailPembinaVoli');
 	Route::get('admin/extracurricular/update', 'AdminController@updateEkskul');
-	Route::get('admin/extracurricular/detail', 'AdminController@detailEkskulPramuka');
+	Route::get('admin/extracurricular/detail-extracurricular-pramuka', 'AdminController@detailEkskulPramuka');
 	Route::get('admin/coach/update', 'AdminController@updatePembina');
 	Route::get('admin/extracurricular/detail-extracurricular-voli', 'AdminController@detailEkskulVoli');
 

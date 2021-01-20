@@ -25,7 +25,7 @@
                   <tr>
                     <td>2</td>
                     <td>volly</td>
-                    <td><a href="{{ url('student/extracurricular/detail-pramuka')}}" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a>
+                    <td><a href="{{ url('student/extracurricular/detail-voli')}}" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a>
                       <a href="{{ url('student/extracurricular/create') }}" button type="submit" class="btn btn-success">Daftar</button> </a>
                         <button type="submit" class="btn btn-primary">Anggota</button></td>
                   </tr>
