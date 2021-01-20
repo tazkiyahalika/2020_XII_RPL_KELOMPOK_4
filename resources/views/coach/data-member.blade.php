@@ -14,7 +14,7 @@
                     <th>Jenis Kelamin</th>
                     <th>Kelas</th>
                     <th>Alamat</th>
-                    <th>action</th>
+                    <th>Aksi</th>
                   </tr>
                   </thead>
                   <tbody>

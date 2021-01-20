@@ -11,30 +11,72 @@
                   <tr>
                     <th>No</th>
                     <th>Ekstrakulikuler</th>
-                    <th>Pembina</th>
-                    <th>Action</th>
+                    <th>Aksi</th>
                   </tr>
                   </thead>
                   <tbody>
                   <tr>
                     <td>1</td>
                     <td>Pramuka</td>
-                    <td>Eman Sulaeman</td>
-                    <td class="text-center">
-                    <a href="{{ url('admin/extracurricular/detail')}}" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a>
-                    <a href="{{ url('admin/extracurricular/update')}}" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Edit"> <i class="fa fa-edit"></i></a>
-                    <a href="" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onclick="return confirm('Yakin Mau hapus?');"> <i class="fa fa-trash"></i></a>
-                    </td>
+                    <td><a href="{{ url('student/extracurricular/detail-pramuka')}}" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a>
+                      <a href="{{ url('student/extracurricular/create') }}" button type="submit" class="btn btn-success">Daftar</button> </a>
+                        <button type="submit" class="btn btn-primary">Anggota</button></td>
                   </tr>
                   <tr>
                     <td>2</td>
-                    <td>Volley Ball</td>
-                    <td>Annisa Komalasari</td>
-                    <td class="text-center">
-                    <a href="{{ url('admin/extracurricular/detail-extracurricular-voli') }}" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a>
-                    <a href="{{ url('admin/extracurricular/update')}}" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Edit"> <i class="fa fa-edit"></i></a>
-                    <a href="" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onclick="return confirm('Yakin Mau hapus?');"> <i class="fa fa-trash"></i></a>
-                    </td>
+                    <td>volly</td>
+                    <td><a href="{{ url('student/extracurricular/detail-pramuka')}}" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a>
+                      <a href="{{ url('student/extracurricular/create') }}" button type="submit" class="btn btn-success">Daftar</button> </a>
+                        <button type="submit" class="btn btn-primary">Anggota</button></td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>RPL</td>
+                    <td><a href="{{ url('student/extracurricular/detail-pramuka')}}" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a>
+                      <a href="{{ url('student/extracurricular/create') }}" button type="submit" class="btn btn-success">Daftar</button> </a>
+                        <button type="submit" class="btn btn-primary">Anggota</button></td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>Multimedia</td>
+                    <td><a href="{{ url('student/extracurricular/detail-pramuka')}}" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a>
+                      <a href="{{ url('student/extracurricular/create') }}" button type="submit" class="btn btn-success">Daftar</button> </a>
+                        <button type="submit" class="btn btn-primary">Anggota</button></td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>Paduan Suara</td>
+                    <td><a href="{{ url('student/extracurricular/detail-pramuka')}}" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a>
+                      <a href="{{ url('student/extracurricular/create') }}" button type="submit" class="btn btn-success">Daftar</button> </a>
+                        <button type="submit" class="btn btn-primary">Anggota</button></td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td>Nampon Kiwari</td>
+                    <td><a href="{{ url('student/extracurricular/detail-pramuka')}}" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a>
+                      <a href="{{ url('student/extracurricular/create') }}" button type="submit" class="btn btn-success">Daftar</button> </a>
+                        <button type="submit" class="btn btn-primary">Anggota</button></td>
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td>Basket</td>
+                    <td><a href="{{ url('student/extracurricular/detail-pramuka')}}" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a>
+                      <a href="{{ url('student/extracurricular/create') }}" button type="submit" class="btn btn-success">Daftar</button> </a>
+                        <button type="submit" class="btn btn-primary">Anggota</button></td>
+                  </tr>
+                  <tr>
+                    <td>8</td>
+                    <td>Panahan</td>
+                    <td><a href="{{ url('student/extracurricular/detail-pramuka')}}" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a>
+                      <a href="{{ url('student/extracurricular/create') }}" button type="submit" class="btn btn-success">Daftar</button> </a>
+                        <button type="submit" class="btn btn-primary">Anggota</button></td>
+                  </tr>
+                  <tr>
+                    <td>9</td>
+                    <td>Rohis</td>
+                    <td><a href="{{ url('student/extracurricular/detail-pramuka')}}" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a>
+                      <a href="{{ url('student/extracurricular/create') }}" button type="submit" class="btn btn-success">Daftar</button> </a>
+                        <button type="submit" class="btn btn-primary">Anggota</button></td>
                   </tr>
                   </tbody>
                 </table>

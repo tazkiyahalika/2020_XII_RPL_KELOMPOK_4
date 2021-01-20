@@ -6,7 +6,7 @@
           <img src="{{url('/dist/img/Mahaputra.jpg')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Student</a>
+          <a href="#" class="d-block">Siswa</a>
         </div>
       </div>
 <nav class="mt-2">
@@ -30,7 +30,7 @@
             <a href="{{ url('/logout')}}" class="nav-link">
               <i class="fa fa-arrow-circle-left"></i>
               <p>
-                Logout
+                Keluar
               </p>
             </a>
 

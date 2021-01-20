@@ -11,7 +11,7 @@
                   <tr>
                     <th>No</th>
                     <th>Ekstrakulikuler</th>
-                    <th>Action</th>
+                    <th>Aksi</th>
                   </tr>
                   </thead>
                   <tbody>
