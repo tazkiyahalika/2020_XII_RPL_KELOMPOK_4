@@ -19,7 +19,7 @@
             <a href="{{ url('/admin/extracurricular') }}" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>
-                Daftar Ekstrakulikuler
+                Data Ekstrakulikuler
                 
               </p>
             </a>
@@ -28,7 +28,7 @@
             <a href="{{ url('/admin/coach') }}" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>
-                Daftar Pembina
+                Data Pembina
                 
               </p>
             </a>
