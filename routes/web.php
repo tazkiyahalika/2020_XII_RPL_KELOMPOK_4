@@ -45,8 +45,12 @@ Route::post('/account/reset-password', 'Auth\AccountController@updatePassword')-
 Route::get('/register-student', 'Auth\RegisterController@registerStudent');
 Route::get('/register-coach', 'Auth\RegisterController@registerCoach');
 Route::get('/register-admin', 'Auth\RegisterController@registerAdmin');
-
+Route::get('/dashboard','User\UserController@index')->name('dashboard.users')->middleware('auth');
 //Route Untuk Admin, Student, coach, jika register dan login maka akan ke halaman ini 
+Route::group(['middleware'=> ['auth','verified']], function(){
+	Route::get('dashboard', 'User\UserController@index')->name('dashboard.users');
+});
+
 Route::group(['middleware' => ['role:admin']], function () {
 	Route::get('/admin/dashboard','AdminController@index')->name('dashboard.admin');
 	Route::get('admin/extracurricular', 'AdminController@list');
@@ -61,6 +65,8 @@ Route::group(['middleware' => ['role:admin']], function () {
 	Route::get('admin/extracurricular/detail-extracurricular-pramuka', 'AdminController@detailEkskulPramuka');
 	Route::get('admin/coach/update', 'AdminController@updatePembina');
 	Route::get('admin/extracurricular/detail-extracurricular-voli', 'AdminController@detailEkskulVoli');
+	Route::get('admin/extracurricular/create-eskul', 'EskulController@create');
+	Route::post('admin/extracurricular/create-eskul', 'EskulController@save');
 
 });
 

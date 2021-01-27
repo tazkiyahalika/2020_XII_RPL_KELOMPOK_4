@@ -9,13 +9,16 @@
                   
                     
                      @csrf
+                     <label>Nama Eskul</label>
+                        <input type="text" name="esc_name" placeholder="nama ektrakulikuler"><br><br>
+                        <label>Nama Pembina</label><br>
+                        <input type="text" name="coc_name" placeholder="Nama Pembina"><br><br>
+                        <label>Deskripsi</label><br>
+                       <textarea></textarea><br><br>
+                        <input type="submit" value="save">
 
-                     @include('admin.partials.form-control')
 
                      <div class="card-footer">
-                     <a href="{{ url('admin/extracurricular')}}" button type="submit" class="btn btn-primary" data-toggle="tooltip" 
-                     data-placement="top" title="Tambah" onclick="return confirm('Tambah Ekstrakulikuler?');">Submit</a>
-                     </div>
                   </div>
                   </form>
 

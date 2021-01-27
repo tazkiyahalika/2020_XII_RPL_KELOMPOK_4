@@ -27,13 +27,11 @@ class UserController extends Controller
        $user = Auth()->user();
 
        if ($user->hasRole('student')) {
-        return redirect('register-student');
+        return redirect('student/dashboard');
        }elseif ($user->hasRole('coach')) {
-        return redirect('register-coach');
+        return redirect('coach/dashboard');
        }elseif ($user->hasRole('admin')) {
-        return redirect('register-admin');
-       }elseif  {
-        return view('dashboard');
+        return redirect('admin/dashboard');
        }else {
         abort(404);
        }

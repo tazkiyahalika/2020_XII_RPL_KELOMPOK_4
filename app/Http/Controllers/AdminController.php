@@ -29,7 +29,14 @@ class AdminController extends Controller
     }
     public function create()
     {
-        return view('admin.add-extracurricular');
+        return view ('admin.add-extracurricular');
+    }
+    public function save(Request $request)
+    {
+        $create = new Eskul();
+        $create->coc_name = $request->input('nama pembina');
+        $create->save();
+        echo $create->esc_id;
     }
 
     public function addpembina()
