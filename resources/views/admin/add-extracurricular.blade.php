@@ -9,13 +9,13 @@
                   
                     
                      @csrf
-                     <label>Nama Eskul</label>
+                     <label>Nama Eskul</label><br>
                         <input type="text" name="esc_name" placeholder="nama ektrakulikuler"><br><br>
                         <label>Nama Pembina</label><br>
                         <input type="text" name="coc_name" placeholder="Nama Pembina"><br><br>
                         <label>Deskripsi</label><br>
                        <textarea></textarea><br><br>
-                        <input type="submit" value="save">
+                        <input type="submit" class="btn btn-primary" value="save">
 
 
                      <div class="card-footer">
