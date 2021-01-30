@@ -65,8 +65,7 @@ Route::group(['middleware' => ['role:admin']], function () {
 	Route::get('admin/extracurricular/detail-extracurricular-pramuka', 'AdminController@detailEkskulPramuka');
 	Route::get('admin/coach/update', 'AdminController@updatePembina');
 	Route::get('admin/extracurricular/detail-extracurricular-voli', 'AdminController@detailEkskulVoli');
-	Route::get('admin/extracurricular/create-eskul', 'EskulController@create');
-	Route::post('admin/extracurricular/create-eskul', 'EskulController@save');
+	
 
 });
 

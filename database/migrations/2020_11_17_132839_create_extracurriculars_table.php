@@ -16,7 +16,7 @@ class CreateExtracurricularsTable extends Migration
         Schema::create('extracurriculars', function (Blueprint $table) {
             $table->id('esc_id');
             $table->string('esc_name');
-            $table->foreignId('esc_coc_id');
+            $table->longtext('esc_description');
             $table->timestamps();
         });
     }

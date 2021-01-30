@@ -15,6 +15,8 @@
                         <input type="text" name="coc_name" placeholder="Nama Pembina"><br><br>
                         <label>Deskripsi</label><br>
                        <textarea></textarea><br><br>
+                        <label>Tambah Foto</label><br>
+                        <input type="text" name="esc_name" placeholder="tambah foto"><br><br>
                         <input type="submit" class="btn btn-primary" value="save">
 
 

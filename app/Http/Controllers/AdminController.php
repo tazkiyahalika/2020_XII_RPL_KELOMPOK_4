@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+
 
 
 class AdminController extends Controller
@@ -21,7 +23,8 @@ class AdminController extends Controller
     }
     public function list()
     {
-    	return view('admin.extracurricular');
+        $list_eskul = \App\extracurricular::all();
+    	return view('admin.extracurricular', ['list_eskul' => $list_eskul]);
     }
     public function Coach()
     {

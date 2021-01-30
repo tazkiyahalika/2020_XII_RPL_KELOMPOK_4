@@ -16,8 +16,12 @@ class CreateCoachesTable extends Migration
         Schema::create('coaches', function (Blueprint $table) {
             $table->id('coc_id');
             $table->string('coc_name');
+            $table->string('coc_extracurricular');
+            $table->string('coc_birth');
             $table->string('coc_gender');
-            $table->foreignId('coc_esc_id');
+            $table->string('coc_study');
+            $table->string('coc_job');
+            $table->string('coc_address');
             $table->timestamps();
         });
     }
