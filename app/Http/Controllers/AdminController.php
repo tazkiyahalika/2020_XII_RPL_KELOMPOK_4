@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Extracurricular;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -30,9 +30,10 @@ class AdminController extends Controller
     {
     	return view('admin.list-pembina');
     }
-    public function create()
+    public function create(Request $request)
     {
-        return view ('admin.add-extracurricular');
+        \App\extracurricular::create($request->all());
+        return view('admin.add-extracurricular');
     }
     public function save(Request $request)
     {
@@ -47,17 +48,31 @@ class AdminController extends Controller
         return view('admin.add-pembina');
     }
 
-     public function addEkskul()
+     public function addEkskul(Request $request)
     {
+        $extracurricular = new extracurricular();
+        $extracurricular->esc_name = request('esc_name');
+        $extracurricular->esc_description = request('esc_description');
+        $extracurricular->save();
         return redirect('admin/extracurricular');
     }
     public function addcoach()
     {
         return redirect('admin/coach');
     }
-    public function updateEkskul()
+    public function editEkskul($esc_id)
     {
-        return view('admin.update-extracurricular');
+        $extracurricular = DB::table('extracurriculars')->where('esc_id', $esc_id)->get();
+        return view('admin.update-extracurricular', ['extracurricular' => $extracurricular]);
+    }
+    public function updateEkskul(Request $request)
+    {
+        DB::table('extracurriculars')->where('esc_id', $request->esc_id)->update([
+            'esc_name' => $request->esc_name,
+            'esc_description' => $request->esc_description
+        ]);
+
+        return redirect('admin/extracurricular');
     }
     public function detailEkskulPramuka()
     {
