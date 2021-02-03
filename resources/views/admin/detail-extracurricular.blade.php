@@ -1,24 +1,19 @@
 @extends('layouts.admin-master')
 @section('content')
-<div class="card">
-  <div class="card-header">
+<!-- <div class="card">
+  <div class="card-header" -->
 
     <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Extracurricular</h1>
-          </div>
-        </div>
-      </div><!-- /.container-fluid -->
-    </section>
 
+    <!--  -->
+     
+<!-- ini detail yang dulu -->
     <!-- Main content -->
-    <section class="content">
+ <!--    <section class="content">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-3">
+            <div class="col-sm-12"></div>
 
             <!-- Profile Image -->
             <div class="card card-primary card-outline">
@@ -55,7 +50,7 @@
         </div>
         <!-- /.row -->
       </div><!-- /.container-fluid -->
-    </section>
+    </section> -->
     <!-- /.content -->
 
   </div>  <!-- /.card-body -->
