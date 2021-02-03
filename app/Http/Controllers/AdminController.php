@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Extracurricular;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
@@ -63,20 +64,27 @@ class AdminController extends Controller
     public function editEkskul($esc_id)
     {
         $extracurricular = DB::table('extracurriculars')->where('esc_id', $esc_id)->get();
-        return view('admin.update-extracurricular', ['extracurricular' => $extracurricular]);
+        return view('admin.update-extracurricular', ['extracurriculars' => $extracurricular]);
     }
-    public function updateEkskul(Request $request)
+    
+    public function updateEkskul(Request $request, $esc_id)
     {
         DB::table('extracurriculars')->where('esc_id', $request->esc_id)->update([
-            'esc_name' => $request->esc_name,
-            'esc_description' => $request->esc_description
-        ]);
-
-        return redirect('admin/extracurricular');
+                'esc_name' => $request->esc_name,
+                'esc_description' => $request->esc_description
+            ]);
+        return redirect('/admin/extracurricular');
+    
     }
-    public function detailEkskulPramuka()
+    public function deleteEkskul($esc_id)
     {
-        return view('admin.detail-extracurricular-pramuka');
+        DB::table('extracurriculars')->where('esc_id', $esc_id)->delete();
+        return back();
+    }
+    public function detailEkskul($esc_id)
+    {
+        $extracurricular = DB::table('extracurriculars')->where('esc_id', $esc_id)->first();
+        return view('admin.detail-extracurricular', compact('extracurricular'));
     }
 
     public function detailEkskulVoli()
