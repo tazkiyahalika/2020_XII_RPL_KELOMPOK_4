@@ -31,18 +31,17 @@ class AdminController extends Controller
     {
     	return view('admin.list-pembina');
     }
-    public function create(Request $request)
+    public function create()
     {
-        \App\extracurricular::create($request->all());
         return view('admin.add-extracurricular');
     }
-    public function save(Request $request)
-    {
-        $create = new Eskul();
-        $create->coc_name = $request->input('nama pembina');
-        $create->save();
-        echo $create->esc_id;
-    }
+    // public function save(Request $request)
+    // {
+    //     $create = new Eskul();
+    //     $create->coc_name = $request->input('nama pembina');
+    //     $create->save();
+    //     echo $create->esc_id;
+    // }
 
     public function addpembina()
     {
@@ -54,7 +53,15 @@ class AdminController extends Controller
         $extracurricular = new extracurricular();
         $extracurricular->esc_name = request('esc_name');
         $extracurricular->esc_description = request('esc_description');
+        if ($request->hasFile('logo_ekstrakulikuler')) {
+            $files = $request->file('logo_ekstrakulikuler');
+            $path = public_path('logo_eskul');
+            $files_name = $files->getClientOriginalName();
+            $files->move($path, $files_name);
+            $extracurricular->esc_logo= $files_name;
+        }
         $extracurricular->save();
+
         return redirect('admin/extracurricular');
     }
     public function addcoach()

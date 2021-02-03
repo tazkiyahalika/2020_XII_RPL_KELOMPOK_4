@@ -2,7 +2,8 @@
 @section('content')
 
        
-                <form action="/admin/extracurricular" method="POST">
+                <form enctype="multipart/form-data" action="/admin/extracurricular" method="POST">
+
                 <div class="card-body">
 
                  
@@ -13,7 +14,7 @@
                    <div class="mb-3">
                     <div class="mb-3">
                         <label for="formFileDisabled" class="form-label">Logo Ekstrakulikuler</label>
-                        <input name="logo_ekstrakulikuler" value="" class="form-control" type="file" id="formFileDisabled">
+                        <input name="logo_ekstrakulikuler" class="form-control" type="file" id="formFileDisabled">
                     </div>
                         <label for="exampleFormControlInput1" class="form-label">Nama Ekstrakulikuler</label>
                         <input name="esc_name" type="text" class="form-control" id="exampleFormControlInput1">

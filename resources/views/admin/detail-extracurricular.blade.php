@@ -24,7 +24,7 @@
             <div class="card card-primary card-outline">
               <div class="card-body box-profile">
                 <div class="text-center">
-                  <img class="profile-user-img img-fluid img-circle" src="../../dist/img/Voli/Logo Voli.jpg" alt="pramuka">
+                  <img class="profile-user-img img-fluid img-circle" src="{{ url('logo_eskul/'.$extracurricular->esc_logo) }}" alt="pramuka">
                 </div>
                
                 <h3 class="profile-username text-center">{{$extracurricular->esc_name}}</h3><br>

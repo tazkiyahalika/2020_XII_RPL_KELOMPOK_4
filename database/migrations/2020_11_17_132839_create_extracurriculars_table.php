@@ -17,6 +17,7 @@ class CreateExtracurricularsTable extends Migration
             $table->id('esc_id');
             $table->string('esc_name')->nullable();
             $table->longtext('esc_description')->nullable();
+            $table->string('esc_logo')->nullable();
             $table->timestamps();
         });
     }
