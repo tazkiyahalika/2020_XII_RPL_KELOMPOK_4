@@ -10,10 +10,10 @@
                     
                   @csrf
                    <div class="mb-3">
-                   <!-- <div class="mb-3">
+                   <div class="mb-3">
                         <label for="formFileDisabled" class="form-label">Logo Ekstrakulikuler</label>
                         <input name="logo_ekstrakulikuler" value="{{$esc->esc_logo}}" class="form-control" type="file" id="formFileDisabled">
-                    </div> -->
+                    </div>
                         <label for="exampleFormControlInput1" class="form-label">Nama Ekstrakulikuler</label>
                         <input name="esc_name" required="required"  value="{{$esc->esc_name}}" type="text" class="form-control" id="exampleFormControlInput1">
                     </div>

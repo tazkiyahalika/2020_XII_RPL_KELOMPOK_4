@@ -79,7 +79,19 @@ class AdminController extends Controller
         DB::table('extracurriculars')->where('esc_id', $request->esc_id)->update([
                 'esc_name' => $request->esc_name,
                 'esc_description' => $request->esc_description
+
             ]);
+        //kondisi jika file request nya ada isinya update kolom
+        if ($request->hasFile('logo_ekstrakulikuler')) {
+            $files = $request->file('logo_ekstrakulikuler');
+            $path = public_path('logo_eskul');
+            $files_name = $files->getClientOriginalName();
+            $files->move($path, $files_name);
+
+            extracurricular::where('esc_id', $request->esc_id)->update ([
+                'esc_logo' => $files
+            ]);
+        } 
         return redirect('/admin/extracurricular');
     
     }

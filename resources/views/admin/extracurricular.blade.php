@@ -24,7 +24,7 @@
 
                         <a href="{{ url('admin/extracurricular/detail-extracurricular/'.$extracurricular->esc_id) }}" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a>
                         <a href='/admin/extracurricular/edit/{{$extracurricular->esc_id}}' class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Edit"> <i class="fa fa-edit"></i></a>
-                        <a href="{{ url('admin/extracurricular/'.$extracurricular->esc_id.'/delete' ) }}" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onclick="return confirm('Yakin Mau hapus gussss?');"> <i class="fa fa-trash"></i></a>
+                        <a href="{{ url('admin/extracurricular/'.$extracurricular->esc_id.'/delete' ) }}" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onclick="return confirm('Yakin Mau Hapus ?');"> <i class="fa fa-trash"></i></a>
                     </td>
                   </tr>
                   </tbody>
