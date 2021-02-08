@@ -12,5 +12,6 @@ class extracurricular extends Model
 	'esc_id',
    	'esc_name', 
    	'esc_description',
+   	'esc_logo'
    ];
 }

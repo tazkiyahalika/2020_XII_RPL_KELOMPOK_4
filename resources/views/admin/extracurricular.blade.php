@@ -15,10 +15,12 @@
                     <th>Aksi</th>
                   </tr>
                   </thead>
+                  <?php $no=1; ?>
                   @foreach($list_eskul as $extracurricular)
                   <tbody>
                   <tr>
-                    <td>{{$extracurricular ->esc_id}}</td>
+                    <th scope="row">{{ $no }}</th>
+                    <!-- <td>{{$extracurricular ->esc_id}}</td> -->
                     <td>{{$extracurricular ->esc_name}}</td>
                     <td>
 
@@ -27,6 +29,7 @@
                         <a href="{{ url('admin/extracurricular/'.$extracurricular->esc_id.'/delete' ) }}" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onclick="return confirm('Yakin Mau Hapus ?');"> <i class="fa fa-trash"></i></a>
                     </td>
                   </tr>
+                  <?php $no++ ;?>
                   </tbody>
                   @endforeach
                 </table>

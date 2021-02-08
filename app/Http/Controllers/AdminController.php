@@ -89,7 +89,7 @@ class AdminController extends Controller
             $files->move($path, $files_name);
 
             extracurricular::where('esc_id', $request->esc_id)->update ([
-                'esc_logo' => $files
+                'esc_logo' => $files_name
             ]);
         } 
         return redirect('/admin/extracurricular');
