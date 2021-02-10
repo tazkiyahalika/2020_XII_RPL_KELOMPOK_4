@@ -14,11 +14,12 @@ class CreateExtracurricularsTable extends Migration
     public function up()
     {
         Schema::create('extracurriculars', function (Blueprint $table) {
-            $table->id('esc_id');
+            $table->bigIncrements('esc_id');
             $table->string('esc_name')->nullable();
             $table->longtext('esc_description')->nullable();
             $table->string('esc_logo')->nullable();
             $table->timestamps();
+            $table->timestamp('deleted_at')->nullable();
         });
     }
 

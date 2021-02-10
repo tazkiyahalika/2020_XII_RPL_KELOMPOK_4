@@ -46,6 +46,7 @@ Route::get('/register-student', 'Auth\RegisterController@registerStudent');
 Route::get('/register-coach', 'Auth\RegisterController@registerCoach');
 Route::get('/register-admin', 'Auth\RegisterController@registerAdmin');
 Route::get('/dashboard','User\UserController@index')->name('dashboard.users')->middleware('auth');
+Route::get('/choose-register', 'Auth\RegisterController@choseRegister');
 //Route Untuk Admin, Student, coach, jika register dan login maka akan ke halaman ini 
 Route::group(['middleware'=> ['auth','verified']], function(){
 	Route::get('dashboard', 'User\UserController@index')->name('dashboard.users');
@@ -59,13 +60,15 @@ Route::group(['middleware' => ['role:admin']], function () {
 	Route::get('admin/extracurricular/create', 'AdminController@create');
 	Route::get('admin/extracurricular/add-coach', 'AdminController@addpembina');
 	Route::post('admin/coach', 'AdminController@addcoach');
-	Route::get('admin/coach/detail-pembina-pramuka', 'AdminController@detailPembinaPramuka');
-	Route::get('admin/coach/detail-pembina-voli', 'AdminController@detailPembinaVoli');
 
 	
 	Route::get('admin/extracurricular/edit/{esc_id}', 'AdminController@editEkskul');
 	Route::post('admin/extracurricular/update/{esc_id}', 'AdminController@updateEkskul');
 	Route::get('admin/extracurricular/{esc_id}/delete', 'AdminController@deleteEkskul');
+	Route::get('Account/profile/{usr_id}','AccountController@show');
+
+
+
 	// Route::post('admin/extracurricular/{esc_id}/delete', 'AdminController@deleteEkskul');
 
 	Route::get('admin/extracurricular/detail-extracurricular/{esc_id}', 'AdminController@detailEkskul');
@@ -78,7 +81,7 @@ Route::group(['middleware' => ['role:admin']], function () {
 
 Route::group(['middleware' => ['role:student']], function () {
 	Route::get('/student/dashboard','StudentController@index')->name('dashboard.student');
-	Route::get('student/extracurricular', 'StudentController@StudentEkskul');
+	Route::get('student/extracurricular', 'StudentController@list');
 	Route::post('student/extracurricular', 'StudentController@saveEkskul');
 	Route::get('student/extracurricular/create', 'StudentController@createEkskul');
 	Route::get('student/extracurricular/detail-pramuka', 'StudentController@detailPramuka');

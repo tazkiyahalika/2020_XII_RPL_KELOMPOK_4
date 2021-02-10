@@ -3,10 +3,14 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class extracurricular extends Model
 {
+	use SoftDeletes;
+
 	protected $table = 'extracurriculars';
+	protected $dates = ['deleted_at'];
 	protected $guarded = [];
 	protected $fillable = [ 
 	'esc_id',

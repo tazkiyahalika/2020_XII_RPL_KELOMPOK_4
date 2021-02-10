@@ -81,7 +81,7 @@
 
       
       <p class="mb-0">
-        <a href="{{ route('register') }}" class="text-center">Register </a>
+        <a href="choose-register" class="text-center">Register </a>
       </p>
     </div>
     <!-- /.login-card-body -->

@@ -103,4 +103,9 @@ class AccountController extends Controller
 
         return redirect('/login')->with(['success' => 'Password Anda Berhasil di Updated']);
     }
+    public function show($usr_id)
+    {
+        $user = User::find($usr_id);
+        return view('profile', ['user' => $user]);
+    }
 }

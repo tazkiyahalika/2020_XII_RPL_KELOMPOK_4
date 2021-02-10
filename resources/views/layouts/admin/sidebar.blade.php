@@ -15,9 +15,17 @@
                with font-awesome or any other icon font library -->
 
 
+           <li class="nav-item">
+            <a href="{{ url('account/profile/'.Auth::user()->usr_id.'/') }}">
+            <img class="align-self-start mr-3" src="{{ asset(Auth()->user()->usr_profile_picture) }}"
+            alt="user avatar">
+            </a>
+            <h6 class="mt-2 user-title">{{ Auth::user()->usr_name}}</h6>
+          </li>
+
           <li class="nav-item">
             <a href="{{ url('/admin/extracurricular') }}" class="nav-link">
-              <i class="nav-icon fas fa-book"></i>
+              <i class="fas fa-book" style="font-size: 20px;"></i>
               <p>
                 Data Ekstrakulikuler
                 
@@ -26,7 +34,7 @@
           </li>
           <li class="nav-item">
             <a href="{{ url('/admin/coach') }}" class="nav-link">
-              <i class="nav-icon fas fa-book"></i>
+              <i class="fas fa-book" style="font-size: 20px;"></i>
               <p>
                 Data Pembina
                 
@@ -35,7 +43,7 @@
           </li>
           <li class="nav-item">
             <a href="{{ url('admin/extracurricular/create') }}" class="nav-link">
-              <i class="nav-icon far fa-plus-square"></i>
+              <i class="fas fa-plus-square" style="font-size: 20px;"></i>
               <p>
                 Tambah Ekstrakulikuler
               </p>

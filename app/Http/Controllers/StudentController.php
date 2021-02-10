@@ -22,6 +22,11 @@ class StudentController extends Controller
     {
     	return view('student.dashboard');
     }
+    public function list()
+    {
+        $list_eskul = \App\extracurricular::all();
+        return view('student.student-extracurricular', ['list_eskul' => $list_eskul]);
+    }
 
     public function StudentEkskul()
     {

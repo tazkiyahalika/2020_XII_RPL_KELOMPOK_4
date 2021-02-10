@@ -24,6 +24,110 @@
                                 @enderror
                             </div>
                         </div>
+                               <div class="form-group row">
+                            <label for="usr_name" class="col-md-4 col-form-label text-md-right">{{ __('extracurricular') }}</label>
+
+                            <div class="col-md-6">
+                                <select id="coc_esc_id" name="coc_esc_id" class="form-control @error('coc_esc_id') is-invalid @enderror">
+                                    @foreach($esc as $esc)
+                                        <option value="{{$esc->esc_id}}">{{$esc->esc_name}}</option>
+
+
+                                    @endforeach
+                                </select>
+                                @error('usr_name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                          <div class="form-group row">
+                            <label for="coc_place" class="col-md-4 col-form-label text-md-right">{{ __('Place') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="coc_place" type="text" class="form-control @error('coc_place') is-invalid @enderror" name="coc_place" value="{{ old('coc_place') }}" autocomplete="coc_place" autofocus>
+
+                                @error('coc_place')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="coc_birth" class="col-md-4 col-form-label text-md-right">{{ __('Birth') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="coc_birth" type="date" class="form-control @error('coc_birth') is-invalid @enderror" name="coc_birth" value="{{ old('coc_birth') }}" autocomplete="coc_birth" autofocus>
+
+                                @error('coc_birth')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="coc_gender" class="col-md-4 col-form-label text-md-right">{{ __('Gender') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="coc_gender" type="radio" value="male" class="@error('coc_gender') is-invalid @enderror" name="coc_gender" value="{{ old('coc_gender') }}" autocomplete="coc_gender" autofocus>
+                                Male<BR>
+                                <input id="coc_gender" type="radio" value="female" class="@error('coc_gender') is-invalid @enderror" name="coc_gender" value="{{ old('coc_gender') }}" autocomplete="coc_gender" autofocus>
+                                Female
+                                @error('coc_gender')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="coc_study" class="col-md-4 col-form-label text-md-right">{{ __('Study') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="coc_study" type="text" class="form-control @error('coc_study') is-invalid @enderror" name="coc_study" value="{{ old('coc_study') }}" autocomplete="coc_study" autofocus>
+
+                                @error('coc_study')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                         <div class="form-group row">
+                            <label for="coc_job" class="col-md-4 col-form-label text-md-right">{{ __('Job') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="coc_job" type="text" class="form-control @error('coc_job') is-invalid @enderror" name="coc_job" value="{{ old('coc_job') }}" autocomplete="coc_job" autofocus>
+
+                                @error('coc_job')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="coc_address" class="col-md-4 col-form-label text-md-right">{{ __('Address') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="coc_address" type="text" class="form-control @error('coc_address') is-invalid @enderror" name="coc_address" value="{{ old('coc_address') }}" autocomplete="coc_address" autofocus>
+
+                                @error('coc_address')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
 
                         <div class="form-group row">
                             <label for="usr_email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>

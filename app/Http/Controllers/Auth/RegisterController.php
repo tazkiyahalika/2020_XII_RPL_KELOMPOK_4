@@ -11,7 +11,9 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendMail;
 use Illuminate\Support\Str;
-
+use App\Student;
+use App\Coach;
+use App\extracurricular;
 class RegisterController extends Controller
 {
     /*
@@ -31,7 +33,8 @@ class RegisterController extends Controller
 
     public function registerCoach()
     {
-        return view('auth.register-coach');
+        $esc=extracurricular::all();
+        return view('auth.register-coach',compact(['esc']));
     }
 
     public function registerAdmin()
@@ -39,6 +42,10 @@ class RegisterController extends Controller
         return view('auth.register-admin');
     }
 
+    public function choseRegister()
+    {
+        return view('auth.choose_register');
+    }
     use RegistersUsers;
 
     /**
@@ -82,6 +89,8 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        // dd($data);
+
         $user = User::create([
             'usr_name' => $data['usr_name'],
             'usr_email' => $data['usr_email'],
@@ -94,9 +103,30 @@ class RegisterController extends Controller
         if ($data['role'] == 1) {
             $user->assignRole('student');
             $user->created_by = $user->usr_id;
+            $student= new Student();
+            $student->std_usr_id=$user->usr_id;
+            $student->std_name=$data['usr_name'];
+            $student->std_gender=$data['std_gender'];
+            $student->std_class=$data['std_class'];
+            $student->std_address=$data['std_address'];
+            $student->save();
+            // dd($user->usr_id);
+
+
         } elseif ($data['role'] == 2) {
             $user->assignRole('coach');
             $user->created_by = $user->usr_id;
+            $coach=new Coach();
+            $coach->coc_usr_id=$user->usr_id;
+            $coach->coc_esc_id=$data['coc_esc_id'];
+            $coach->coc_birth=$data['coc_place'].','.$data['coc_birth'];
+            $coach->coc_gender=$data['coc_gender'];
+            $coach->coc_study=$data['coc_study'];
+            $coach->coc_job=$data['coc_job'];
+            $coach->coc_address=$data['coc_address'];
+            $coach->save(); 
+
+ 
         } elseif ($data['role'] == 3) {
             $user->assignRole('admin');
             $user->created_by = $user->usr_id;

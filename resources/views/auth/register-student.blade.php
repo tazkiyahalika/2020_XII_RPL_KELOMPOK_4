@@ -25,6 +25,50 @@
                             </div>
                         </div>
 
+                         <div class="form-group row">
+                            <label for="std_gender" class="col-md-4 col-form-label text-md-right">{{ __('Gender') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="std_gender" type="radio" value="male" class="@error('std_gender') is-invalid @enderror" name="std_gender" value="{{ old('std_gender') }}" autocomplete="std_gender" autofocus>
+                                Male<BR>
+                                <input id="std_gender" type="radio" value="female" class="@error('std_gender') is-invalid @enderror" name="std_gender" value="{{ old('std_gender') }}" autocomplete="std_gender" autofocus>
+                                Female
+                                @error('std_gender')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="std_class" class="col-md-4 col-form-label text-md-right">{{ __('Class') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="std_class" type="text" class="form-control @error('std_class') is-invalid @enderror" name="std_class" value="{{ old('std_class') }}" autocomplete="std_class" autofocus>
+
+                                @error('std_class')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="std_address" class="col-md-4 col-form-label text-md-right">{{ __('Address') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="std_address" type="text" class="form-control @error('std_address') is-invalid @enderror" name="std_address" value="{{ old('std_address') }}" autocomplete="std_address" autofocus>
+
+                                @error('std_address')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
                         <div class="form-group row">
                             <label for="usr_email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 

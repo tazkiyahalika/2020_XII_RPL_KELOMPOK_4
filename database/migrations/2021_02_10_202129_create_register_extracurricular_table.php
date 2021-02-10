@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateStudentsTable extends Migration
+class CreateRegisterExtracurricularTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,11 @@ class CreateStudentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('students', function (Blueprint $table) {
-            $table->id('std_id');
+        Schema::create('register_extracurricular', function (Blueprint $table) {
+            $table->id('id_regis_esc');
+            $table->unsignedBigInteger('esc_id');
             $table->unsignedBigInteger('std_usr_id');
-            $table->string('std_name');
-            $table->string('std_gender');
-            $table->string('std_class');
-            $table->string('std_address');
             $table->timestamps();
-
-            $table->foreign('std_usr_id')->references('usr_id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -33,6 +28,6 @@ class CreateStudentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('students');
+        Schema::dropIfExists('register_extracurricular');
     }
 }
