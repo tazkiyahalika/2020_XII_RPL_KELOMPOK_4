@@ -15,22 +15,17 @@
                   </tr>
                   </thead>
                   <?php $no=1; ?>
-                  @foreach($list_eskul as $extracurricular)
+                  @foreach($eskul as $key => $data)
                   <tbody>
                   <tr>
-                    <th scope="row">{{ $no }}</th>
-                    <!-- <td>{{$extracurricular ->esc_id}}</td> -->
-                    <td>{{$extracurricular ->esc_name}}</td>
+                    <th scope="row">{{ $key+1 }}</th>
+                   
+                    <td>{{$data->esc_name}}</td>
                     <td>
 
                         
                         
-                        <form action="{{ url('student/extracurricular/daftar')}} " method="post">
-                          @csrf
-                          <input type="hidden" name="id_esc" value="{{$extracurricular->esc_id}}">
-                          <a href="{{ url('student/extracurricular/detail-extracurricular/'.$extracurricular->esc_id) }}" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a>
-                          <button type="submit" class="btn btn-success">Daftar</button>
-                        </form>
+                  
 
 
                     </td>

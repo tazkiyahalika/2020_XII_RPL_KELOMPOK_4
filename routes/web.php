@@ -86,6 +86,10 @@ Route::group(['middleware' => ['role:student']], function () {
 	Route::get('student/extracurricular/create', 'StudentController@createEkskul');
 	Route::get('student/extracurricular/detail-pramuka', 'StudentController@detailPramuka');
 	Route::get('student/extracurricular/detail-voli', 'StudentController@detailVoli');
+	Route::get('student/extracurricular/detail-extracurricular/{esc_id}', 'StudentController@detailEkskul');
+	Route::post('student/extracurricular/daftar','StudentController@daftar');
+	Route::get('student/extracurricular/list','StudentController@listEkskul');
+
 
 
 });
