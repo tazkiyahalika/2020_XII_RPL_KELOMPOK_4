@@ -7,8 +7,8 @@
 
               <!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
-                  <thead>
+                <table id="example1" class="table">
+                  <thead class="table-warning">
                   <tr>
                     <th>No</th>
                     <th>Ekstrakulikuler</th>

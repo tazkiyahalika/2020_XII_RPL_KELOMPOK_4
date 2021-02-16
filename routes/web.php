@@ -54,26 +54,24 @@ Route::group(['middleware'=> ['auth','verified']], function(){
 
 Route::group(['middleware' => ['role:admin']], function () {
 	Route::get('/admin/dashboard','AdminController@index')->name('dashboard.admin');
-	Route::get('admin/extracurricular', 'AdminController@list');
+	Route::get('admin/extracurricular', 'ExtracurricularController@list');
 	Route::get('admin/coach', 'AdminController@coach');
-	Route::post('admin/extracurricular', 'AdminController@addEkskul');
-	Route::get('admin/extracurricular/create', 'AdminController@create');
+	Route::post('admin/extracurricular', 'ExtracurricularController@addEkskul');
+	Route::get('admin/extracurricular/create', 'ExtracurricularController@create');
 	Route::get('admin/extracurricular/add-coach', 'AdminController@addpembina');
-	Route::post('admin/coach', 'AdminController@addcoach');
 
-	
-	Route::get('admin/extracurricular/edit/{esc_id}', 'AdminController@editEkskul');
-	Route::post('admin/extracurricular/update/{esc_id}', 'AdminController@updateEkskul');
-	Route::get('admin/extracurricular/{esc_id}/delete', 'AdminController@deleteEkskul');
+	Route::get('admin/extracurricular/edit/{esc_id}', 'ExtracurricularController@editEkskul');
+	Route::post('admin/extracurricular/update/{esc_id}', 'ExtracurricularController@updateEkskul');
+	Route::get('admin/extracurricular/{esc_id}/delete', 'ExtracurricularController@deleteEkskul');
 	Route::get('Account/profile/{usr_id}','AccountController@show');
-
-
 
 	// Route::post('admin/extracurricular/{esc_id}/delete', 'AdminController@deleteEkskul');
 
-	Route::get('admin/extracurricular/detail-extracurricular/{esc_id}', 'AdminController@detailEkskul');
+	Route::get('admin/extracurricular/detail-extracurricular/{esc_id}', 'ExtracurricularController@detailEkskul');
+	Route::post('admin/coach', 'AdminController@addcoach');
+	Route::get('admin/coach/detail-pembina', 'AdminController@detailCoach');
 	Route::get('admin/coach/update', 'AdminController@updatePembina');
-	Route::get('admin/extracurricular/detail-extracurricular-voli', 'AdminController@detailEkskulVoli');
+	
 	
 
 });
@@ -81,12 +79,10 @@ Route::group(['middleware' => ['role:admin']], function () {
 
 Route::group(['middleware' => ['role:student']], function () {
 	Route::get('/student/dashboard','StudentController@index')->name('dashboard.student');
-	Route::get('student/extracurricular', 'StudentController@list');
-	Route::post('student/extracurricular', 'StudentController@saveEkskul');
-	Route::get('student/extracurricular/create', 'StudentController@createEkskul');
-	Route::get('student/extracurricular/detail-extracurricular/{esc_id}', 'StudentController@detailEkskul');
-	Route::post('student/extracurricular/daftar','StudentController@daftar');
-	Route::get('student/extracurricular/list','StudentController@listEkskul');
+	Route::get('student/extracurricular', 'ExtracurricularController@listEkskulStudent');
+	Route::get('student/extracurricular/detail-extracurricular/{esc_id}', 'ExtracurricularController@detailEkskulStudent');
+	Route::post('student/extracurricular/{esc_id}','ExtracurricularController@daftar');
+	Route::get('student/extracurricular/list','ExtracurricularController@listEkskul');
 
 
 

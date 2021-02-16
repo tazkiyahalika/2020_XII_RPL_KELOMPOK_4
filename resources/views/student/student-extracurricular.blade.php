@@ -25,7 +25,7 @@
 
                         
                         
-                        <form action="{{ url('student/extracurricular/daftar')}} " method="post">
+                        <form action="{{ url('student/extracurricular/'.$extracurricular->esc_id)}} " method="post">
                           @csrf
                           <input type="hidden" name="id_esc" value="{{$extracurricular->esc_id}}">
                           <a href="{{ url('student/extracurricular/detail-extracurricular/'.$extracurricular->esc_id) }}" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a>

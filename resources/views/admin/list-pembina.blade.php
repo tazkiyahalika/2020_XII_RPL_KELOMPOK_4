@@ -14,8 +14,9 @@
         <tr>
           <th>Nama</th>
           <th>Ekstrakulikuler</th>
-          <th>Jenis Kelamin</th>
-          <th>Email</th>
+          <th>Tempat Tanggal Lahir</th>
+          <th>Pekerjaan</th>
+          <th>Alamat</th>
           <th>Action</th>
         </tr>
       </thead>
@@ -25,14 +26,15 @@
           <td>Pramuka</td>
           <td>Laki-laki</td>
           <td>eman@gmail.com</td>
+          <td>HHHHH</td>
           <td class="text-center">
-                <a href="{{ url('admin/coach/detail-pembina-pramuka')}}" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a>
+                <a href="{{ url('admin/coach/detail-pembina')}}" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a>
                 <a href="{{ url('admin/coach/update')}}" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Edit"> <i class="fa fa-edit"></i></a>
                 <a href="" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onclick="return confirm('Yakin Mau hapus gussss?');"> <i class="fa fa-trash"></i></a>
             </td>
 
 
-          </tr>
+          <!-- </tr>
           <tr>
             <td>Annisa Komalasari</td>
             <td>Voli</td>
@@ -120,7 +122,7 @@
                 <a href="{{ url('admin/coach/update')}}" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Edit"> <i class="fa fa-edit"></i></a>
                 <a href="" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onclick="return confirm('Yakin Mau hapus gussss?');"> <i class="fa fa-trash"></i></a>
             </td>
-          </tr>
+          </tr> -->
 
         </tbody>
       </table>

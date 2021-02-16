@@ -25,7 +25,7 @@
                     <td>XII RPL 2</td>
                     <td>Landean</td>
                     <td><a href="" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onclick="return confirm('Yakin Mau hapus?');"> <i class="fa fa-trash"></i></a></td> 
-                  </tr>
+                 <!--  </tr> -->
 
                    <tr>
                     <td>2</td>
@@ -34,7 +34,7 @@
                     <td>XII RPL 2</td>
                     <td>Bojong</td>
                     <td><a href="" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onclick="return confirm('Yakin Mau hapus?');"> <i class="fa fa-trash"></i></a></td> 
-                  </tr>
+                  <!-- </tr>
                    <tr>
                     <td>3</td>
                     <td>Alika Tazkiyah</td>
@@ -58,7 +58,7 @@
                     <td>XII RPL 2</td>
                     <td>Cangkudu</td>
                     <td><a href="" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onclick="return confirm('Yakin Mau hapus?');"> <i class="fa fa-trash"></i></a></td> 
-                  </tr>
+                  </tr> -->
                   </tbody>
                 </table>
               </div>

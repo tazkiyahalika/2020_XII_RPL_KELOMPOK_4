@@ -15,7 +15,10 @@
           <div class="col-md-3">
             <div class="col-sm-12"></div>
 
+
+
             <!-- Profile Image -->
+
             <div class="card card-primary card-outline">
               <div class="card-body box-profile">
                 <div class="text-center">
@@ -27,6 +30,8 @@
                 <p class="text-muted text-center">SMKS Mahaputra Cerdas Utama</p>
                  <p class="text-muted text-center">{{$extracurricular->esc_description}}</p>
 
+
+
                 <ul class="list-group list-group-unbordered mb-3">
                  
                 </ul>
@@ -34,6 +39,23 @@
               </div>
               <!-- /.card-body -->
             </div>
+            <p>Anggota</p>
+            <table id="example1" class="table">
+                  <thead class="table-warning">
+                  <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>Kelas</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Elsa Lusiani</td>
+                    <td>XII RPL 2</td>
+                  </tr>
+                </tbody>
+              </table>
             <!-- /.card -->
 
             <!-- About Me Box -->

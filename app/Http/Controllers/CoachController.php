@@ -19,9 +19,22 @@ class CoachController extends Controller
     {
     	return view('coach.dashboard');
     }
-     public function ListStudent()
+     public function Coach()
     {
-    	return view('coach.data-member');
+        return view('admin.list-pembina');
+    }
+    public function addpembina()
+    {
+        return view('admin.add-pembina');
+    }
+    public function addcoach()
+    {
+        return redirect('admin/coach');
+    }
+    public function detailCoach()
+    {
+        return view('admin.detail-pembina'); 
+
     }
 
  }
