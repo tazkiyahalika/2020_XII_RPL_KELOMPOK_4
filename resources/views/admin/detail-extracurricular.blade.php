@@ -39,23 +39,7 @@
               </div>
               <!-- /.card-body -->
             </div>
-            <p>Anggota</p>
-            <table id="example1" class="table">
-                  <thead class="table-warning">
-                  <tr>
-                    <th>No</th>
-                    <th>Nama</th>
-                    <th>Kelas</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Elsa Lusiani</td>
-                    <td>XII RPL 2</td>
-                  </tr>
-                </tbody>
-              </table>
+            
             <!-- /.card -->
 
             <!-- About Me Box -->

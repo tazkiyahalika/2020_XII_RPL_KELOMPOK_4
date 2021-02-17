@@ -91,10 +91,10 @@ class ExtracurricularController extends Controller
         ->whereEscId($request->input('id_esc'))
         ->first();
         if ($cek) {
-            return redirect('student/extracurricular')->withToastError('Gagal, Guru Sudah Menjadi Wali kelas');
+            return redirect('student/extracurricular')->withToastError('Anda Sudah Memasuki Ekstrakulikuler Ini');
         }
         if ($count >1) {
-            return back();
+            return back()->withToastError('Anda Sudah Memasuki 2 Ekstrakulikuler');
         }
         $create = new RegisterExtracurricular ();
         $create->esc_id= $request->input('id_esc');
