@@ -11,7 +11,6 @@
                   <tr>
                     <th>No</th>
                     <th>Ekstrakulikuler</th>
-                    <th>Aksi</th>
                   </tr>
                   </thead>
                   <?php $no=1; ?>
@@ -31,6 +30,7 @@
                     </td>
                   </tr>
                   <?php $no++ ;?>
+                 
                   </tbody>
                   @endforeach
                 </table>

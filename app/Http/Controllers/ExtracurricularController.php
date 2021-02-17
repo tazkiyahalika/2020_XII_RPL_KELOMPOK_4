@@ -91,19 +91,17 @@ class ExtracurricularController extends Controller
         ->whereEscId($request->input('id_esc'))
         ->first();
         if ($cek) {
-            return redirect('student/extracurricular');
+            return redirect('student/extracurricular')->withToastError('Gagal, Guru Sudah Menjadi Wali kelas');
         }
         if ($count >1) {
-            
-            
             return back();
         }
         $create = new RegisterExtracurricular ();
         $create->esc_id= $request->input('id_esc');
         $create->std_usr_id= Auth::user()->usr_id;
         $create->save();
-        //return redirect('student/extracurricular/list')->withSuccess('Pendaftaran Ekskul Berhasil');
-
+        return redirect('student/extracurricular')->withSuccess('Pendaftaran Ekskul Berhasil');
+        
     }
     public function listEkskul()
     {
