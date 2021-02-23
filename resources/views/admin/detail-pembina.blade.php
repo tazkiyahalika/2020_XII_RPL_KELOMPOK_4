@@ -6,25 +6,25 @@
                   <img class="profile-user-img img-fluid img-circle" src="../../dist/img/pramuka/Kak Eman.jpg" alt="User profile picture">
                 </div>
 
-                <h3 class="profile-username text-center">Eman Sulaeman, S.Pd</h3>
+                <h3 class="profile-username text-center">{{$coach->coc_usr_id}}</h3>
 
-                <p class="text-muted text-center">Pembina Pramuka</p>
+                <p class="text-muted text-center">{{$coach->coc_esc_id}}</p>
 
                 <ul class="list-group list-group-unbordered mb-3">
                   <li class="list-group-item">
-                    <b>Tempat Tanggal Lahir</b> <a class="float-right">1976</a>
+                    <b>Tempat Tanggal Lahir</b> <a class="float-right">{{$coach->coc_birth}}</a>
                   </li>
                   <li class="list-group-item">
-                    <b>Jenis Kelamin</b> <a class="float-right">Laki-Laki</a>
+                    <b>Jenis Kelamin</b> <a class="float-right">{{$coach->coc_gender}}</a>
                   </li>
                   <li class="list-group-item">
-                    <b>Pendidikan</b> <a class="float-right">S1 Jurusan Olahraga(PJKR) STKIP Cimahi Pasundan Bandung</a>
+                    <b>Pendidikan</b> <a class="float-right">{{$coach->coc_study}}</a>
                   </li>
                   <li class="list-group-item">
-                    <b>Pekerjaan</b> <a class="float-right">TNI AU</a>
+                    <b>Pekerjaan</b> <a class="float-right">{{$coach->coc_job}}</a>
                   </li>
                   <li class="list-group-item">
-                    <b>Alamat</b> <a class="float-right">Perumahan.Cincin permata indah Blok E Rt 05/Rw 11. Desa Cingcin Kec. Soreang Kab. Bandung No. 26</a>
+                    <b>Alamat</b> <a class="float-right">{{$coach->coc_address}}</a>
                   </li>
                 </ul>
 

@@ -68,9 +68,12 @@ Route::group(['middleware' => ['role:admin']], function () {
 	// Route::post('admin/extracurricular/{esc_id}/delete', 'AdminController@deleteEkskul');
 
 	Route::get('admin/extracurricular/detail-extracurricular/{esc_id}', 'ExtracurricularController@detailEkskul');
-	Route::post('admin/coach', 'AdminController@addcoach');
-	Route::get('admin/coach/detail-pembina', 'AdminController@detailCoach');
-	Route::get('admin/coach/update', 'AdminController@updatePembina');
+	// Route::post('admin/coach', 'AdminController@addcoach');
+	// Route::get('admin/coach/detail-pembina', 'AdminController@detailCoach');
+	// Route::get('admin/coach/update', 'AdminController@updatePembina');
+
+	Route::get('admin/coach', 'CoachController@list');
+	Route::get('admin/coach/detail-pembina/{coc_id}', 'CoachController@detail');
 	
 	
 
