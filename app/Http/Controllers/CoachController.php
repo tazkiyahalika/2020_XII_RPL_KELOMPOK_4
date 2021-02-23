@@ -6,6 +6,8 @@ use App\Coach;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 
 
 class CoachController extends Controller
@@ -27,7 +29,7 @@ class CoachController extends Controller
         $data ['eskul']= DB::table('coaches')
         ->join('extracurriculars','coaches.coc_esc_id','=','extracurriculars.esc_id')
         ->join('users','coaches.coc_usr_id','=','users.usr_id')
-        ->select('coaches.coc_esc_id','extracurriculars.esc_name','users.usr_name')
+        // ->select('coaches.coc_esc_id','extracurriculars.esc_name','users.usr_name')
 
         ->get();
         return view('admin.list-pembina',$data);
@@ -39,8 +41,13 @@ class CoachController extends Controller
     }
     public function detail($coc_id)
     {
-        $coach = Coach::where('coc_id', $coc_id)->first();
+        $coach = Coach::where('coc_id',$coc_id)->first();
         return view('admin.detail-pembina', compact('coach'));
+    }
+    public function deleteCoach($coc_id)
+    {
+        $eskul =Coach::where('coc_id', $coc_id)->delete();
+        return back();
     }
 
 

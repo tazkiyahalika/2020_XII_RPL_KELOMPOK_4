@@ -19,14 +19,14 @@
         </tr>
       </thead>
       <?php $no=1; ?>
-      @foreach($data as $coach)
+      @foreach($eskul as $data)
       <tbody>
         <tr>
           <th scope="row">{{ $no }}</th>
-          <td>{{$coach ->usr_name}}</td>
-          <td>{{$coach ->esc_name}}</td>
+          <td>{{$data ->usr_name}}</td>
+          <td>{{$data ->esc_name}}</td>
           <td class="">
-                <a href="{{ url('admin/coach/detail-pembina/'.$coach->coc_id)}}" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a>
+                <a href="{{ url('admin/coach/detail-pembina/'.$data->coc_id)}}" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></i></a>
                 <a href="{{ url('admin/coach/update')}}" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Edit"> <i class="fa fa-edit"></i></a>
                 <a href="" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onclick="return confirm('Yakin Mau hapus gussss?');"> <i class="fa fa-trash"></i></a>
             </td>

@@ -25,8 +25,10 @@ class CreateCoachesTable extends Migration
             $table->string('coc_job');
             $table->string('coc_address');
             $table->timestamps();
+            $table->timestamp('deleted_at')->nullable();
             $table->foreign('coc_usr_id')->references('usr_id')->on('Users')->onDelete('cascade');
-             $table->foreign('coc_esc_id')->references('esc_id')->on('extracurriculars')->onDelete('cascade');
+            $table->foreign('coc_esc_id')->references('esc_id')->on('extracurriculars')->onDelete('cascade');
+
 
         });
     }
