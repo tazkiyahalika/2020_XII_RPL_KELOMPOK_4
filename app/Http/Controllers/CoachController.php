@@ -24,19 +24,22 @@ class CoachController extends Controller
     public function list()
     {
 
-        // $data ['eskul']=coach::whereCocUsrId(Auth::user()->usr_id)
-        // ->join('extracurriculars','coaches.coc_esc_id','=','extracurriculars.esc_id')
-        // ->get();
-        // return view('admin.list-pembina',$data);
+        $data ['eskul']= DB::table('coaches')
+        ->join('extracurriculars','coaches.coc_esc_id','=','extracurriculars.esc_id')
+        ->join('users','coaches.coc_usr_id','=','users.usr_id')
+        ->select('coaches.coc_esc_id','extracurriculars.esc_name','users.usr_name')
+
+        ->get();
+        return view('admin.list-pembina',$data);
 
 
 
-        $list_coach = \App\Coach::all();
-        return view('admin.list-pembina', ['list_coach' => $list_coach]);
+        // $list_coach = \App\Coach::all();
+        // return view('admin.list-pembina', ['list_coach' => $list_coach]);
     }
     public function detail($coc_id)
     {
-        $coach = coach::where('coc_id', $coc_id)->first();
+        $coach = Coach::where('coc_id', $coc_id)->first();
         return view('admin.detail-pembina', compact('coach'));
     }
 
