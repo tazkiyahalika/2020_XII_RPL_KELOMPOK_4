@@ -1,15 +1,11 @@
 @extends('layouts.admin-master')
 @section('content')
-<div class="card card-primary card-outline">
-              <div class="card-body box-profile">
-                <div class="text-center">
-                  <img class="profile-user-img img-fluid img-circle" src="../../dist/img/pramuka/Kak Eman.jpg" alt="User profile picture">
-                </div>
 
-                <h3 class="profile-username text-center">{{$coach->coc_id}}</h3>
+ 
+            <div class="card card-primary card-outline">
 
-                <p class="text-muted text-center">{{$coach->coc_esc_id}}</p>
-
+             <div class="card-body box-profile">
+                
                 <ul class="list-group list-group-unbordered mb-3">
                   <li class="list-group-item">
                     <b>Tempat Tanggal Lahir</b> <a class="float-right">{{$coach->coc_birth}}</a>
@@ -27,9 +23,8 @@
                     <b>Alamat</b> <a class="float-right">{{$coach->coc_address}}</a>
                   </li>
                 </ul>
-
-              
-              </div>
-              <!-- /.card-body -->
+            
+             </div>
             </div>
+
  @endsection
