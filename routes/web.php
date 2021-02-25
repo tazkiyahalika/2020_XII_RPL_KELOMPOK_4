@@ -64,10 +64,8 @@ Route::group(['middleware' => ['role:admin']], function () {
 	Route::post('admin/extracurricular/update/{esc_id}', 'ExtracurricularController@updateEkskul');
 	Route::get('admin/extracurricular/{esc_id}/delete', 'ExtracurricularController@deleteEkskul');
 	Route::get('Account/profile/{usr_id}','AccountController@show');
-
-	// Route::post('admin/extracurricular/{esc_id}/delete', 'AdminController@deleteEkskul');
-
 	Route::get('admin/extracurricular/detail-extracurricular/{esc_id}', 'ExtracurricularController@detailEkskul');
+	// Route::post('admin/extracurricular/{esc_id}/delete', 'AdminController@deleteEkskul');
 	//Route::post('admin/coach', 'CoachController@addcoach');
 	// Route::get('admin/coach/detail-pembina', 'AdminController@detailCoach');
 	// Route::get('admin/coach/update', 'AdminController@updatePembina');
@@ -77,6 +75,8 @@ Route::group(['middleware' => ['role:admin']], function () {
 	Route::get('admin/extracurricular/{coc_id}/delete', 'CoachController@deleteCoach');
 	Route::get('admin/coach/add-coach', 'CoachController@addcoach');
 	
+
+	Route::get('admin/student','StudentController@list');
 	
 
 });
@@ -95,6 +95,6 @@ Route::group(['middleware' => ['role:student']], function () {
 
 Route::group(['middleware' => ['role:coach']], function () {
 	Route::get('/coach/dashboard','CoachController@index')->name('dashboard.coach');
-	Route::get('coach/student','CoachController@ListStudent');
+	Route::get('coach/student','CoachController@listes'); //ini baru menampilkan data di table semua bukan pertable//
 });
 

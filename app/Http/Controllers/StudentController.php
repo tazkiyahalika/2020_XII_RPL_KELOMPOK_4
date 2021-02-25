@@ -24,8 +24,9 @@ class StudentController extends Controller
     	return view('student.dashboard');
     }
     
-     public function ListStudent()
+     public function list()
     {
-        return view('coach.data-member');
+        $list_student = \App\Student::all();
+        return view('admin.list-siswa', ['list_student' => $list_student]);
     }
 }

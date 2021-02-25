@@ -32,6 +32,8 @@
               </p>
             </a>
           </li>
+
+
           <li class="nav-item">
             <a href="{{ url('/admin/coach') }}" class="nav-link">
               <i class="fas fa-book" style="font-size: 20px;"></i>
@@ -41,6 +43,20 @@
               </p>
             </a>
           </li>
+
+
+          <li class="nav-item">
+            <a href="{{ url('/admin/student') }}" class="nav-link">
+              <i class="fas fa-book" style="font-size: 20px;"></i>
+              <p>
+                Data Siswa
+                
+              </p>
+            </a>
+          </li>
+
+
+
           <li class="nav-item">
             <a href="{{ url('admin/extracurricular/create') }}" class="nav-link">
               <i class="fas fa-plus-square" style="font-size: 20px;"></i>
