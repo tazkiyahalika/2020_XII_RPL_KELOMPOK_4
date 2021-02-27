@@ -73,8 +73,8 @@ Route::group(['middleware' => ['role:admin']], function () {
 	Route::get('admin/coach', 'CoachController@list');
 	Route::get('admin/coach/detail-pembina/{coc_id}', 'CoachController@detail');
 	Route::get('admin/extracurricular/{coc_id}/delete', 'CoachController@deleteCoach');
-	Route::get('admin/coach/add-coach', 'CoachController@addcoach');
-	
+	Route::get('admin/coach/add-coach', 'CoachController@create');
+	Route::post('admin/coach/create','CoachController@addcoach');
 
 	Route::get('admin/student','StudentController@list');
 	

@@ -17,8 +17,6 @@ class CreateCoachesTable extends Migration
             $table->id('coc_id');
             $table->unsignedBigInteger('coc_usr_id');
             $table->unsignedBigInteger('coc_esc_id');
-             // $table->string('coc_name');
-            // $table->string('coc_extracurricular');
             $table->string('coc_birth');
             $table->string('coc_gender');
             $table->string('coc_study');

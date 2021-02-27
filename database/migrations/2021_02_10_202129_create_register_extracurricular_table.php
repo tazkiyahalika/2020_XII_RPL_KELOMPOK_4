@@ -14,10 +14,12 @@ class CreateRegisterExtracurricularTable extends Migration
     public function up()
     {
         Schema::create('register_extracurricular', function (Blueprint $table) {
-            $table->id('id_regis_esc');
-            $table->unsignedBigInteger('esc_id');
-            $table->unsignedBigInteger('std_usr_id');
+            $table->id('regis_id');
+            $table->unsignedBigInteger('regis_esc_id');
+            $table->unsignedBigInteger('regis_std_usr_id');
+            $table->unsignedBigInteger('regis_status');
             $table->timestamps();
+            $table->timestamp('deleted_at')->nullable();
         });
     }
 

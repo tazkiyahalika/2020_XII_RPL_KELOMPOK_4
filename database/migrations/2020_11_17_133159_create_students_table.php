@@ -21,7 +21,7 @@ class CreateStudentsTable extends Migration
             $table->string('std_class');
             $table->string('std_address');
             $table->timestamps();
-
+            $table->timestamp('deleted_at')->nullable();
             $table->foreign('std_usr_id')->references('usr_id')->on('users')->onDelete('cascade');
         });
     }

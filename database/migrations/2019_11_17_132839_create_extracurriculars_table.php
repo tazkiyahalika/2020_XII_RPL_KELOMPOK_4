@@ -15,9 +15,9 @@ class CreateExtracurricularsTable extends Migration
     {
         Schema::create('extracurriculars', function (Blueprint $table) {
             $table->bigIncrements('esc_id');
-            $table->string('esc_name')->nullable();
-            $table->longtext('esc_description')->nullable();
-            $table->string('esc_logo')->nullable();
+            $table->string('esc_name');
+            $table->longtext('esc_description');
+            $table->string('esc_logo');
             $table->timestamps();
             $table->timestamp('deleted_at')->nullable();
         });

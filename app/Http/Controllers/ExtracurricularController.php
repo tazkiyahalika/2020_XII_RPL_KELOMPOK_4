@@ -86,9 +86,9 @@ class ExtracurricularController extends Controller
     }
     public function daftar(Request $request, $esc_id)
     {
-        $count = RegisterExtracurricular::whereStdUsrId(Auth::user()->usr_id)->count();
-        $cek = RegisterExtracurricular::whereStdUsrId(Auth::user()->usr_id)
-        ->whereEscId($request->input('id_esc'))
+        $count = RegisterExtracurricular::whereRegisStdUsrId(Auth::user()->usr_id)->count();
+        $cek = RegisterExtracurricular::whereRegisStdUsrId(Auth::user()->usr_id)
+        ->whereRegisEscId($request->input('id_esc'))
         ->first();
         if ($cek) {
             return redirect('student/extracurricular')->withToastError('Anda Sudah Memasuki Ekstrakulikuler Ini');
@@ -97,16 +97,16 @@ class ExtracurricularController extends Controller
             return back()->withToastError('Anda Sudah Memasuki 2 Ekstrakulikuler');
         }
         $create = new RegisterExtracurricular ();
-        $create->esc_id= $request->input('id_esc');
-        $create->std_usr_id= Auth::user()->usr_id;
+        $create->regis_esc_id= $request->input('id_esc');
+        $create->regis_std_usr_id= Auth::user()->usr_id;
         $create->save();
         return redirect('student/extracurricular')->withSuccess('Pendaftaran Ekskul Berhasil');
         
     }
     public function listEkskul()
     {
-        $data ['eskul']=RegisterExtracurricular::whereStdUsrId(Auth::user()->usr_id)
-        ->join('extracurriculars','register_extracurricular.esc_id','=','extracurriculars.esc_id')
+        $data ['eskul']=RegisterExtracurricular::whereRegisStdUsrId(Auth::user()->usr_id)
+        ->join('extracurriculars','register_extracurricular.Regis_esc_id','=','extracurriculars.esc_id')
         ->get();
         return view('student.student-list-eskul',$data);
 
