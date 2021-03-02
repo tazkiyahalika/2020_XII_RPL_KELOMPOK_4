@@ -14,7 +14,10 @@
                     <b>Ekstrakulikuler</b> <a class="float-right">{{$data->esc_name}}</a>
                   </li>
                   <li class="list-group-item">
-                    <b>Tempat Tanggal Lahir</b> <a class="float-right">{{$data->coc_birth}}</a>
+                    <b>Tempat Lahir</b> <a class="float-right">{{$data->coc_place}}</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b>Tanggal Lahir</b> <a class="float-right">{{$data->coc_birth}}</a>
                   </li>
                   <li class="list-group-item">
                     <b>Jenis Kelamin</b> <a class="float-right">{{$data->coc_gender}}</a>

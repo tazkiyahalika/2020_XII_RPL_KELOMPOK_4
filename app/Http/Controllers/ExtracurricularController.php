@@ -23,11 +23,7 @@ class ExtracurricularController extends Controller
     }
     public function create()
     {
-         $extracurriculars = DB::table('extracurriculars')
-        ->join('coaches','coaches.coc_esc_id','=','extracurriculars.esc_id')
-        ->select('coc_esc_id')
-        
-        ->get();
+         $extracurriculars = DB::table('extracurriculars');
         return view('admin.add-extracurricular', compact('extracurriculars'));
     }
     public function addEkskul(Request $request)
@@ -56,7 +52,8 @@ class ExtracurricularController extends Controller
 
         $coach = new Coach();
         $coach->coc_usr_id = $user->usr_id;
-       $coach->coc_esc_id= $extracurricular->id;
+        $coach->coc_esc_id= $extracurricular->id;
+        $coach->coc_place = request('coc_place');
         $coach->coc_birth = request('coc_birth');
         $coach->coc_gender = request('coc_gender');
         $coach->coc_study = request('coc_study');
@@ -70,18 +67,33 @@ class ExtracurricularController extends Controller
     }
     public function editEkskul($esc_id)
     {
-        $extracurricular = extracurricular::where('esc_id', $esc_id)->get();
-        return view('admin.update-extracurricular', ['extracurriculars' => $extracurricular]);
+        $extracurriculars = DB::table('extracurriculars')->where('esc_id', $esc_id)
+        ->join('coaches','coaches.coc_esc_id','=','extracurriculars.esc_id')
+        ->join('users','users.usr_id','=','coaches.coc_usr_id')
+        ->select('esc_id','esc_logo','esc_name','esc_description','usr_name','usr_email','usr_phone','coc_place',
+            'coc_birth','coc_gender','coc_study','coc_job','coc_address')
+        
+        ->get();
+        return view('admin.update-extracurricular', ['extracurriculars' => $extracurriculars]);
     }
 
     
     public function updateEkskul(Request $request, $esc_id)
     {
-        extracurricular::where('esc_id', $request->esc_id)->update([
-                'esc_name' => $request->esc_name,
-                'esc_description' => $request->esc_description
+        // $user = User::where('usr_id', $request->usr_id)->update([
+        //         'usr_name' => $request->usr_name,
+        //         'usr_email' => $request->usr_email,
+        //         'usr_phone' => $request->usr_phone,
+        //         'usr_password' => $request->usr_password,
+                // 'usr_verification_token' => $request->usr_verification_token,
+                // 'usr_is_active' => $request->usr_is_active
+            //]);
+        $extracurriculars = DB::table('extracurriculars')->where('esc_id', $esc_id)->first();
+        $extracurriculars->esc_name = $request->esc_name;
+        $extracurriculars->esc_description = $request->esc_description;
+        $extracurriculars->update();
 
-            ]);
+            
         //kondisi jika file request nya ada isinya update kolom
         if ($request->hasFile('logo_ekstrakulikuler')) {
             $files = $request->file('logo_ekstrakulikuler');
@@ -92,7 +104,42 @@ class ExtracurricularController extends Controller
             extracurricular::where('esc_id', $request->esc_id)->update ([
                 'esc_logo' => $files_name
             ]);
+
+        $coach = Coach::where('coc_esc_id', $extracurriculars->esc_id)->first();
+        $coach->coc_place = $request->coc_place;
+        $coach->coc_birth = $request->coc_birth;
+        $coach->coc_gender = $request->coc_gender;
+        $coach->coc_study = $request->coc_study;
+        $coach->coc_job = $request->coc_job;
+        $coach->coc_address = $request->coc_address;
+        $coach->update();
+
+        $user = User::where('usr_id', $coach->coc_usr_id)->first();
+        $user->usr_name = $request->usr_name;
+        $user->usr_email = $request->usr_email;
+        $user->usr_phone = $request->usr_phone;
+        $user->usr_password = $request->usr_password;
+        $user->usr_verification_token = $request->usr_verification_token;
+        $user->usr_is_active = $request->usr_is_active;
+        $user->update();
+
+        //$extracurriculars = extracurricular::where('esc_id', $request->esc_id)->update([
+        //         'esc_name' => $request->esc_name,
+        //         'esc_description' => $request->esc_description
+       
+        // ]);
+
+        // $coach = Coach::where('coc_usr_id', $request->coc_usr_id)->update([
+        //         'coc_place' => $request->coc_place,
+        //         'coc_birth' => $request->coc_birth,
+        //         'coc_gender' => $request->coc_gender,
+        //         'coc_study' => $request->coc_study,
+        //         'coc_job' => $request->coc_job,
+        //         'coc_address' => $request->coc_address
+        // ]);
+        
         } 
+
         return redirect('/admin/extracurricular');
     
     }

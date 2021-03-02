@@ -38,8 +38,12 @@
                     <input name="usr_phone" type="text" class="form-control" placeholder="Telepon">
                   </div>
                   <div class="form-group">
-                    <label>Tempat Tanggal Lahir</label>
-                    <input type="date" name="coc_birth" class="form-control" placeholder="tempat tanggal lahir">
+                    <label>Tempat Lahir</label>
+                    <input type="text" name="coc_place" class="form-control" placeholder="tempat lahir">
+                  </div>
+                  <div class="form-group">
+                    <label>Tanggal Lahir</label>
+                    <input type="date" name="coc_birth" class="form-control" placeholder="tanggal lahir">
                   </div>
                   <div class="form-group">
                     <label>Jenis Kelamin</label>

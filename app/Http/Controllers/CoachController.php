@@ -75,6 +75,7 @@ class CoachController extends Controller
         $coach = new Coach();
         $coach->coc_usr_id = $user->usr_id;
         $coach->coc_esc_id = request('coc_esc_id');
+        $coach->coc_place = request('coc_place');
         $coach->coc_birth = request('coc_birth');
         $coach->coc_gender = request('coc_gender');
         $coach->coc_study = request('coc_study');
@@ -91,7 +92,7 @@ class CoachController extends Controller
         $data ['data']= DB::table('coaches')
         ->join('extracurriculars','coaches.coc_esc_id','=','extracurriculars.esc_id')
         ->join('users','coaches.coc_usr_id','=','users.usr_id')
-        ->select('usr_name','esc_name','coc_birth','coc_gender','coc_study','coc_job','coc_address')
+        ->select('usr_name','esc_name','coc_place','coc_birth','coc_gender','coc_study','coc_job','coc_address')
         ->where('coc_id',$coc_id)
 
         ->first();

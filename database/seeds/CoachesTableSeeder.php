@@ -14,8 +14,8 @@ class CoachesTableSeeder extends Seeder
     	 DB::table('coaches')->insert([
             'coc_id' 	          => '1',
             'coc_usr_id'          => '8',
-            'coc_esc_id'              => '1',
-            'coc_birth'           => 'Lebak, 25 April 1970',
+            'coc_esc_id'          => '1',
+            'coc_place'           => 'Lebak',
         	'coc_gender'          => 'Laki - Laki',
             'coc_study'           => 'S1',
             'coc_job'             => 'TNI AU',
@@ -26,8 +26,8 @@ class CoachesTableSeeder extends Seeder
     	 DB::table('coaches')->insert([
             'coc_id'              => '2',
             'coc_usr_id'          =>  '9',
-            'coc_esc_id'              => '2',
-            'coc_birth'           => 'Bandung, 31 Maret 1996',
+            'coc_esc_id'          => '2',
+            'coc_place'           => 'Bandung',
             'coc_gender'          => 'Perempuan',
             'coc_study'           => 'S1',
             'coc_job'             => 'Guru Honorer',
@@ -36,9 +36,9 @@ class CoachesTableSeeder extends Seeder
 
     	 DB::table('coaches')->insert([
             'coc_id'              => '3',
-            'coc_usr_id'          =>  '10',
-            'coc_esc_id'              => '3',
-            'coc_birth'           => 'Bandung, 12 desember 1994',
+            'coc_usr_id'          => '10',
+            'coc_esc_id'          => '3',
+            'coc_place'           => 'Bandung',
             'coc_gender'          => 'Laki - Laki',
             'coc_study'           => 'D3',
             'coc_job'             => 'Guru',
@@ -47,9 +47,9 @@ class CoachesTableSeeder extends Seeder
 
     	 DB::table('coaches')->insert([
             'coc_id'              => '4',
-            'coc_usr_id'          =>  '11',
-            'coc_esc_id'              => '4',
-            'coc_birth'           => 'Cilegon, 1 januari 1993',
+            'coc_usr_id'          => '11',
+            'coc_esc_id'          => '4',
+            'coc_place'           => 'Cilegon',
             'coc_gender'          => 'Laki - Laki',
             'coc_study'           => 'S1',
             'coc_job'             => 'Guru',
@@ -58,9 +58,9 @@ class CoachesTableSeeder extends Seeder
 
     	 DB::table('coaches')->insert([
             'coc_id'              => '5',
-            'coc_usr_id'          =>  '12',
-            'coc_esc_id'              => '5',
-            'coc_birth'           => 'Bandung, 17 juli 1983',
+            'coc_usr_id'          => '12',
+            'coc_esc_id'          => '5',
+            'coc_place'           => 'Bandung',
             'coc_gender'          => 'Laki - Laki',
             'coc_study'           => 'SMA',
             'coc_job'             => 'Pegawai Pemda',
@@ -69,9 +69,9 @@ class CoachesTableSeeder extends Seeder
 
     	 DB::table('coaches')->insert([
             'coc_id'              => '6',
-            'coc_usr_id'          =>  '13',
-            'coc_esc_id'              => '6',
-            'coc_birth'           => 'Bandung, 24 April 1985',
+            'coc_usr_id'          => '13',
+            'coc_esc_id'          => '6',
+            'coc_place'           => 'Bandung',
             'coc_gender'          => 'Laki - Laki',
             'coc_study'           => 'S1',
             'coc_job'             => 'Pengajar',
@@ -80,9 +80,9 @@ class CoachesTableSeeder extends Seeder
 
     	 DB::table('coaches')->insert([
             'coc_id'              => '7',
-            'coc_usr_id'          =>  '14',
-            'coc_esc_id'              => '7',
-            'coc_birth'           => 'Bandung, 12 november 1994',
+            'coc_usr_id'          => '14',
+            'coc_esc_id'          => '7',
+            'coc_place'           => 'Bandung',
             'coc_gender'          => 'Laki - Laki',
             'coc_study'           => 'S1',
             'coc_job'             => 'Guru',
@@ -91,9 +91,9 @@ class CoachesTableSeeder extends Seeder
 
     	 DB::table('coaches')->insert([
             'coc_id'              => '8',
-            'coc_usr_id'          =>  '15',
-            'coc_esc_id'              => '8',
-            'coc_birth'           => 'Bandung, 10 mei 1964',
+            'coc_usr_id'          => '15',
+            'coc_esc_id'          => '8',
+            'coc_place'           => 'Bandung',
             'coc_gender'          => 'Laki - Laki',
             'coc_study'           => 'MA',
             'coc_job'             => 'Wirausaha',
@@ -102,9 +102,9 @@ class CoachesTableSeeder extends Seeder
 
     	 DB::table('coaches')->insert([
             'coc_id'              => '9',
-            'coc_usr_id'          =>  '16',
-            'coc_esc_id'              => '9',
-            'coc_birth'           => 'Bandung',
+            'coc_usr_id'          => '16',
+            'coc_esc_id'          => '9',
+            'coc_place'           => 'Bandung',
             'coc_gender'          => 'Laki - Laki',
             'coc_study'           => 'S3',
             'coc_job'             => 'Pengajar',
