@@ -45,13 +45,23 @@
                             <label for="std_class" class="col-md-4 col-form-label text-md-right">{{ __('Class') }}</label>
 
                             <div class="col-md-6">
-                                <input id="std_class" type="text" class="form-control @error('std_class') is-invalid @enderror" name="std_class" value="{{ old('std_class') }}" autocomplete="std_class" autofocus>
+                                <select id="std_class" type="text" class="form-control @error('std_class') is-invalid @enderror" name="std_class" value="{{ old('std_class') }}" autocomplete="std_class" autofocus>
+                                    <option>X MULTIMEDIA 1</option>
+                                    <option>X MULTIMEDIA 2</option>
+                                    <option>X REKAYASA PERANGKAT LUNAK</option>
+                                    <option>XI MULTIMEDIA 1</option>
+                                    <option>XI MULTIMEDIA 2</option>
+                                    <option>XI REKAYASA PERANGKAT LUNAK</option>
+                                    <option>XII MULTIMEDIA</option>
+                                    <option>XII REKAYASA PERANGKAT LUNAK 1</option>
+                                    <option>XII REKAYASA PERANGKAT LUNAK 2</option>
 
                                 @error('std_class')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                                 @enderror
+                                </select>
                             </div>
                         </div>
 

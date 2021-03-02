@@ -2,11 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use Hash;
+use App\User;
+use App\Coach;
 use App\Extracurricular;
+use Illuminate\Support\Facades\DB;
 use App\RegisterExtracurricular;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Str;
 
 
 class ExtracurricularController extends Controller
@@ -18,10 +23,25 @@ class ExtracurricularController extends Controller
     }
     public function create()
     {
-        return view('admin.add-extracurricular');
+         $extracurriculars = DB::table('extracurriculars')
+        ->join('coaches','coaches.coc_esc_id','=','extracurriculars.esc_id')
+        ->select('coc_esc_id')
+        
+        ->get();
+        return view('admin.add-extracurricular', compact('extracurriculars'));
     }
     public function addEkskul(Request $request)
     {
+       $user = new User();
+       $user->usr_name = request('usr_name');
+       $user->usr_email = request('usr_email');
+       $user->usr_phone = request('usr_phone');
+       $user->usr_password = Hash::make('coach123');
+       $user->usr_verification_token = str_replace('/', '', Hash::make(Str::random(12)));
+       $user->usr_is_active = true;
+       $user->save();
+       $user->assignRole('coach');
+
         $extracurricular = new extracurricular();
         $extracurricular->esc_name = request('esc_name');
         $extracurricular->esc_description = request('esc_description');
@@ -33,6 +53,18 @@ class ExtracurricularController extends Controller
             $extracurricular->esc_logo= $files_name;
         }
         $extracurricular->save();
+
+        $coach = new Coach();
+        $coach->coc_usr_id = $user->usr_id;
+       $coach->coc_esc_id= $extracurricular->id;
+        $coach->coc_birth = request('coc_birth');
+        $coach->coc_gender = request('coc_gender');
+        $coach->coc_study = request('coc_study');
+        $coach->coc_job = request('coc_job');
+        $coach->coc_address = request('coc_address');
+        $coach->save();
+
+        
 
         return redirect('admin/extracurricular');
     }
@@ -77,7 +109,10 @@ class ExtracurricularController extends Controller
     public function listEkskulStudent()
     {
         $list_eskul = \App\extracurricular::all();
-        return view('student.student-extracurricular', ['list_eskul' => $list_eskul]);
+        $data ['eskul']=RegisterExtracurricular::whereRegisStdUsrId(Auth::user()->usr_id)
+        ->join('extracurriculars','register_extracurricular.regis_std_usr_id','=','extracurriculars.std_usr_id')
+        ->get();
+        return view('student.student-extracurricular', ['list_eskul' => $list_eskul], $data);
     }
      public function detailEkskulStudent($esc_id)
     {
@@ -99,6 +134,7 @@ class ExtracurricularController extends Controller
         $create = new RegisterExtracurricular ();
         $create->regis_esc_id= $request->input('id_esc');
         $create->regis_std_usr_id= Auth::user()->usr_id;
+        $create->regis_status=1;
         $create->save();
         return redirect('student/extracurricular')->withSuccess('Pendaftaran Ekskul Berhasil');
         

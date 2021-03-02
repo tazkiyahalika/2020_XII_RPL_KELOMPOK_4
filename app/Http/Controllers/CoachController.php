@@ -66,9 +66,9 @@ class CoachController extends Controller
        $user->usr_phone = request('usr_phone');
        $user->usr_password = Hash::make('coach123');
        $user->usr_verification_token = str_replace('/', '', Hash::make(Str::random(12)));
-        $user->usr_is_active = true;
-        $user->save();
-        $user->assignRole('coach');
+       $user->usr_is_active = true;
+       $user->save();
+       $user->assignRole('coach');
 
 
 

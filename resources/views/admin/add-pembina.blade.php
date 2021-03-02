@@ -22,6 +22,7 @@
                   <div class="form-group">
                     <label>Extrakulikuler</label>
                    <select class="form-control" name="coc_esc_id" placeholder="Extrakulikuler">
+                   
                    @foreach($extracurriculars as $extracurricular)
                       <option value='{{ $extracurricular->esc_id }}'>{{ $extracurricular->esc_name }}</option>
                     @endforeach
