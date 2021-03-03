@@ -88,7 +88,8 @@ class ExtracurricularController extends Controller
                 // 'usr_verification_token' => $request->usr_verification_token,
                 // 'usr_is_active' => $request->usr_is_active
             //]);
-        $extracurriculars = DB::table('extracurriculars')->where('esc_id', $esc_id)->first();
+        $extracurriculars = extracurricular::where('esc_id', $esc_id)->first();
+        //dd($extracurriculars);
         $extracurriculars->esc_name = $request->esc_name;
         $extracurriculars->esc_description = $request->esc_description;
         $extracurriculars->update();
@@ -118,9 +119,9 @@ class ExtracurricularController extends Controller
         $user->usr_name = $request->usr_name;
         $user->usr_email = $request->usr_email;
         $user->usr_phone = $request->usr_phone;
-        $user->usr_password = $request->usr_password;
-        $user->usr_verification_token = $request->usr_verification_token;
-        $user->usr_is_active = $request->usr_is_active;
+        // $user->usr_password = Hash::make($request->usr_password);
+        // $user->usr_verification_token = $request->usr_verification_token;
+        // $user->usr_is_active = $request->usr_is_active;
         $user->update();
 
         //$extracurriculars = extracurricular::where('esc_id', $request->esc_id)->update([

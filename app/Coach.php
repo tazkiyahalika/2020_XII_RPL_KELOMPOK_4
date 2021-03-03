@@ -9,19 +9,21 @@ class Coach extends Model
 {
 	use SoftDeletes;
 
+	protected $primaryKey = 'coc_id';
     protected $table = 'coaches';
 	protected $dates = ['deleted_at'];
 	protected $guarded = [];
-	protected $fillable = [ 
-	'coc_id',
-	'coc_usr_id',
-	'coc_esc_id',
-	'coc_birth',
-	'coc_gender',
-	'coc_study',
-	'coc_job',
-	'coc_address'
+	// protected $fillable = [ 
+	// 'coc_id',
+	// 'coc_usr_id',
+	// 'coc_esc_id',
+	// 'coc_place',
+	// 'coc_birth',
+	// 'coc_gender',
+	// 'coc_study',
+	// 'coc_job',
+	// 'coc_address'
 
-	];
+	// ];
 }
 
