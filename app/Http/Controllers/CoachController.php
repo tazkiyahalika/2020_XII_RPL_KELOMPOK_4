@@ -104,11 +104,7 @@ class CoachController extends Controller
         $eskul = Coach::where('coc_id', $coc_id)->delete();
         return back();
     }
-    public function listes()
-    {
-        $list_student = \App\Student::all();
-        return view('coach.data-member', ['list_student' => $list_student]);
-    }
+   
 
 
 

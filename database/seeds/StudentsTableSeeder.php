@@ -14,7 +14,6 @@ class StudentsTableSeeder extends Seeder
          DB::table('students')->insert([
             'std_id' 	 => '1',
             'std_usr_id' => '1',
-            'std_name'	 => 'Rismawati',
         	'std_gender' => 'Perempuan',
         	'std_class'	 => 'xii rekayasa perangkat lunak 2',
         	'std_address' => 'Landean'
@@ -23,7 +22,6 @@ class StudentsTableSeeder extends Seeder
          DB::table('students')->insert([
             'std_id' 	 => '2',
             'std_usr_id' => '2',
-            'std_name'	 => 'Elsa Lusiani',
         	'std_gender' => 'perempuan',
         	'std_class'	 => 'xii rekayasa perangkat lunak 2',
         	'std_address' => 'Bojong'
@@ -32,7 +30,6 @@ class StudentsTableSeeder extends Seeder
          DB::table('students')->insert([
             'std_id' 	 => '3',
             'std_usr_id' => '3',
-            'std_name'	 => 'Alika Tazkiyah',
         	'std_gender' => 'perempuan',
         	'std_class'	 => 'xii rekayasa perangkat lunak 1',
         	'std_address' => 'juntihilir'
@@ -41,7 +38,6 @@ class StudentsTableSeeder extends Seeder
          DB::table('students')->insert([
             'std_id' 	 => '4',
             'std_usr_id' => '4',
-            'std_name'	 => 'Rizki Muhamad N',
         	'std_gender' => 'Laki - Laki',
         	'std_class'	 => 'xii rekayasa perangkat lunak 2',
         	'std_address' => 'cibogo'
@@ -50,7 +46,6 @@ class StudentsTableSeeder extends Seeder
          DB::table('students')->insert([
             'std_id' 	 => '5',
             'std_usr_id' => '5',
-            'std_name'	 => 'Asiah Nurjanah',
         	'std_gender' => 'Perempuan',
         	'std_class'	 => 'xii rekayasa perangkat lunak 2',
         	'std_address' => 'Cangkudu'

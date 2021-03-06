@@ -95,6 +95,7 @@ Route::group(['middleware' => ['role:student']], function () {
 
 Route::group(['middleware' => ['role:coach']], function () {
 	Route::get('/coach/dashboard','CoachController@index')->name('dashboard.coach');
-	Route::get('coach/student','CoachController@listes'); //ini baru menampilkan data di table semua bukan pertable//
+	Route::get('coach/student','StudentController@listes'); //ini baru menampilkan data di table semua bukan pertable//
+	// Route::get('')
 });
 

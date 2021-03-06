@@ -52,7 +52,7 @@ class ExtracurricularController extends Controller
 
         $coach = new Coach();
         $coach->coc_usr_id = $user->usr_id;
-        $coach->coc_esc_id= $extracurricular->id;
+        $coach->coc_esc_id= $extracurricular->esc_id;
         $coach->coc_place = request('coc_place');
         $coach->coc_birth = request('coc_birth');
         $coach->coc_gender = request('coc_gender');
@@ -157,10 +157,10 @@ class ExtracurricularController extends Controller
     public function listEkskulStudent()
     {
         $list_eskul = \App\extracurricular::all();
-        $data ['eskul']=RegisterExtracurricular::whereRegisStdUsrId(Auth::user()->usr_id)
-        ->join('extracurriculars','register_extracurricular.regis_std_usr_id','=','extracurriculars.std_usr_id')
-        ->get();
-        return view('student.student-extracurricular', ['list_eskul' => $list_eskul], $data);
+        // $cek ['eskul']=RegisterExtracurricular::whereRegisStdUsrId(Auth::user()->usr_id)
+        // ->join('extracurriculars','register_extracurricular.regis_esc_id','=','extracurriculars.esc_id')
+        // ->get();
+        return view('student.student-extracurricular', ['list_eskul' => $list_eskul]);
     }
      public function detailEkskulStudent($esc_id)
     {
@@ -181,9 +181,11 @@ class ExtracurricularController extends Controller
         }
         $create = new RegisterExtracurricular ();
         $create->regis_esc_id= $request->input('id_esc');
-        $create->regis_std_usr_id= Auth::user()->usr_id;
+        // $create->regis_std_usr_id= Auth::user()->usr_id;
+        // $create->regis_coc_id = $request->input('id_coc');
         $create->regis_status=1;
         $create->save();
+    
         return redirect('student/extracurricular')->withSuccess('Pendaftaran Ekskul Berhasil');
         
     }
@@ -191,6 +193,7 @@ class ExtracurricularController extends Controller
     {
         $data ['eskul']=RegisterExtracurricular::whereRegisStdUsrId(Auth::user()->usr_id)
         ->join('extracurriculars','register_extracurricular.Regis_esc_id','=','extracurriculars.esc_id')
+        // ->join('coaches', 'register_extracurricular.regis_coc_id', '=', 'coaches.coc_id')
         ->get();
         return view('student.student-list-eskul',$data);
 

@@ -24,42 +24,42 @@
 
                     <div class="form-group">
                     <label>Nama</label>
-                    <input name="usr_name" value="{{$esc->usr_name}}" type="text" class="form-control" placeholder="nama pembina">
+                    <input name="usr_name" value="{{$esc->usr_name}}" type="text" required="required" class="form-control" placeholder="nama pembina">
                   </div>
                   <div class="form-group">
                     <label>email</label>
-                    <input name="usr_email" value="{{$esc->usr_email}}" type="text" class="form-control" placeholder="email">
+                    <input name="usr_email" value="{{$esc->usr_email}}" type="text" required="required" class="form-control" placeholder="email">
                   </div>
                   <div class="form-group">
                     <label>Telepon</label>
-                    <input name="usr_phone" value="{{$esc->usr_phone}}" type="text" class="form-control" placeholder="Telepon">
+                    <input name="usr_phone" value="{{$esc->usr_phone}}" type="text" required="required" class="form-control" placeholder="Telepon">
                   </div>
                   <div class="form-group">
                     <label>Tempat Lahir</label>
-                    <input name="coc_place" value="{{$esc->coc_place}}" type="text"  class="form-control" placeholder="tempat lahir">
+                    <input name="coc_place" value="{{$esc->coc_place}}" type="text" required="required"  class="form-control" placeholder="tempat lahir">
                   </div>
                   <div class="form-group">
                     <label>Tanggal Lahir</label>
-                    <input name="coc_birth" value="{{$esc->coc_birth}}" type="date"  class="form-control" placeholder="tempat tanggal lahir">
+                    <input name="coc_birth" value="{{$esc->coc_birth}}" type="date" required="required"  class="form-control" placeholder="tempat tanggal lahir">
                   </div>
                   <div class="form-group">
                     <label>Jenis Kelamin</label>
-                    <select name="coc_gender" value="{{$esc->coc_gender}}" class="form-control" placeholder="jenis kelamin">
+                    <select name="coc_gender" value="{{$esc->coc_gender}}" required="required" class="form-control" placeholder="jenis kelamin">
                       <option value="Laki-Laki">Laki-Laki</option>
                       <option value="Perempuan">Perempuan</option>
                        </select>
                   </div>
                   <div class="form-group">
                     <label>Pendidikan</label>
-                    <input type="text" name="coc_study" value="{{$esc->coc_study}}" class="form-control" placeholder="pendidikan">
+                    <input type="text" name="coc_study" value="{{$esc->coc_study}}" required="required" class="form-control" placeholder="pendidikan">
                   </div>
                   <div class="form-group">
                     <label>Pekerjaan</label>
-                    <input type="text" name="coc_job" value="{{$esc->coc_job}}" class="form-control" placeholder="pekerjaan">
+                    <input type="text" name="coc_job" value="{{$esc->coc_job}}" required="required" class="form-control" placeholder="pekerjaan">
                   </div>
                   <div class="form-group">
                     <label>Alamat</label>
-                    <input type="text" name="coc_address" value="{{$esc->coc_address}}" class="form-control" placeholder="alamat">
+                    <input type="text" name="coc_address" value="{{$esc->coc_address}}" required="required" class="form-control" placeholder="alamat">
                   </div>
                      <button type="submit" class="btn btn-primary">Submit</button> 
 

@@ -105,7 +105,7 @@ class RegisterController extends Controller
             $user->created_by = $user->usr_id;
             $student= new Student();
             $student->std_usr_id=$user->usr_id;
-            $student->std_name=$data['usr_name'];
+            // $student->std_name=$data['usr_name'];
             $student->std_gender=$data['std_gender'];
             $student->std_class=$data['std_class'];
             $student->std_address=$data['std_address'];

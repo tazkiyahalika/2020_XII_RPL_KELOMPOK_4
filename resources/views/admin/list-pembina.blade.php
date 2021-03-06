@@ -7,8 +7,8 @@
   <!-- /.card-header -->
   <div class="card-body">
     <tr>
-      <td> <a href="{{ url('admin/coach/add-coach')}}" class="btn btn-primary btn-sm">Tambah Pembina</a></td>
-    </tr>
+     <!--  <td> <a href="{{ url('admin/coach/add-coach')}}" class="btn btn-primary btn-sm">Tambah Pembina</a></td>
+    </tr> -->
     <br>
     <table id="example1" class="table table-bordered table-striped">
       <thead>
