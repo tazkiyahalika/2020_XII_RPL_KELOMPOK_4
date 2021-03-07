@@ -83,7 +83,7 @@ class CoachController extends Controller
         $coach->coc_address = request('coc_address');
         $coach->save();
 
-        return redirect('admin/coach');
+        return redirect('admin/coach')->withSuccess('Berhasil Di Tambahkan');
         
     }
     public function detail($coc_id)
@@ -102,7 +102,7 @@ class CoachController extends Controller
     public function deleteCoach($coc_id)
     {
         $eskul = Coach::where('coc_id', $coc_id)->delete();
-        return back();
+        return back()->withToastError('berhasil di Hapus');
     }
    
 

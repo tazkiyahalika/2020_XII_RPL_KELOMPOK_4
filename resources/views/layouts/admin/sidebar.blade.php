@@ -45,7 +45,7 @@
           </li>
 
 
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="{{ url('/admin/student') }}" class="nav-link">
               <i class="fas fa-book" style="font-size: 20px;"></i>
               <p>
@@ -53,7 +53,7 @@
                 
               </p>
             </a>
-          </li>
+          </li> -->
 
 
 

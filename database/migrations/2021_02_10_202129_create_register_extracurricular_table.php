@@ -16,7 +16,7 @@ class CreateRegisterExtracurricularTable extends Migration
         Schema::create('register_extracurricular', function (Blueprint $table) {
             $table->id('regis_id');
             $table->unsignedBigInteger('regis_esc_id');
-            $table->unsignedBigInteger('regis_coc_id');
+            // $table->unsignedBigInteger('regis_coc_id');
             $table->unsignedBigInteger('regis_std_usr_id');
             $table->unsignedBigInteger('regis_status');
             $table->timestamps();

@@ -63,7 +63,7 @@ class ExtracurricularController extends Controller
 
         
 
-        return redirect('admin/extracurricular');
+        return redirect('admin/extracurricular')->withSuccess('Berhasil Di Tambahkan');
     }
     public function editEkskul($esc_id)
     {
@@ -141,13 +141,19 @@ class ExtracurricularController extends Controller
         
         } 
 
-        return redirect('/admin/extracurricular');
+        return redirect('/admin/extracurricular')->withSuccess('Berhasil Di Edit');
     
     }
     public function deleteEkskul($esc_id)
     {
-        $eskul = extracurricular::where('esc_id', $esc_id)->delete();
-        return back();
+        $extracurriculars = DB::table('extracurriculars')->where('esc_id', $esc_id)
+        ->join('coaches','coaches.coc_esc_id','=','extracurriculars.esc_id')
+        ->join('users','users.usr_id','=','coaches.coc_usr_id')
+        ->select('esc_id','esc_logo','esc_name','esc_description','usr_name','usr_email','usr_phone','coc_place',
+            'coc_birth','coc_gender','coc_study','coc_job','coc_address')
+        
+        ->delete();
+        return back()->withToastError('berhasil di Hapus');
     }
     public function detailEkskul($esc_id)
     {
@@ -181,11 +187,10 @@ class ExtracurricularController extends Controller
         }
         $create = new RegisterExtracurricular ();
         $create->regis_esc_id= $request->input('id_esc');
-        // $create->regis_std_usr_id= Auth::user()->usr_id;
-        // $create->regis_coc_id = $request->input('id_coc');
+        $create->regis_std_usr_id= Auth::user()->usr_id;
         $create->regis_status=1;
         $create->save();
-    
+
         return redirect('student/extracurricular')->withSuccess('Pendaftaran Ekskul Berhasil');
         
     }

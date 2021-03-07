@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Extracurricular;
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Student;
@@ -38,9 +39,9 @@ class StudentController extends Controller
         return view('admin.list-siswa', ['list_student' => $list_student]);
     }
 
-     public function deletestudent($esc_id)
+     public function deletestudent($std_id)
     {
         $student = Student::where('std_id', $std_id)->delete();
-        return back();
+        return back()->withToastError('berhasil di Hapus');
     }
 }
