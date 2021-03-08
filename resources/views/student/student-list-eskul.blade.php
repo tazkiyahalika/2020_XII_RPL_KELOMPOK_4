@@ -20,14 +20,7 @@
                     <th scope="row">{{ $key+1 }}</th>
                    
                     <td>{{$data->esc_name}}</td>
-                    <td>
-
-                        
-                        
-                  
-
-
-                    </td>
+                    
                   </tr>
                   <?php $no++ ;?>
                  

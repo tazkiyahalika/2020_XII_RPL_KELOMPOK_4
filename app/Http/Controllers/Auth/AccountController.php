@@ -106,6 +106,6 @@ class AccountController extends Controller
     public function show($usr_id)
     {
         $user = User::find($usr_id);
-        return view('profile', ['user' => $user]);
+        return back();
     }
 }

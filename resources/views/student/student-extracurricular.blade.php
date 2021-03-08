@@ -22,7 +22,7 @@
                     <!-- <td>{{$extracurricular ->esc_id}}</td> -->
                     <td>{{$extracurricular ->esc_name}}</td>
                     <td>
-
+                   
                         
                         <form action="{{ url('student/extracurricular/'.$extracurricular->esc_id)}} " method="post">
                           @csrf

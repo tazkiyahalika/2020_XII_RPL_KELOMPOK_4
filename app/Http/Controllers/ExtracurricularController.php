@@ -80,15 +80,25 @@ class ExtracurricularController extends Controller
     
     public function updateEkskul(Request $request, $esc_id)
     {
-        // $user = User::where('usr_id', $request->usr_id)->update([
-        //         'usr_name' => $request->usr_name,
-        //         'usr_email' => $request->usr_email,
-        //         'usr_phone' => $request->usr_phone,
-        //         'usr_password' => $request->usr_password,
-                // 'usr_verification_token' => $request->usr_verification_token,
-                // 'usr_is_active' => $request->usr_is_active
-            //]);
-        $extracurriculars = extracurricular::where('esc_id', $esc_id)->first();
+        $coach = Coach::where('coc_esc_id' ,$esc_id)->first();
+        $coach->coc_place = $request->coc_place;
+        $coach->coc_birth = $request->coc_birth;
+        $coach->coc_gender = $request->coc_gender;
+        $coach->coc_study = $request->coc_study;
+        $coach->coc_job = $request->coc_job;
+        $coach->coc_address = $request->coc_address;
+        $coach->update();
+
+        $user = User::where('usr_id', $coach->coc_usr_id)->first();
+        $user->usr_name = $request->usr_name;
+        $user->usr_email = $request->usr_email;
+        $user->usr_phone = $request->usr_phone;
+        // $user->usr_password = Hash::make($request->usr_password);
+        // $user->usr_verification_token = $request->usr_verification_token;
+        // $user->usr_is_active = $request->usr_is_active;
+        $user->update();
+        
+        $extracurriculars = extracurricular::where('esc_id', $coach->coc_esc_id)->first();
         //dd($extracurriculars);
         $extracurriculars->esc_name = $request->esc_name;
         $extracurriculars->esc_description = $request->esc_description;
@@ -106,23 +116,14 @@ class ExtracurricularController extends Controller
                 'esc_logo' => $files_name
             ]);
 
-        $coach = Coach::where('coc_esc_id', $extracurriculars->esc_id)->first();
-        $coach->coc_place = $request->coc_place;
-        $coach->coc_birth = $request->coc_birth;
-        $coach->coc_gender = $request->coc_gender;
-        $coach->coc_study = $request->coc_study;
-        $coach->coc_job = $request->coc_job;
-        $coach->coc_address = $request->coc_address;
-        $coach->update();
-
-        $user = User::where('usr_id', $coach->coc_usr_id)->first();
-        $user->usr_name = $request->usr_name;
-        $user->usr_email = $request->usr_email;
-        $user->usr_phone = $request->usr_phone;
-        // $user->usr_password = Hash::make($request->usr_password);
-        // $user->usr_verification_token = $request->usr_verification_token;
-        // $user->usr_is_active = $request->usr_is_active;
-        $user->update();
+        // $user = User::where('usr_id', $request->usr_id)->update([
+        //         'usr_name' => $request->usr_name,
+        //         'usr_email' => $request->usr_email,
+        //         'usr_phone' => $request->usr_phone,
+        //         'usr_password' => $request->usr_password,
+                // 'usr_verification_token' => $request->usr_verification_token,
+                // 'usr_is_active' => $request->usr_is_active
+            //]);
 
         //$extracurriculars = extracurricular::where('esc_id', $request->esc_id)->update([
         //         'esc_name' => $request->esc_name,
@@ -163,8 +164,10 @@ class ExtracurricularController extends Controller
     public function listEkskulStudent()
     {
         $list_eskul = \App\extracurricular::all();
-        // $cek ['eskul']=RegisterExtracurricular::whereRegisStdUsrId(Auth::user()->usr_id)
+        // $cek ['eskul']=RegisterExtracurricular::whereRegisUsrId(Auth::user()->usr_id)
         // ->join('extracurriculars','register_extracurricular.regis_esc_id','=','extracurriculars.esc_id')
+        // ->join('users', 'register_extracurricular.regis_usr_id', '=', 'users.usr_id')
+        // ->select('usr_id','esc_name')
         // ->get();
         return view('student.student-extracurricular', ['list_eskul' => $list_eskul]);
     }
@@ -175,8 +178,8 @@ class ExtracurricularController extends Controller
     }
     public function daftar(Request $request, $esc_id)
     {
-        $count = RegisterExtracurricular::whereRegisStdUsrId(Auth::user()->usr_id)->count();
-        $cek = RegisterExtracurricular::whereRegisStdUsrId(Auth::user()->usr_id)
+        $count = RegisterExtracurricular::whereRegisUsrId(Auth::user()->usr_id)->count();
+        $cek = RegisterExtracurricular::whereRegisUsrId(Auth::user()->usr_id)
         ->whereRegisEscId($request->input('id_esc'))
         ->first();
         if ($cek) {
@@ -187,7 +190,7 @@ class ExtracurricularController extends Controller
         }
         $create = new RegisterExtracurricular ();
         $create->regis_esc_id= $request->input('id_esc');
-        $create->regis_std_usr_id= Auth::user()->usr_id;
+        $create->regis_usr_id= Auth::user()->usr_id;
         $create->regis_status=1;
         $create->save();
 
@@ -196,7 +199,7 @@ class ExtracurricularController extends Controller
     }
     public function listEkskul()
     {
-        $data ['eskul']=RegisterExtracurricular::whereRegisStdUsrId(Auth::user()->usr_id)
+        $data ['eskul']=RegisterExtracurricular::whereRegisUsrId(Auth::user()->usr_id)
         ->join('extracurriculars','register_extracurricular.Regis_esc_id','=','extracurriculars.esc_id')
         // ->join('coaches', 'register_extracurricular.regis_coc_id', '=', 'coaches.coc_id')
         ->get();
