@@ -6,22 +6,16 @@
           <img src="{{url('/dist/img/Mahaputra.jpg')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Admin</a>
+          <a href="#" class="d-block">SMK MAHAPUTRA </a>
         </div>
       </div>
-<nav class="mt-2">
+        <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
 
-           <!-- <li class="nav-item">
-            <a href="{{ url('account/profile/'.Auth::user()->usr_id.'/') }}">
-            <img class="align-self-start mr-3" src="{{ asset(Auth()->user()->usr_profile_picture) }}"
-            alt="user avatar">
-            </a>
-            <h6 class="mt-2 user-title">{{ Auth::user()->usr_name}}</h6>
-          </li> -->
+           
 
           <li class="nav-item">
             <a href="{{ url('/admin/extracurricular') }}" class="nav-link">
