@@ -24,8 +24,14 @@ class StudentController extends Controller
     }
      public function listes()
     {
-        $list_student = \App\Student::all();
-        return view('coach.data-member', ['list_student' => $list_student]);
+        // $list_student = \App\Student::all();
+        $register = DB::table('register_extracurricular')
+                    ->join('extracurriculars', 'register_extracurricular.regis_esc_id', '=', 'extracurriculars.esc_id')
+                    ->join('coaches', 'register_extracurricular.regis_esc_id', '=', 'coaches.coc_esc_id')
+                    ->join('users', 'register_extracurricular.regis_usr_id', '=', 'users.usr_id')
+                    ->join('students', 'users.usr_id', '=', 'students.std_usr_id')
+                    ->get();
+        return view('coach.data-member', ['list_student' => $register]);
     }
     
      public function list()

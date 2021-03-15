@@ -163,8 +163,8 @@ class ExtracurricularController extends Controller
     }
     public function listEkskulStudent()
     {
-        $list_eskul = \App\extracurricular::all();
-        // $cek ['eskul']=RegisterExtracurricular::whereRegisUsrId(Auth::user()->usr_id)
+         $list_eskul = \App\extracurricular::all();
+        // $list_eskul =RegisterExtracurricular::whereRegisUsrId(Auth::user()->usr_id)
         // ->join('extracurriculars','register_extracurricular.regis_esc_id','=','extracurriculars.esc_id')
         // ->join('users', 'register_extracurricular.regis_usr_id', '=', 'users.usr_id')
         // ->select('usr_id','esc_name')

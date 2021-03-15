@@ -18,7 +18,7 @@
           <!-- Google Font: Source Sans Pro -->
           <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
         </head>
-        <body class="hold-transition register-page">
+        <body class="hold-transition register-page" style="background-image: url('/dist/img/back.jpg');">
         <div class="register-box">
           <div class="register-logo">
             <a href="../../index2.html">EKSTRAKULIKULER</a>
@@ -26,15 +26,15 @@
 
           <div class="card">
             <div class="card-body register-card-body">
-              <p class="login-box-msg">CHOOSE ROLE</p>
+             <!--  <p class="login-box-msg">CHOOSE ROLE</p> -->
 
               <a href="register-student" class="form-control btn btn-primary">SISWA</a>
-              <center><p >atau</p></center>
+              <!-- <center><p >atau</p></center>
               <a href="register-coach" class="form-control btn btn-primary">PEMBINA</a>
               <div class="social-auth-links text-center">
                 
               </div>
-
+ -->
               <a href="{{URL('login')}}" class="text-center">LOG IN</a>
             </div>
             <!-- /.form-box -->

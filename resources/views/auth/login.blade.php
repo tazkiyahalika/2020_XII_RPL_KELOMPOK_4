@@ -18,7 +18,8 @@
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
-<body class="hold-transition login-page">
+
+<body class="hold-transition login-page"  style="background-image: url('/dist/img/back.jpg');" >
 <div class="login-box">
   <div class="login-logo">
     <a href="../../index2.html">EKSTRAKULIKULER</a>
@@ -81,12 +82,13 @@
 
       
       <p class="mb-0">
-        <a href="choose-register" class="text-center">Register </a>
+        <a href="register-student" class="text-center">Register </a>
       </p>
     </div>
     <!-- /.login-card-body -->
   </div>
 </div>
+
 <!-- /.login-box -->
 
 <!-- jQuery -->
@@ -97,4 +99,7 @@
 <script src="{{ URL::to('assets/dist/js/adminlte.min.js') }}"></script>
 
 </body>
+
 </html>
+
+

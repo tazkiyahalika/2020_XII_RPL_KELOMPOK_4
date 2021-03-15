@@ -1,18 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
+<div class="container" >
+    <div class="row justify-content-center" >
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register Siswa') }}</div>
+                <div class="card-header" style="background-color:aqua;">{{ __('Register Siswa') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}" id="submitForm">
                         @csrf
 
                         <div class="form-group row">
-                            <label for="usr_name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                            <label for="usr_name" class="col-md-4 col-form-label text-md-right">{{ __('Nama') }}</label>
 
                             <div class="col-md-6">
                                 <input id="usr_name" type="text" class="form-control @error('usr_name') is-invalid @enderror" name="usr_name" value="{{ old('usr_name') }}" autocomplete="usr_name" autofocus>
@@ -26,13 +26,13 @@
                         </div>
 
                          <div class="form-group row">
-                            <label for="std_gender" class="col-md-4 col-form-label text-md-right">{{ __('Gender') }}</label>
+                            <label for="std_gender" class="col-md-4 col-form-label text-md-right">{{ __('Jenis Kelamin') }}</label>
 
                             <div class="col-md-6">
                                 <input id="std_gender" type="radio" value="male" class="@error('std_gender') is-invalid @enderror" name="std_gender" value="{{ old('std_gender') }}" autocomplete="std_gender" autofocus>
-                                Male<BR>
+                                Laki-Laki<BR>
                                 <input id="std_gender" type="radio" value="female" class="@error('std_gender') is-invalid @enderror" name="std_gender" value="{{ old('std_gender') }}" autocomplete="std_gender" autofocus>
-                                Female
+                                Perempuan
                                 @error('std_gender')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -42,7 +42,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="std_class" class="col-md-4 col-form-label text-md-right">{{ __('Class') }}</label>
+                            <label for="std_class" class="col-md-4 col-form-label text-md-right">{{ __('Kelas') }}</label>
 
                             <div class="col-md-6">
                                 <select id="std_class" type="text" class="form-control @error('std_class') is-invalid @enderror" name="std_class" value="{{ old('std_class') }}" autocomplete="std_class" autofocus>
@@ -66,7 +66,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="std_address" class="col-md-4 col-form-label text-md-right">{{ __('Address') }}</label>
+                            <label for="std_address" class="col-md-4 col-form-label text-md-right">{{ __('Alamat') }}</label>
 
                             <div class="col-md-6">
                                 <input id="std_address" type="text" class="form-control @error('std_address') is-invalid @enderror" name="std_address" value="{{ old('std_address') }}" autocomplete="std_address" autofocus>
@@ -80,7 +80,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="usr_email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="usr_email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
 
                             <div class="col-md-6">
                                 <input id="usr_email" type="email" class="form-control @error('usr_email') is-invalid @enderror" name="usr_email" value="{{ old('usr_email') }}" autocomplete="usr_email">
@@ -94,7 +94,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="usr_phone" class="col-md-4 col-form-label text-md-right">{{ __('Phone Number') }}</label>
+                            <label for="usr_phone" class="col-md-4 col-form-label text-md-right">{{ __('No.Telp') }}</label>
 
                             <div class="col-md-6" id="only-number">
                                 <input id="usr_phone" value="{{ old('usr_phone') }}" type="text" class="form-control @error('usr_phone') is-invalid @enderror" name="usr_phone" autocomplete="off">

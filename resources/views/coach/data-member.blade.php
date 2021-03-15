@@ -23,7 +23,7 @@
                   <tbody>
                   <tr>
                     <th scope="row">{{ $no }}</th>
-                    <td>{{$std->std_name}}</td>
+                    <td>{{$std->usr_name}}</td>
                     <td>{{$std->std_gender}}</td>
                     <td>{{$std->std_class}}</td>
                     <td>{{$std->std_address}}</td>

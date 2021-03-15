@@ -19,10 +19,14 @@
                   <tbody>
                   <tr>
                     <th scope="row">{{ $no }}</th>
-                    <!-- <td>{{$extracurricular ->esc_id}}</td> -->
                     <td>{{$extracurricular ->esc_name}}</td>
                     <td>
-                   
+                   @if(Auth()->user()->hasRole('student'))
+
+                   @if ($extracurricular->regis_status == 1)
+                   <td><td>
+                    @endif
+                    @endif
                         
                         <form action="{{ url('student/extracurricular/'.$extracurricular->esc_id)}} " method="post">
                           @csrf
