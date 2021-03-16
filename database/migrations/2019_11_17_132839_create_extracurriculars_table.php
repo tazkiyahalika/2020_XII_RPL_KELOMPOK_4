@@ -19,7 +19,10 @@ class CreateExtracurricularsTable extends Migration
             $table->longtext('esc_description');
             $table->string('esc_logo');
             $table->timestamps();
-            $table->timestamp('deleted_at')->nullable();
+            $table->softDeletes();
+            // $table->timestamp('deleted_at')->nullable();
+            
+
         });
     }
 

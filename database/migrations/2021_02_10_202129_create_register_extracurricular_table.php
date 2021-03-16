@@ -20,7 +20,9 @@ class CreateRegisterExtracurricularTable extends Migration
             $table->unsignedBigInteger('regis_usr_id');
             $table->unsignedBigInteger('regis_status');
             $table->timestamps();
-            $table->timestamp('deleted_at')->nullable();
+            $table->softDeletes();
+            // $table->timestamp('deleted_at')->nullable();
+        
         });
     }
 

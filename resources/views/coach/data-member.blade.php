@@ -28,7 +28,7 @@
                     <td>{{$std->std_class}}</td>
                     <td>{{$std->std_address}}</td>
                     <td>
-                      <a href="{{ url('coach/student'.$std->std_id.'/delete' ) }}" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onclick="return confirm('Yakin Mau Hapus ?');"> <i class="fa fa-trash"></i></a>
+                      <a href="{{ url('coach/student/'.$std->regis_id.'/delete' ) }}" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onclick="return confirm('Yakin Mau Hapus ?');"> <i class="fa fa-trash"></i></a>
                     </td>
                  </tr>
 

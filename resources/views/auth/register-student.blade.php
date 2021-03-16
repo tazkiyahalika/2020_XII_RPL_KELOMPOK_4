@@ -29,9 +29,9 @@
                             <label for="std_gender" class="col-md-4 col-form-label text-md-right">{{ __('Jenis Kelamin') }}</label>
 
                             <div class="col-md-6">
-                                <input id="std_gender" type="radio" value="male" class="@error('std_gender') is-invalid @enderror" name="std_gender" value="{{ old('std_gender') }}" autocomplete="std_gender" autofocus>
+                                <input id="std_gender" type="radio" value="laki-laki" class="@error('std_gender') is-invalid @enderror" name="std_gender" value="{{ old('std_gender') }}" autocomplete="std_gender" autofocus>
                                 Laki-Laki<BR>
-                                <input id="std_gender" type="radio" value="female" class="@error('std_gender') is-invalid @enderror" name="std_gender" value="{{ old('std_gender') }}" autocomplete="std_gender" autofocus>
+                                <input id="std_gender" type="radio" value="perempuan" class="@error('std_gender') is-invalid @enderror" name="std_gender" value="{{ old('std_gender') }}" autocomplete="std_gender" autofocus>
                                 Perempuan
                                 @error('std_gender')
                                 <span class="invalid-feedback" role="alert">
