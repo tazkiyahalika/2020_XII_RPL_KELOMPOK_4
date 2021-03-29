@@ -6,6 +6,7 @@ use Hash;
 use App\User;
 use App\Coach;
 use App\Extracurricular;
+use App\ScheduleExtracurricular;
 use Illuminate\Support\Facades\DB;
 use App\RegisterExtracurricular;
 use Illuminate\Support\Facades\Auth;
@@ -60,8 +61,6 @@ class ExtracurricularController extends Controller
         $coach->coc_job = request('coc_job');
         $coach->coc_address = request('coc_address');
         $coach->save();
-
-        
 
         return redirect('admin/extracurricular')->withSuccess('Berhasil Di Tambahkan');
     }
@@ -207,4 +206,29 @@ class ExtracurricularController extends Controller
 
     }
 
+    public function ScheduleList()
+    {
+         $data ['schedule']= DB::table('schedule_extracurricular')
+        ->join('extracurriculars','schedule_extracurricular.schedule_esc_id','=','extracurriculars.esc_id')
+        ->select('esc_name','schedule_day','schedule_time_start','schedule_time_end')
+        ->get();
+        return view('admin.list-schedule', $data);
+    }
+    public function CreateSchedule()
+    {
+        $data ['extracurricular']= extracurricular::all();
+        
+        return view('admin.add-schedule', $data);
+    }
+    public function addSchedule(Request $request)
+    {
+        $schedule = new ScheduleExtracurricular();
+        $schedule->schedule_esc_id = $request->schedule_esc_id;
+        $schedule->schedule_day= $request->schedule_day;
+        $schedule->schedule_time_start = $request->schedule_time_start;
+        $schedule->schedule_time_end = $request->schedule_time_end;
+        $schedule->save();
+
+        return redirect('/admin/schedule')->withSuccess('Berhasil Di Tambah');
+    }
 }

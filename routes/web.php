@@ -77,7 +77,10 @@ Route::group(['middleware' => ['role:admin']], function () {
 	Route::post('admin/coach/create','CoachController@addcoach');
 
 	Route::get('admin/student','StudentController@list');
-	
+	Route::get('admin/schedule','ExtracurricularController@ScheduleList');
+	Route::get('admin/schedule/create', 'ExtracurricularController@CreateSchedule');
+	Route::post('admin/schedule/add-schedule', 'ExtracurricularController@addSchedule');
+
 
 });
 

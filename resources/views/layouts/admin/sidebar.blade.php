@@ -49,7 +49,15 @@
             </a>
           </li> -->
 
-
+           <li class="nav-item">
+            <a href="{{ url('/admin/schedule') }}" class="nav-link">
+              <i class="fas fa-book" style="font-size: 20px;"></i>
+              <p>
+                Jadwal Ekstrakulikuler
+                
+              </p>
+            </a>
+          </li>
 
           <li class="nav-item">
             <a href="{{ url('admin/extracurricular/create') }}" class="nav-link">
@@ -60,6 +68,8 @@
             </a>
 
           </li>
+
+         
          
           
 
