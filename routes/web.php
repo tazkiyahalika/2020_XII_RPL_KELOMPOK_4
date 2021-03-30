@@ -39,7 +39,7 @@ Route::get('/account/forgot-password', 'Auth\AccountController@forgotPassword')-
 Route::post('/account/forgot-password', 'Auth\AccountController@sendEmailForgotPassword')->name('forgot.password');
 Route::get('/account/{resetVerificationToken}/forgot-password', 'Auth\AccountController@verifyForgotToken');
 Route::post('/account/reset-password', 'Auth\AccountController@updatePassword')->name('password-reset');
-
+// Route::get('/account/profile/{userId}','Auth\AccountController@listprofile');
 //Route untuk register student, coach 
 
 Route::get('/register-student', 'Auth\RegisterController@registerStudent');
@@ -100,5 +100,8 @@ Route::group(['middleware' => ['role:coach']], function () {
 	Route::get('/coach/dashboard','CoachController@index')->name('dashboard.coach');
 	Route::get('coach/student','StudentController@listes'); //ini baru menampilkan data di table semua bukan pertable//
 	Route::get('coach/student/{regis_id}/delete', 'StudentController@deletestudent');
+	Route::get('coach/info/create','ExtracurricularController@createinfo');
+	Route::post('coach/info/add-info', 'ExtracurricularController@addinfo');
 });
+
 

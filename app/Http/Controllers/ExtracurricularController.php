@@ -7,6 +7,7 @@ use App\User;
 use App\Coach;
 use App\Extracurricular;
 use App\ScheduleExtracurricular;
+use App\InformationExtracurriculars;
 use Illuminate\Support\Facades\DB;
 use App\RegisterExtracurricular;
 use Illuminate\Support\Facades\Auth;
@@ -230,5 +231,29 @@ class ExtracurricularController extends Controller
         $schedule->save();
 
         return redirect('/admin/schedule')->withSuccess('Berhasil Di Tambah');
+    }
+    public function createinfo()
+    {
+        $data ['info']= InformationExtracurriculars::all();
+
+        return view('coach.add-info', $data);
+    }
+    public function addinfo(Request $request)
+    {
+        $info = new InformationExtracurriculars();
+        $info->info_esc_id = $request->info_esc_id;
+        $info->info_usr_id= $request->info_usr_id;
+        $info->information = $request->information;
+        $info->info_date = $request->info_date;
+       if ($request->hasFile('info_img')) {
+            $files = $request->file('info_img');
+            $path = public_path('image_info');
+            $files_name = $files->getClientOriginalName();
+            $files->move($path, $files_name);
+            $extracurricular->info_img= $files_name;
+        }
+        $info->save();
+
+        return redirect('/coach/dashboard');
     }
 }

@@ -108,4 +108,9 @@ class AccountController extends Controller
         $user = User::find($usr_id);
         return back();
     }
+    // public function listprofile()
+    // {
+    //    $profile['profile'] = DB::table('user');
+    //     return view('profile', $profile);
+    // }
 }

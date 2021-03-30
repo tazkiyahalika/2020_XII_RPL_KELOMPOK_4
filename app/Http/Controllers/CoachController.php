@@ -6,6 +6,7 @@ use Hash;
 use App\User;
 use App\Coach;
 use App\extracurricular;
+use App\InformationExtracurriculars;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -25,9 +26,13 @@ class CoachController extends Controller
     
     public function index()
     {
-    	return view('coach.dashboard');
-    }
+       $data ['info']= DB::table('information_extracurriculars')
+        ->join('extracurriculars','information_extracurriculars.info_esc_id','=','extracurriculars.esc_id')
+        ->join('users','information_extracurriculars.info_usr_id','=','users.usr_id')
 
+        ->get();
+    	return view('coach.dashboard', $data);
+    }
     public function list()
     {
 
