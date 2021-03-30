@@ -232,6 +232,27 @@ class ExtracurricularController extends Controller
 
         return redirect('/admin/schedule')->withSuccess('Berhasil Di Tambah');
     }
+      public function EditSchedule($schedule_id)
+    {
+        $extracurricular=extracurricular::all();
+        $data= DB::table('schedule_extracurricular')->where('schedule_id', $schedule_id)
+        ->join('extracurriculars','schedule_extracurricular.schedule_esc_id','=','extracurriculars.esc_id')
+        ->get();
+
+        return view('admin.update-schedule', ['extracurricular' => $extracurricular, 'data' => $data]);
+
+    }
+    public function UpdateSchedule(Request $request, $schedule_id)
+    {
+        $schedule = ScheduleExtracurricular::findOrFail($schedule_id);
+        $schedule->schedule_esc_id = $request->schedule_esc_id;
+        $schedule->schedule_day= $request->schedule_day;
+        $schedule->schedule_time_start = $request->schedule_time_start;
+        $schedule->schedule_time_end = $request->schedule_time_end;
+        $schedule->update();
+
+        return redirect('/admin/schedule')->withSuccess('Berhasil Di Edit');
+    }
     public function createinfo()
     {
         $data ['info']= InformationExtracurriculars::all();

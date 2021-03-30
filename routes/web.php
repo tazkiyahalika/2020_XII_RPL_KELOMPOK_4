@@ -80,6 +80,8 @@ Route::group(['middleware' => ['role:admin']], function () {
 	Route::get('admin/schedule','ExtracurricularController@ScheduleList');
 	Route::get('admin/schedule/create', 'ExtracurricularController@CreateSchedule');
 	Route::post('admin/schedule/add-schedule', 'ExtracurricularController@addSchedule');
+	Route::post('admin/schedule/edit/{schedule_id}', 'ExtracurricularController@updateSchedule');
+	Route::get('admin/schedule/update/{schedule_id}', 'ExtracurricularController@EditSchedule');
 
 
 });

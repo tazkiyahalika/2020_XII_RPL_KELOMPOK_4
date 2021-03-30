@@ -31,7 +31,7 @@
         <td>{{$extracurricular->schedule_time_start}}</td>
         <td>{{$extracurricular->schedule_time_end}}</td>
         <td>
-            <a href='' class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Edit"> <i class="fa fa-edit"></i></a>
+            <a href="{{ url('admin/schedule/update/'.$extracurricular->schedule_id) }}" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Edit"> <i class="fa fa-edit"></i></a>
             <a href="" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onclick="return confirm('Yakin Mau Hapus ?');"> <i class="fa fa-trash"></i></a>
         </td>
 
