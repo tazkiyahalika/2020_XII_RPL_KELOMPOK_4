@@ -1,4 +1,4 @@
-@extends('layouts.admin-master')
+@extends('layouts.coach-master')
 @section('content')
 <div class="card">
   <div class="card-header">
@@ -6,9 +6,6 @@
   </div>
   <!-- /.card-header -->
   <div class="card-body">
-    <tr>
-      <td> <a href="{{ url('admin/schedule/create')}}" class="btn btn-primary btn-sm">Tambah Jadwal Ekstrakulikuler</a></td>
-    </tr>
     <br>
     <table id="example1" class="table table-bordered table-striped">
       <thead>
@@ -18,7 +15,7 @@
           <th>Hari</th>
           <th>Jam Mulai</th>
           <th>Jam Selesai</th>
-          <th>Action</th>
+         
         </tr>
       </thead>
        <?php $no=1; ?>
@@ -30,11 +27,6 @@
         <td>{{$extracurricular->schedule_day}}</td>
         <td>{{$extracurricular->schedule_time_start}}</td>
         <td>{{$extracurricular->schedule_time_end}}</td>
-        <td>
-            <a href="{{ url('admin/schedule/update/'.$extracurricular->schedule_id) }}" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Edit"> <i class="fa fa-edit"></i></a>
-            <a href="{{ url('admin/schedule/'.$extracurricular->schedule_id.'/delete' ) }}" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onclick="return confirm('Yakin Mau Hapus ?');"> <i class="fa fa-trash"></i></a>
-        </td>
-
       </tr>
 
       <?php $no++ ;?>
@@ -47,15 +39,3 @@
     <!-- /.card-body -->
   </div>
   @endsection
-
-
-
-
-<!--  <th>Tempat Tanggal Lahir</th>
-          <th>Pekerjaan</th>
-          <th>Alamat Email</th> -->
-
-
-  <!-- <td>Laki-laki</td>
-          <td>eman@gmail.com</td>
-          <td>eman@gmail.com</td> -->

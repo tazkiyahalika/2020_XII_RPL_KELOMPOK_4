@@ -14,7 +14,16 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
-
+          <li class="nav-item has-treeview">
+            <li class="nav-item">
+            <a href="{{ url('/student/schedule') }}" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+              <p>
+               Jadwal Ekstrakulikuler
+                
+              </p>
+            </a>
+          </li>
                
           <li class="nav-item has-treeview">
             <li class="nav-item">

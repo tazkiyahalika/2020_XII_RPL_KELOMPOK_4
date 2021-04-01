@@ -82,6 +82,7 @@ Route::group(['middleware' => ['role:admin']], function () {
 	Route::post('admin/schedule/add-schedule', 'ExtracurricularController@addSchedule');
 	Route::post('admin/schedule/edit/{schedule_id}', 'ExtracurricularController@updateSchedule');
 	Route::get('admin/schedule/update/{schedule_id}', 'ExtracurricularController@EditSchedule');
+	Route::get('admin/schedule/{schedule_id}/delete', 'ExtracurricularController@deleteSchedule');
 
 
 });
@@ -93,6 +94,7 @@ Route::group(['middleware' => ['role:student']], function () {
 	Route::get('student/extracurricular/detail-extracurricular/{esc_id}', 'ExtracurricularController@detailEkskulStudent');
 	Route::post('student/extracurricular/{esc_id}','ExtracurricularController@daftar');
 	Route::get('student/extracurricular/list','ExtracurricularController@listEkskul');
+	Route::get('student/schedule','StudentController@ScheduleEskulStudent');
 
 
 
@@ -104,6 +106,7 @@ Route::group(['middleware' => ['role:coach']], function () {
 	Route::get('coach/student/{regis_id}/delete', 'StudentController@deletestudent');
 	Route::get('coach/info/create','ExtracurricularController@createinfo');
 	Route::post('coach/info/add-info', 'ExtracurricularController@addinfo');
+	Route::get('coach/schedule','CoachController@ScheduleEskulCoach');
 });
 
 

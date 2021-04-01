@@ -7,7 +7,7 @@
                 <div class="card-body">
 
                  
-                    <div class="card-header"><h2>Tambah Ekstrakulikuler</h2></div>
+                    <div class="card-header"><h2>Tambah informasi</h2></div>
                   
                     
                     {{ csrf_field() }} 
@@ -15,12 +15,16 @@
                  <!--  -->
                    <div class="mb-3">
                   
-                        <label for="exampleFormControlInput1" class="form-label">Nama Ekstrakulikuler</label>
-                        <input name="info_esc_id" type="text" class="form-control" required="required" placeholder="nama Ekstrakulikuler" id="exampleFormControlInput1">
+                      <select class="form-control" name="info_esc_id" placeholder="Extrakulikuler">
+                         <option value="---pilih nama ekstrakulikuler---">---pilih nama ekstrakulikuler---</option>
+                         @foreach($extracurricular as $extracurricular)
+                            <option value='{{ $extracurricular->esc_id }}'>{{ $extracurricular->esc_name }}</option>
+                          @endforeach
+                    </select>
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Nama Pemibna</label>
-                        <input name="info_usr_id" type="text" class="form-control" required="required" placeholder="nama pembina" id="exampleFormControlTextarea1" rows="3">
+                        <input name="info_usr_name" type="text" class="form-control" required="required" placeholder="nama pembina" id="exampleFormControlTextarea1" rows="3">
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Information</label>

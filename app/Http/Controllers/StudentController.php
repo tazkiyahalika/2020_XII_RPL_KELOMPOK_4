@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Coach;
 use App\RegisterExtracurricular;
 use App\Extracurricular;
+use App\ScheduleExtracurricular;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\DB;
@@ -58,4 +59,15 @@ class StudentController extends Controller
 
         return back()->withToastError('berhasil di Hapus');
     }
+
+    public function ScheduleEskulStudent()
+    {
+        $extracurricular=extracurricular::all();
+        $schedule['schedule']= DB::table('schedule_extracurricular')
+        ->join('extracurriculars','schedule_extracurricular.schedule_esc_id','=','extracurriculars.esc_id')
+        ->get();
+         return view('coach.coach-schedule', $schedule );
+    }
+
+    
 }

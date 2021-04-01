@@ -16,6 +16,17 @@
 
           <li class="nav-item has-treeview">
             <li class="nav-item">
+            <a href="{{ url('/coach/schedule') }}" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+              <p>
+               Jadwal Ekstrakulikuler
+                
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item has-treeview">
+            <li class="nav-item">
             <a href="{{ url('/coach/student') }}" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>

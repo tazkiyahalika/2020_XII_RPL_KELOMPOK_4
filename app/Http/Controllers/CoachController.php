@@ -7,6 +7,7 @@ use App\User;
 use App\Coach;
 use App\extracurricular;
 use App\InformationExtracurriculars;
+use App\ScheduleExtracurricular;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -110,7 +111,15 @@ class CoachController extends Controller
         return back()->withToastError('berhasil di Hapus');
     }
    
+    public function ScheduleEskulCoach()
+    {
+        $extracurricular =extracurricular::all();
+        $schedule ['schedule']= DB::table('schedule_extracurricular')
+        ->join('extracurriculars','schedule_extracurricular.schedule_esc_id','=','extracurriculars.esc_id')
+        ->get();
 
+        return view('coach.coach-schedule', $schedule);
+    }
 
 
 

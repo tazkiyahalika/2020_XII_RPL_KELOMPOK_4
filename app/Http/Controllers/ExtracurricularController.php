@@ -211,7 +211,8 @@ class ExtracurricularController extends Controller
     {
          $data ['schedule']= DB::table('schedule_extracurricular')
         ->join('extracurriculars','schedule_extracurricular.schedule_esc_id','=','extracurriculars.esc_id')
-        ->select('esc_name','schedule_day','schedule_time_start','schedule_time_end')
+        //->where('schedule_esc_id','=',null)
+        // ->select('esc_name','schedule_day','schedule_time_start','schedule_time_end')
         ->get();
         return view('admin.list-schedule', $data);
     }
@@ -244,7 +245,7 @@ class ExtracurricularController extends Controller
     }
     public function UpdateSchedule(Request $request, $schedule_id)
     {
-        $schedule = ScheduleExtracurricular::findOrFail($schedule_id);
+        $schedule = ScheduleExtracurricular::where('schedule_id', $schedule_id)->first();
         $schedule->schedule_esc_id = $request->schedule_esc_id;
         $schedule->schedule_day= $request->schedule_day;
         $schedule->schedule_time_start = $request->schedule_time_start;
@@ -253,11 +254,21 @@ class ExtracurricularController extends Controller
 
         return redirect('/admin/schedule')->withSuccess('Berhasil Di Edit');
     }
+    public function deleteSchedule($schedule_id)
+    {
+
+        $data= ScheduleExtracurricular::where('schedule_id', $schedule_id)
+        ->join('extracurriculars','schedule_extracurricular.schedule_esc_id','=','extracurriculars.esc_id')
+        ->delete();
+
+        return back()->withToastError('berhasil di Hapus');
+    }
     public function createinfo()
     {
-        $data ['info']= InformationExtracurriculars::all();
+        $info ['extracurricular']= DB::table('information_extracurriculars');
+        
 
-        return view('coach.add-info', $data);
+        return view('coach.add-info', $info);
     }
     public function addinfo(Request $request)
     {
@@ -271,7 +282,7 @@ class ExtracurricularController extends Controller
             $path = public_path('image_info');
             $files_name = $files->getClientOriginalName();
             $files->move($path, $files_name);
-            $extracurricular->info_img= $files_name;
+            $info->info_img= $files_name;
         }
         $info->save();
 
