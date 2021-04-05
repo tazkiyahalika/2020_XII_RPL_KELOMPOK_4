@@ -27,6 +27,16 @@
             </a>
           </li>
 
+           <li class="nav-item">
+            <a href="{{ url('/admin/achievement') }}" class="nav-link">
+              <i class="fas fa-book" style="font-size: 20px;"></i>
+              <p>
+                Data Prestasi
+                
+              </p>
+            </a>
+          </li>
+
 
           <li class="nav-item">
             <a href="{{ url('/admin/coach') }}" class="nav-link">

@@ -8,6 +8,7 @@ use App\Coach;
 use App\Extracurricular;
 use App\ScheduleExtracurricular;
 use App\InformationExtracurriculars;
+use App\Achievement;
 use Illuminate\Support\Facades\DB;
 use App\RegisterExtracurricular;
 use Illuminate\Support\Facades\Auth;
@@ -147,7 +148,7 @@ class ExtracurricularController extends Controller
     }
     public function deleteEkskul($esc_id)
     {
-        $extracurriculars = DB::table('extracurriculars')->where('esc_id', $esc_id)
+        $extracurriculars = extracurricular::where('esc_id', $esc_id)
         ->join('coaches','coaches.coc_esc_id','=','extracurriculars.esc_id')
         ->join('users','users.usr_id','=','coaches.coc_usr_id')
         ->select('esc_id','esc_logo','esc_name','esc_description','usr_name','usr_email','usr_phone','coc_place',
@@ -211,8 +212,7 @@ class ExtracurricularController extends Controller
     {
          $data ['schedule']= DB::table('schedule_extracurricular')
         ->join('extracurriculars','schedule_extracurricular.schedule_esc_id','=','extracurriculars.esc_id')
-        //->where('schedule_esc_id','=',null)
-        // ->select('esc_name','schedule_day','schedule_time_start','schedule_time_end')
+        ->where('schedule_extracurricular.deleted_at', null)
         ->get();
         return view('admin.list-schedule', $data);
     }
@@ -259,6 +259,63 @@ class ExtracurricularController extends Controller
 
         $data= ScheduleExtracurricular::where('schedule_id', $schedule_id)
         ->join('extracurriculars','schedule_extracurricular.schedule_esc_id','=','extracurriculars.esc_id')
+        ->delete();
+
+        return back()->withToastError('berhasil di Hapus');
+    }
+    public function AchievementList()
+    {
+         $data ['achievement']= DB::table('achievement')
+        ->join('extracurriculars','achievement.ach_esc_id','=','extracurriculars.esc_id')
+        ->where('achievement.deleted_at', null)
+        ->get();
+        return view('admin.list-achievement', $data);
+    }
+    public function AchievementCreate()
+    {
+        $data ['extracurricular']= extracurricular::all();
+        
+        return view('admin.add-achievement', $data);
+    }
+    public function AchievementAdd(Request $request)
+    {
+        $ach = new Achievement();
+        $ach->ach_esc_id = $request->ach_esc_id;
+        $ach->ach_event= $request->ach_event;
+        $ach->ach_date_event = $request->ach_date_event;
+        $ach->ach_champion = $request->ach_champion;
+        $ach->save();
+
+        return redirect('/admin/achievement')->withSuccess('Berhasil Di Tambah');
+
+    }
+
+    public function EditAchievement($ach_id)
+    {
+        $extracurricular=extracurricular::all();
+        $data= DB::table('achievement')->where('ach_id', $ach_id)
+        ->join('extracurriculars','achievement.ach_esc_id','=','extracurriculars.esc_id')
+        ->get();
+
+        return view('admin.update-achievement', ['extracurricular' => $extracurricular, 'data' => $data]);
+    }
+
+    public function UpdateAchievement(Request $request, $ach_id)
+    {
+        $achievement = Achievement::where('ach_id', $ach_id)->first();
+        $achievement->ach_esc_id = $request->ach_esc_id;
+        $achievement->ach_event= $request->ach_event;
+        $achievement->ach_date_event = $request->ach_date_event;
+        $achievement->ach_champion = $request->ach_champion;
+        $achievement->update();
+
+        return redirect('/admin/achievement')->withSuccess('Berhasil Di Edit');
+    }
+    public function deleteAchievement($ach_id)
+    {
+
+        $achievement= Achievement::where('ach_id', $ach_id)
+        ->join('extracurriculars','achievement.ach_esc_id','=','extracurriculars.esc_id')
         ->delete();
 
         return back()->withToastError('berhasil di Hapus');

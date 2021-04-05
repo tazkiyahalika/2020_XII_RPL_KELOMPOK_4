@@ -11,7 +11,7 @@
                   <div class="form-group">
                     <label>Nama EKstrakulikuler</label>
                   <!-- <input name="esc_id" type="text" class="form-control" placeholder="name"> -->
-                  <select class="form-control" name="schedule_esc_id" placeholder="Extrakulikuler">
+                  <select class="form-control" name="schedule_esc_id" required="required" placeholder="Extrakulikuler">
                    <option value="---pilih nama ekstrakulikuler---">---pilih nama ekstrakulikuler---</option>
                    @foreach($extracurricular as $extracurricular)
                       <option value='{{ $extracurricular->esc_id }}'>{{ $extracurricular->esc_name }}</option>
@@ -20,7 +20,7 @@
                   </div>
                   <div class="form-group">
                     <label>Hari</label>
-                    <select name="schedule_day" class="form-control" placeholder="Hari">
+                    <select name="schedule_day" required="required" class="form-control" placeholder="Hari">
                       <option value="---pilih hari---">---pilih hari---</option>
                       <option value="Senin">Senin</option>
                       <option value="Selasa">Selasa</option>
@@ -34,11 +34,11 @@
                   </div>
                   <div class="form-group">
                     <label>Jam Mulai</label>
-                    <input name="schedule_time_start" type="time" class="form-control" placeholder="Mulai">
+                    <input name="schedule_time_start" type="time" required="required" class="form-control" placeholder="Mulai">
                   </div>
                   <div class="form-group">
                     <label>Jam Selesai</label>
-                    <input name="schedule_time_end" type="time" class="form-control" placeholder="Selesai">
+                    <input name="schedule_time_end" type="time" required="required" class="form-control" placeholder="Selesai">
       
                 <!-- /.card-body -->
                 </div>

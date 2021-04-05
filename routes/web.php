@@ -84,6 +84,14 @@ Route::group(['middleware' => ['role:admin']], function () {
 	Route::get('admin/schedule/update/{schedule_id}', 'ExtracurricularController@EditSchedule');
 	Route::get('admin/schedule/{schedule_id}/delete', 'ExtracurricularController@deleteSchedule');
 
+	Route::get('admin/achievement', 'ExtracurricularController@AchievementList');
+	Route::get('admin/achievement/create', 'ExtracurricularController@AchievementCreate');
+	Route::post('admin/achievement/add-achievement', 'ExtracurricularController@AchievementAdd');
+
+	Route::get('admin/achievement/edit/{ach_id}', 'ExtracurricularController@EditAchievement');
+	Route::post('admin/achievement/update/{ach_id}', 'ExtracurricularController@UpdateAchievement');
+	Route::get('admin/achievement/{ach_id}/delete', 'ExtracurricularController@deleteAchievement');
+
 
 });
 
