@@ -109,9 +109,10 @@ Route::group(['middleware' => ['role:student']], function () {
 });
 
 Route::group(['middleware' => ['role:coach']], function () {
-	Route::get('/coach/dashboard','CoachController@index')->name('dashboard.coach');
+	Route::get('/coach/dashboard','ExtracurricularController@index')->name('dashboard.coach');
 	Route::get('coach/student','StudentController@listes'); //ini baru menampilkan data di table semua bukan pertable//
 	Route::get('coach/student/{regis_id}/delete', 'StudentController@deletestudent');
+
 	Route::get('coach/info/create','ExtracurricularController@createinfo');
 	Route::post('coach/info/add-info', 'ExtracurricularController@addinfo');
 	Route::get('coach/schedule','CoachController@ScheduleEskulCoach');

@@ -25,15 +25,15 @@ class CoachController extends Controller
         $this->middleware('auth');
          }
     
-    public function index()
-    {
-       $data ['info']= DB::table('information_extracurriculars')
-        ->join('extracurriculars','information_extracurriculars.info_esc_id','=','extracurriculars.esc_id')
-        ->join('users','information_extracurriculars.info_usr_id','=','users.usr_id')
+    // public function index()
+    // {
+    //    $data ['info']= DB::table('information_extracurriculars')
+    //     ->join('extracurriculars','information_extracurriculars.info_esc_id','=','extracurriculars.esc_id')
+    //     ->join('users','information_extracurriculars.info_usr_id','=','users.usr_id')
 
-        ->get();
-    	return view('coach.dashboard', $data);
-    }
+    //     ->get();
+    // 	return view('coach.dashboard', $data);
+    // }
     public function list()
     {
 

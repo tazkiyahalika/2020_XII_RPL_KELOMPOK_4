@@ -19,18 +19,24 @@
 
                 </ul>
               </div><!-- /.card-header -->
+              
+                    <!-- Post -->
+                    @foreach($extracurricular as $information)
               <div class="card-body">
                 <div class="tab-content">
                   <div class="active tab-pane" id="activity">
                   
-                    <!-- Post -->
-                    @foreach($info as $information)
                     <div class="post">
                         <span class="username">
-                          <a href="#">{{$information->usr_name}}</a>
+                          <a href="#">{{$information->usr_name}}</a><br>
                         </span>
-                        <span class="description">{{$information->info-date}}</span>
+                        <span class="username">
+                          <a href="#">{{$information->esc_name}}</a><br>
+                        </span>
+                        <span class="description">{{$information->info_date}}</span>
+
                       </div>
+
                       <!-- /.user-block -->
                       <p>
                         {{$information->information}}
@@ -39,20 +45,27 @@
 
                       <div class="row mb-3">
                         <div class="col-sm-6">
-                          <img class="img-fluid" src="{{$information->info_img}}" alt="Photo">
+                        <center>
+                          <img class="" align="middle" style="width="500px"; height="200px" src="{{ url('image_info/'.$information->info_img) }}" alt="Photo">
+                          </center>
                         </div>
+
                         <!-- /.col -->
+                       
                           </div>
                           <!-- /.row -->
+
                         </div>
                         <!-- /.col -->
                       </div>
                       <!-- /.row -->
-
-     
+                      <div>
+                        <a href='' class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Edit"> <i class="fa fa-edit"></i></a>
+                        <a href="" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onclick="return confirm('Yakin Mau Hapus ?');"> <i class="fa fa-trash"></i></a>
+                    </div>
                     </div>
                     <!-- /.post -->
-
+    
                     @endforeach
                   </div>
                   <!-- /.tab-pane -->

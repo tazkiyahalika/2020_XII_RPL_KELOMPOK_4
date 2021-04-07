@@ -320,18 +320,32 @@ class ExtracurricularController extends Controller
 
         return back()->withToastError('berhasil di Hapus');
     }
+
+     public function index()
+    {
+       $data ['extracurricular']= DB::table('information_extracurriculars')
+        ->join('extracurriculars','information_extracurriculars.info_esc_id','=','extracurriculars.esc_id')
+        ->join('users','information_extracurriculars.info_usr_id','=','users.usr_id')
+
+        ->get();
+        return view('coach.dashboard', $data);
+    }
     public function createinfo()
     {
-        $info ['extracurricular']= DB::table('information_extracurriculars');
-        
+    $data ['extracurricular']= DB::table('coaches')
+        ->join('extracurriculars','coaches.coc_esc_id','=','extracurriculars.esc_id')
+        ->join('users','coaches.coc_usr_id','=','users.usr_id')
+        ->where('usr_id','=',Auth::user()->usr_id)
 
-        return view('coach.add-info', $info);
+        ->first();
+        // dd($data);
+        return view('coach.add-info', $data);
     }
     public function addinfo(Request $request)
     {
         $info = new InformationExtracurriculars();
-        $info->info_esc_id = $request->info_esc_id;
-        $info->info_usr_id= $request->info_usr_id;
+        $info->info_esc_id = $request->coc_esc_id;
+        $info->info_usr_id=  $request->coc_usr_id;
         $info->information = $request->information;
         $info->info_date = $request->info_date;
        if ($request->hasFile('info_img')) {

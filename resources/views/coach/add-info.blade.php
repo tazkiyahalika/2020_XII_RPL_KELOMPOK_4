@@ -1,8 +1,10 @@
 @extends('layouts.coach-master')
 @section('content')
 
-       
+                
                 <form enctype="multipart/form-data" action="/coach/info/add-info" method="POST">
+
+
 
                 <div class="card-body">
 
@@ -13,18 +15,21 @@
                     {{ csrf_field() }} 
                    
                  <!--  -->
-                   <div class="mb-3">
-                  
-                      <select class="form-control" name="info_esc_id" placeholder="Extrakulikuler">
-                         <option value="---pilih nama ekstrakulikuler---">---pilih nama ekstrakulikuler---</option>
-                         @foreach($extracurricular as $extracurricular)
-                            <option value='{{ $extracurricular->esc_id }}'>{{ $extracurricular->esc_name }}</option>
-                          @endforeach
-                    </select>
+                 
+                      <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Nama Ekstrakulikuler</label>
+                         <input class="form-control" name="coc_esc_id" required="required" placeholder="Extrakulikuler" readonly 
+                            value='{{ $extracurricular->esc_id }}' hidden>
+                          <input class="form-control" name="esc_name" required="required" placeholder="Extrakulikuler" readonly 
+                            value='{{ $extracurricular->esc_name }}' >
+                           
                     </div>
                     <div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label">Nama Pemibna</label>
-                        <input name="info_usr_name" type="text" class="form-control" required="required" placeholder="nama pembina" id="exampleFormControlTextarea1" rows="3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Nama Pembina</label>
+                         <input class="form-control" name="coc_usr_id" required="required" placeholder="Extrakulikuler" readonly 
+                            value='{{ $extracurricular->usr_id }}' hidden >
+                          <input class="form-control" name="usr_name" required="required" placeholder="Extrakulikuler" readonly 
+                            value='{{ $extracurricular->usr_name }}' >
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Information</label>
