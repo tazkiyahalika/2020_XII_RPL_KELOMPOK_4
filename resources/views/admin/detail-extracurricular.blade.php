@@ -32,12 +32,14 @@
 
                 <p class="text-muted text-center">SMKS Mahaputra Cerdas Utama</p>
                  <p class="text-muted text-center">{{$extracurricular->esc_description}}</p>
+                 
 
 
 
                 <ul class="list-group list-group-unbordered mb-3">
                  
                 </ul>
+
 
               </div>
               <!-- /.card-body -->

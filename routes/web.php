@@ -115,7 +115,12 @@ Route::group(['middleware' => ['role:coach']], function () {
 
 	Route::get('coach/info/create','ExtracurricularController@createinfo');
 	Route::post('coach/info/add-info', 'ExtracurricularController@addinfo');
+	Route::get('coach/info/edit/{info_id}', 'ExtracurricularController@EditInfo');
+	Route::post('coach/info/update/{info_id}', 'ExtracurricularController@UpdateInfo');
+	Route::get('coach/info/{info_id}/delete', 'ExtracurricularController@deleteInfo');
 	Route::get('coach/schedule','CoachController@ScheduleEskulCoach');
+	Route::get('coach/student/obligate', 'StudentController@StudentObligate');
+
 });
 
 

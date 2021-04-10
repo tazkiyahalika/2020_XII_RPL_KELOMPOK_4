@@ -66,7 +66,15 @@ class StudentController extends Controller
         $schedule['schedule']= DB::table('schedule_extracurricular')
         ->join('extracurriculars','schedule_extracurricular.schedule_esc_id','=','extracurriculars.esc_id')
         ->get();
-         return view('coach.coach-schedule', $schedule );
+         return view('student.student-schedule', $schedule );
+    }
+    public function StudentObligate()
+    {
+        $std['std'] = DB::table('students')
+        ->join('users', 'students.std_usr_id', '=', 'users.usr_id')
+        ->get();
+
+        return view('coach.student-obligate', $std);
     }
 
     

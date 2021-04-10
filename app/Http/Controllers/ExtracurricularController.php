@@ -359,4 +359,46 @@ class ExtracurricularController extends Controller
 
         return redirect('/coach/dashboard');
     }
+    public function EditInfo($info_id)
+    {
+
+        $extracurricular=extracurricular::all();
+        $data ['extracurricular']= DB::table('coaches')->where('info_id', $info_id)
+        ->join('extracurriculars','coaches.coc_esc_id','=','extracurriculars.esc_id')
+        ->join('users','coaches.coc_usr_id','=','users.usr_id')
+        ->where('usr_id','=',Auth::user()->usr_id)
+
+        ->first();
+        
+        return view('coach.update-info', ['extracurricular' => $extracurricular, 'data' => $data]);
+    }
+    public function UpdateInfo(Request $request, $info_id)
+    {
+        $info = InformationExtracurriculars::where('info_id', $info_id)->first();
+        $info->info_esc_id = $request->coc_esc_id;
+        $info->info_usr_id=  $request->coc_usr_id;
+        $info->information = $request->information;
+        $info->info_date = $request->info_date;
+       if ($request->hasFile('info_img')) {
+            $files = $request->file('info_img');
+            $path = public_path('image_info');
+            $files_name = $files->getClientOriginalName();
+            $files->move($path, $files_name);
+            $info->info_img= $files_name;
+        }
+        $info->update();
+
+        return redirect('/coach/dashboard');
+    }
+    public function deleteInfo($info_id)
+    {
+        $data= InformationExtracurriculars::where('info_id', $info_id)
+        ->join('extracurriculars','coaches.coc_esc_id','=','extracurriculars.esc_id')
+        ->join('users','coaches.coc_usr_id','=','users.usr_id')
+        ->where('usr_id','=',Auth::user()->usr_id)
+
+        ->delete();
+
+        return back();
+    }
 }

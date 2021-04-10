@@ -30,7 +30,18 @@
             <a href="{{ url('/coach/student') }}" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>
-               Data Anggota
+              Data Anggota Inti
+                
+              </p>
+            </a>
+          </li>
+
+           <li class="nav-item has-treeview">
+            <li class="nav-item">
+            <a href="{{ url('/coach/student/obligate') }}" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+              <p>
+              Data Anggota Wajib
                 
               </p>
             </a>
