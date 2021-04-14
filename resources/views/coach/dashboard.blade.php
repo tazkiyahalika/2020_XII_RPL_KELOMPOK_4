@@ -33,7 +33,7 @@
                         <span class="username">
                           <a href="#">{{$information->esc_name}}</a><br>
                         </span>
-                        <span class="description">{{$information->info_date}}</span>
+                       
 
                       </div>
 
@@ -41,6 +41,7 @@
                       <p>
                         {{$information->information}}
                       </p>
+                      <div class="description">Pada Tanggal:  {{$information->info_date}}</div><br>
 
 
                       <div class="row mb-3">
@@ -58,8 +59,16 @@
                         </div>
                         <!-- /.col -->
                       </div>
+                      <div class="card-footer">
+                            Di Posting Pada {{ $information->created_at }}
+                        
+                      </div>
+
+
                       <!-- /.row -->
                       <div>
+                        
+
                         <a href='/coach/info/edit/{{$information->info_id}}' class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Edit"> <i class="fa fa-edit"></i></a>
                         <a href="{{ url('coach/info/'.$information->info_id.'/delete' ) }}" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onclick="return confirm('Yakin Mau Hapus ?');"> <i class="fa fa-trash"></i></a>
                     </div>

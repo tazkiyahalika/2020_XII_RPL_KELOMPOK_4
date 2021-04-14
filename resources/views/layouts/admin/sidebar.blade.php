@@ -79,9 +79,16 @@
 
           </li>
 
-         
-         
-          
+            <li class="nav-item">
+            <a href="{{ url('/admin/student/obligate') }}" class="nav-link">
+              <i class="fas fa-book" style="font-size: 20px;"></i>
+              <p>
+              Data Anggota Wajib
+                
+              </p>
+            </a>
+          </li>
+
 
           <li class="nav-item">
             <a href="{{ url('/logout')}}" class="nav-link">

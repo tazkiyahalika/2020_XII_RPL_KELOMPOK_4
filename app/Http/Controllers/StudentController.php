@@ -74,7 +74,7 @@ class StudentController extends Controller
         ->join('users', 'students.std_usr_id', '=', 'users.usr_id')
         ->get();
 
-        return view('coach.student-obligate', $std);
+        return view('admin.student-obligate', $std);
     }
 
     

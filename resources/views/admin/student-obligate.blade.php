@@ -1,4 +1,4 @@
-@extends('layouts.coach-master')
+@extends('layouts.admin-master')
 @section('content')
               <div class="card">
               <div class="card-header">

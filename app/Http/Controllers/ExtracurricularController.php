@@ -218,9 +218,14 @@ class ExtracurricularController extends Controller
     }
     public function CreateSchedule()
     {
-        $data ['extracurricular']= extracurricular::all();
+        // $data ['extracurricular']= extracurricular::all();
+        $extracurriculars = DB::table('extracurriculars')
+        ->leftjoin('schedule_extracurricular','schedule_extracurricular.schedule_esc_id','=','extracurriculars.esc_id')
+        ->where('schedule_esc_id','=',null)
+        ->get();
         
-        return view('admin.add-schedule', $data);
+        
+        return view('admin.add-schedule', compact('extracurriculars'));
     }
     public function addSchedule(Request $request)
     {
@@ -363,20 +368,20 @@ class ExtracurricularController extends Controller
     {
 
         $extracurricular=extracurricular::all();
-        $data ['extracurricular']= DB::table('coaches')->where('info_id', $info_id)
-        ->join('extracurriculars','coaches.coc_esc_id','=','extracurriculars.esc_id')
-        ->join('users','coaches.coc_usr_id','=','users.usr_id')
+        $data ['extracurricular']= DB::table('information_extracurriculars')->where('info_id', $info_id)
+        ->join('users','information_extracurriculars.info_usr_id','=','users.usr_id')
+        ->join('extracurriculars','information_extracurriculars.info_esc_id','=','extracurriculars.esc_id')
         ->where('usr_id','=',Auth::user()->usr_id)
 
-        ->first();
+        ->get();
         
-        return view('coach.update-info', ['extracurricular' => $extracurricular, 'data' => $data]);
+        return view('coach.update-info', ['extracurricular' => $extracurricular ,'data' => $data]);
     }
     public function UpdateInfo(Request $request, $info_id)
     {
         $info = InformationExtracurriculars::where('info_id', $info_id)->first();
-        $info->info_esc_id = $request->coc_esc_id;
-        $info->info_usr_id=  $request->coc_usr_id;
+        $info->info_esc_id = $request->info_esc_id;
+        $info->info_usr_id=  $request->info_usr_id;
         $info->information = $request->information;
         $info->info_date = $request->info_date;
        if ($request->hasFile('info_img')) {

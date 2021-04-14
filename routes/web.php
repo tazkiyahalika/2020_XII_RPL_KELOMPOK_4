@@ -92,6 +92,7 @@ Route::group(['middleware' => ['role:admin']], function () {
 	Route::post('admin/achievement/update/{ach_id}', 'ExtracurricularController@UpdateAchievement');
 	Route::get('admin/achievement/{ach_id}/delete', 'ExtracurricularController@deleteAchievement');
 
+	Route::get('admin/student/obligate', 'StudentController@StudentObligate');
 
 });
 
@@ -119,7 +120,7 @@ Route::group(['middleware' => ['role:coach']], function () {
 	Route::post('coach/info/update/{info_id}', 'ExtracurricularController@UpdateInfo');
 	Route::get('coach/info/{info_id}/delete', 'ExtracurricularController@deleteInfo');
 	Route::get('coach/schedule','CoachController@ScheduleEskulCoach');
-	Route::get('coach/student/obligate', 'StudentController@StudentObligate');
+	
 
 });
 
