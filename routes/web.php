@@ -94,15 +94,23 @@ Route::group(['middleware' => ['role:admin']], function () {
 
 	Route::get('admin/student/obligate', 'StudentController@StudentObligate');
 
+	Route::get('admin/extracurricular_obligate', 'ExtracurricularController@ListEskulWajib');
+	Route::get('admin/extracurricular_obligate/create', 'ExtracurricularController@CreateEskulWajib');
+	Route::post('admin/extracurricular_obligate/add-obligate', 'ExtracurricularController@AddEskulWajib');
+	Route::get('admin/extracurricular_obligate/edit/{obligate_id}','ExtracurricularController@EditEskulWajib');
+	Route::post('admin/extracurricular_obligate/update/{obligate_id}','ExtracurricularController@UpdateEskulWajib');
+	Route::get('admin/extracurricular_obligate/{obligate_id}/delete', 'ExtracurricularController@DeleteEskulWajib');
+
 });
 
 
 Route::group(['middleware' => ['role:student']], function () {
 	Route::get('/student/dashboard','StudentController@index')->name('dashboard.student');
-	Route::get('student/extracurricular', 'ExtracurricularController@listEkskulStudent');
+	Route::get('student/extracurricular', 'ExtracurricularController@listEkskulStudent'); 
 	Route::get('student/extracurricular/detail-extracurricular/{esc_id}', 'ExtracurricularController@detailEkskulStudent');
 	Route::post('student/extracurricular/{esc_id}','ExtracurricularController@daftar');
 	Route::get('student/extracurricular/list','ExtracurricularController@listEkskul');
+	
 	Route::get('student/schedule','StudentController@ScheduleEskulStudent');
 
 

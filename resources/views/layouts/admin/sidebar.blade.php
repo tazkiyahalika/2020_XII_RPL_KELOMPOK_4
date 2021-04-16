@@ -79,11 +79,12 @@
 
           </li>
 
-            <li class="nav-item">
-            <a href="{{ url('/admin/student/obligate') }}" class="nav-link">
+           
+          <li class="nav-item">
+            <a href="{{ url('admin/extracurricular_obligate') }}" class="nav-link">
               <i class="fas fa-book" style="font-size: 20px;"></i>
               <p>
-              Data Anggota Wajib
+              Ekstrakulikuler Wajib
                 
               </p>
             </a>

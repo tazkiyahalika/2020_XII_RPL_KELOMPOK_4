@@ -9,6 +9,7 @@ use App\Extracurricular;
 use App\ScheduleExtracurricular;
 use App\InformationExtracurriculars;
 use App\Achievement;
+use App\EkstracurricularObligate;
 use Illuminate\Support\Facades\DB;
 use App\RegisterExtracurricular;
 use Illuminate\Support\Facades\Auth;
@@ -331,6 +332,7 @@ class ExtracurricularController extends Controller
        $data ['extracurricular']= DB::table('information_extracurriculars')
         ->join('extracurriculars','information_extracurriculars.info_esc_id','=','extracurriculars.esc_id')
         ->join('users','information_extracurriculars.info_usr_id','=','users.usr_id')
+        ->where('information_extracurriculars.deleted_at', null)
 
         ->get();
         return view('coach.dashboard', $data);
@@ -367,7 +369,7 @@ class ExtracurricularController extends Controller
     public function EditInfo($info_id)
     {
 
-        $extracurricular=extracurricular::all();
+        
         $data ['extracurricular']= DB::table('information_extracurriculars')->where('info_id', $info_id)
         ->join('users','information_extracurriculars.info_usr_id','=','users.usr_id')
         ->join('extracurriculars','information_extracurriculars.info_esc_id','=','extracurriculars.esc_id')
@@ -375,7 +377,7 @@ class ExtracurricularController extends Controller
 
         ->get();
         
-        return view('coach.update-info', ['extracurricular' => $extracurricular ,'data' => $data]);
+        return view('coach.update-info', $data);
     }
     public function UpdateInfo(Request $request, $info_id)
     {
@@ -397,13 +399,68 @@ class ExtracurricularController extends Controller
     }
     public function deleteInfo($info_id)
     {
-        $data= InformationExtracurriculars::where('info_id', $info_id)
-        ->join('extracurriculars','coaches.coc_esc_id','=','extracurriculars.esc_id')
-        ->join('users','coaches.coc_usr_id','=','users.usr_id')
-        ->where('usr_id','=',Auth::user()->usr_id)
+       $data ['extracurricular']= InformationExtracurriculars::where('info_id', $info_id)
+        ->join('users','information_extracurriculars.info_usr_id','=','users.usr_id')
+        ->join('extracurriculars','information_extracurriculars.info_esc_id','=','extracurriculars.esc_id')
+
 
         ->delete();
 
         return back();
     }
+
+    public function ListEskulWajib()
+    {
+         $data ['eskul_wajib']= DB::table('extracurricular_obligate')
+        ->join('extracurriculars','extracurricular_obligate.obligate_esc_id','=','extracurriculars.esc_id')
+        ->where('extracurricular_obligate.deleted_at', null)
+
+
+        ->get();
+        return view('admin.list-obligate', $data);
+    }
+
+    public function CreateEskulWajib()
+    {
+        $data ['extracurricular']= extracurricular::all();
+        
+        return view('admin.add-obligate', $data);
+    }
+
+    public function AddEskulWajib(Request $request)
+    {
+        $obligate = new EkstracurricularObligate();
+        $obligate->obligate_esc_id = $request->obligate_esc_id;
+        $obligate->save();
+
+        return redirect('/admin/extracurricular_obligate')->withSuccess('Berhasil Di Tambah');
+    }
+    public function EditEskulWajib($obligate_id)
+    {
+
+        $extracurricular=extracurricular::all();
+        $data= DB::table('extracurricular_obligate')->where('obligate_id', $obligate_id)
+        ->join('extracurriculars','extracurricular_obligate.obligate_esc_id','=','extracurriculars.esc_id')
+        ->get();
+
+        return view('admin.update-obligate', ['extracurricular' => $extracurricular, 'data' => $data]); 
+    }
+    public function UpdateEskulWajib(Request $request, $obligate_id)
+    {
+        $obligate = EkstracurricularObligate::where('obligate_id', $obligate_id)->first();
+        $obligate->obligate_esc_id = $request->obligate_esc_id;
+        $obligate->update();
+
+        return redirect('/admin/extracurricular_obligate')->withSuccess('Berhasil Di Edit');
+    }
+    public function DeleteEskulWajib($obligate_id)
+    {
+        $obligate= EkstracurricularObligate::where('obligate_id', $obligate_id)
+        ->join('extracurriculars','extracurricular_obligate.obligate_esc_id','=','extracurriculars.esc_id')
+        ->delete();
+
+        return back()->withToastError('berhasil di Hapus');
+    
+    }
+  
 }
