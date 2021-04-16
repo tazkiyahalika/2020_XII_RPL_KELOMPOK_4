@@ -25,6 +25,10 @@
                         <label for="exampleFormControlTextarea1" class="form-label">Deskripsi</label>
                         <textarea name="esc_description" class="form-control" required="required" placeholder="deskripsi atau keterangan ekskul" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Visi Misi</label>
+                        <textarea name="esc_vision_mission" class="form-control" required="required" placeholder="visi dan misi" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
                      <div class="form-group">
                     <label>Nama</label>
                     <input name="usr_name" type="text" class="form-control" required="required" placeholder="nama pembina">

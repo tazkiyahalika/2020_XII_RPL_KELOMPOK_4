@@ -17,6 +17,7 @@ class CreateExtracurricularsTable extends Migration
             $table->bigIncrements('esc_id');
             $table->string('esc_name');
             $table->longtext('esc_description');
+            $table->longtext('esc_vision_mission');
             $table->string('esc_logo');
             $table->timestamps();
             $table->softDeletes();

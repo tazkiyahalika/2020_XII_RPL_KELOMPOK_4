@@ -21,6 +21,11 @@
                         <label for="exampleFormControlTextarea1" class="form-label">Deskripsi</label>
                         <textarea name="esc_description" required="required"  class="form-control" id="exampleFormControlTextarea1" rows="3">{{$esc->esc_description}}</textarea>
                     </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Visi Misi</label>
+                        <textarea name="esc_vision_mission" required="required"  class="form-control" id="exampleFormControlTextarea1" rows="3">{{$esc->esc_vision_mission}}</textarea>
+                    </div>
+
 
                     <div class="form-group">
                     <label>Nama</label>

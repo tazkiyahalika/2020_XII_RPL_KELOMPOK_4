@@ -26,6 +26,7 @@
 
                 <p class="text-muted text-center">SMKS Mahaputra Cerdas Utama</p>
                  <p class="text-muted text-center">{{$extracurricular->esc_description}}</p>
+                 <p class="text-muted text-center">{{$extracurricular->esc_vision_mission}}</p>
 
                 <ul class="list-group list-group-unbordered mb-3">
                  

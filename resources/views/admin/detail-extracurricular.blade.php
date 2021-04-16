@@ -21,9 +21,7 @@
 
             <div class="card card-primary card-outline">
               <div class="card-body box-profile">
-                 <tr>
-                   <td> <a href="{{ url('admin/achievement/'.$extracurricular->esc_id)}}" class="btn btn-primary btn-sm">Prestasi</a></td>
-                </tr>
+                 
                 <div class="text-center">
                   <img class="img-circle" style="width="300px"; height="150px"  src="{{ url('logo_eskul/'.$extracurricular->esc_logo) }}" alt="pramuka">
                 </div>
@@ -32,6 +30,7 @@
 
                 <p class="text-muted text-center">SMKS Mahaputra Cerdas Utama</p>
                  <p class="text-muted text-center">{{$extracurricular->esc_description}}</p>
+                 <p class="text-muted text-center">{{$extracurricular->esc_vision_mission}}</p>
                  
 
 

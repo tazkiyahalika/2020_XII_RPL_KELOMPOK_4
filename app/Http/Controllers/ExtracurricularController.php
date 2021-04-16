@@ -45,6 +45,7 @@ class ExtracurricularController extends Controller
         $extracurricular = new extracurricular();
         $extracurricular->esc_name = request('esc_name');
         $extracurricular->esc_description = request('esc_description');
+        $extracurricular->esc_vision_mission = request('esc_vision_mission');
         if ($request->hasFile('logo_ekstrakulikuler')) {
             $files = $request->file('logo_ekstrakulikuler');
             $path = public_path('logo_eskul');
@@ -72,7 +73,7 @@ class ExtracurricularController extends Controller
         $extracurriculars = DB::table('extracurriculars')->where('esc_id', $esc_id)
         ->join('coaches','coaches.coc_esc_id','=','extracurriculars.esc_id')
         ->join('users','users.usr_id','=','coaches.coc_usr_id')
-        ->select('esc_id','esc_logo','esc_name','esc_description','usr_name','usr_email','usr_phone','coc_place',
+        ->select('esc_id','esc_logo','esc_name','esc_description','esc_vision_mission','usr_name','usr_email','usr_phone','coc_place',
             'coc_birth','coc_gender','coc_study','coc_job','coc_address')
         
         ->get();
@@ -104,6 +105,7 @@ class ExtracurricularController extends Controller
         //dd($extracurriculars);
         $extracurriculars->esc_name = $request->esc_name;
         $extracurriculars->esc_description = $request->esc_description;
+        $extracurriculars->esc_vision_mission = $request->esc_vision_mission;
         $extracurriculars->update();
 
             
@@ -152,7 +154,7 @@ class ExtracurricularController extends Controller
         $extracurriculars = extracurricular::where('esc_id', $esc_id)
         ->join('coaches','coaches.coc_esc_id','=','extracurriculars.esc_id')
         ->join('users','users.usr_id','=','coaches.coc_usr_id')
-        ->select('esc_id','esc_logo','esc_name','esc_description','usr_name','usr_email','usr_phone','coc_place',
+        ->select('esc_id','esc_logo','esc_name','esc_description','esc_vision_mission','usr_name','usr_email','usr_phone','coc_place',
             'coc_birth','coc_gender','coc_study','coc_job','coc_address')
         
         ->delete();
@@ -461,6 +463,16 @@ class ExtracurricularController extends Controller
 
         return back()->withToastError('berhasil di Hapus');
     
+    }
+    public function EskulWajibSiswa()
+    {
+         $data ['eskul_wajib']= DB::table('extracurricular_obligate')
+        ->join('extracurriculars','extracurricular_obligate.obligate_esc_id','=','extracurriculars.esc_id')
+        ->where('extracurricular_obligate.deleted_at', null)
+
+
+        ->get();
+        return view('student.list-eskul-wajib', $data);
     }
   
 }
