@@ -112,6 +112,7 @@ Route::group(['middleware' => ['role:student']], function () {
 	Route::get('student/extracurricular/list','ExtracurricularController@listEkskul');
 	Route::get('student/schedule','StudentController@ScheduleEskulStudent');
 	Route::get('student/extracurricular_obligate','ExtracurricularController@EskulWajibSiswa');
+	Route::get('student/achievement', 'StudentController@ListAchievement'); 
 
 
 

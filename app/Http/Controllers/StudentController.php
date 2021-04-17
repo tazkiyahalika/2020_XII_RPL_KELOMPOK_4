@@ -6,6 +6,7 @@ use App\Coach;
 use App\RegisterExtracurricular;
 use App\Extracurricular;
 use App\ScheduleExtracurricular;
+use App\Achievement;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\DB;
@@ -75,6 +76,16 @@ class StudentController extends Controller
         ->get();
 
         return view('admin.student-obligate', $std);
+    }
+    public function ListAchievement()
+    {
+        $extracurricular=extracurricular::all();
+        $ach['achievement']= DB::table('achievement')
+        ->join('extracurriculars','achievement.ach_esc_id','=','extracurriculars.esc_id')
+        ->get();
+         
+
+        return view('student.ListAchievement', $ach);
     }
 
     

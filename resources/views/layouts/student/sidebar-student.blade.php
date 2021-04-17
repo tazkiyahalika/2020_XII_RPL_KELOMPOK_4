@@ -36,16 +36,30 @@
             </a>
           </li>
 
+           <li class="nav-item has-treeview">
+            <li class="nav-item">
+            <a href="{{ url('student/achievement') }}" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+              <p>
+               Data Prestasi
+                
+              </p>
+            </a>
+          </li>
+         
+
           <li class="nav-item has-treeview">
             <li class="nav-item">
             <a href="{{ url('student/extracurricular/list') }}" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>
-               Ekskul yang diikuti
+               Ekskul Yang Diikuti
                 
               </p>
             </a>
           </li>
+
+
          
           
 
