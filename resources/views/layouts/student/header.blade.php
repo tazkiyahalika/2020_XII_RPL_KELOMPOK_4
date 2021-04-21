@@ -13,7 +13,7 @@
      
         <div class="image">
        <li class="nav-item">
-            <a href="{{ url('account/profile/'.Auth::user()->usr_id.'/') }}">
+            <a href="{{ url('account/profile') }}">
             <img class="align-self-start mr-3" style="width:40px; height:40px;" src="{{url('/dist/img/avatar-new.png')}}"
             alt="user avatar">
             </a>

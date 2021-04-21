@@ -39,7 +39,9 @@ Route::get('/account/forgot-password', 'Auth\AccountController@forgotPassword')-
 Route::post('/account/forgot-password', 'Auth\AccountController@sendEmailForgotPassword')->name('forgot.password');
 Route::get('/account/{resetVerificationToken}/forgot-password', 'Auth\AccountController@verifyForgotToken');
 Route::post('/account/reset-password', 'Auth\AccountController@updatePassword')->name('password-reset');
-// Route::get('/account/profile/{userId}','Auth\AccountController@listprofile');
+Route::get('/account/profile','Auth\AccountController@listprofilecoach');
+Route::get('/account/profile/edit','Auth\AccountController@editprofile');
+Route::post('/account/profile/edit','Auth\AccountController@updateprofile');
 //Route untuk register student, coach 
 
 Route::get('/register-student', 'Auth\RegisterController@registerStudent');
