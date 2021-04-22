@@ -23,7 +23,13 @@ class StudentController extends Controller
     }
     public function index()
     {
-    	return view('student.dashboard');
+    	$data ['extracurricular']= DB::table('information_extracurriculars')
+        ->join('extracurriculars','information_extracurriculars.info_esc_id','=','extracurriculars.esc_id')
+        ->join('users','information_extracurriculars.info_usr_id','=','users.usr_id')
+        ->where('information_extracurriculars.deleted_at', null)
+
+        ->get();
+        return view('student.dashboard', $data);
     }
      public function listes()
     {

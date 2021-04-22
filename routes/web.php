@@ -56,6 +56,12 @@ Route::group(['middleware'=> ['auth','verified']], function(){
 
 Route::group(['middleware' => ['role:admin']], function () {
 	Route::get('/admin/dashboard','AdminController@index')->name('dashboard.admin');
+	Route::get('admin/info/create','ExtracurricularController@createinfoadmin');
+	// Route::post('admin/info/add-info', 'ExtracurricularController@addinfoadmin');
+	// Route::get('admin/info/edit/{info_id}', 'ExtracurricularController@EditInfo');
+	// Route::post('admin/info/update/{info_id}', 'ExtracurricularController@UpdateInfo');
+	// Route::get('admin/info/{info_id}/delete', 'ExtracurricularController@deleteInfo');
+
 	Route::get('admin/extracurricular', 'ExtracurricularController@list');
 	Route::get('admin/coach', 'AdminController@coach');
 	Route::post('admin/extracurricular', 'ExtracurricularController@addEkskul');
@@ -67,10 +73,7 @@ Route::group(['middleware' => ['role:admin']], function () {
 	Route::get('admin/extracurricular/{esc_id}/delete', 'ExtracurricularController@deleteEkskul');
 	Route::get('Account/profile/{usr_id}','AccountController@show');
 	Route::get('admin/extracurricular/detail-extracurricular/{esc_id}', 'ExtracurricularController@detailEkskul');
-	// Route::post('admin/extracurricular/{esc_id}/delete', 'AdminController@deleteEkskul');
-	//Route::post('admin/coach', 'CoachController@addcoach');
-	// Route::get('admin/coach/detail-pembina', 'AdminController@detailCoach');
-	// Route::get('admin/coach/update', 'AdminController@updatePembina');
+
 
 	Route::get('admin/coach', 'CoachController@list');
 	Route::get('admin/coach/detail-pembina/{coc_id}', 'CoachController@detail');

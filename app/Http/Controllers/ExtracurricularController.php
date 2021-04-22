@@ -474,5 +474,76 @@ class ExtracurricularController extends Controller
         ->get();
         return view('student.list-eskul-wajib', $data);
     }
+    public function createinfoadmin()
+    {
+        $data ['extracurricular']= DB::table('coaches')
+        ->join('extracurriculars','coaches.coc_esc_id','=','extracurriculars.esc_id')
+        ->join('users','coaches.coc_usr_id','=','users.usr_id')
+        ->where('coc_esc_id','esc_name')
+
+        ->get();
+        
+        return view('admin.add-info', $data);
+    }
+    // public function addinfoadmin(Request $request)
+    // {
+    //     $info = new InformationExtracurriculars();
+    //     $info->info_esc_id = $request->coc_esc_id;
+    //     $info->info_usr_id=  $request->coc_usr_id;
+    //     $info->information = $request->information;
+    //     $info->info_date = $request->info_date;
+    //    if ($request->hasFile('info_img')) {
+    //         $files = $request->file('info_img');
+    //         $path = public_path('image_info');
+    //         $files_name = $files->getClientOriginalName();
+    //         $files->move($path, $files_name);
+    //         $info->info_img= $files_name;
+    //     }
+    //     $info->save();
+
+    //     return redirect('/admin/dashboard');
+    // }
+    // public function EditInfoadmin($info_id)
+    // {
+
+        
+    //     $data ['extracurricular']= DB::table('information_extracurriculars')->where('info_id', $info_id)
+    //     ->join('users','information_extracurriculars.info_usr_id','=','users.usr_id')
+    //     ->join('extracurriculars','information_extracurriculars.info_esc_id','=','extracurriculars.esc_id')
+    //     ->where('usr_id','=',Auth::user()->usr_id)
+
+    //     ->get();
+        
+    //     return view('coach.update-info', $data);
+    // }
+    // public function UpdateInfoadmin(Request $request, $info_id)
+    // {
+    //     $info = InformationExtracurriculars::where('info_id', $info_id)->first();
+    //     $info->info_esc_id = $request->info_esc_id;
+    //     $info->info_usr_id=  $request->info_usr_id;
+    //     $info->information = $request->information;
+    //     $info->info_date = $request->info_date;
+    //    if ($request->hasFile('info_img')) {
+    //         $files = $request->file('info_img');
+    //         $path = public_path('image_info');
+    //         $files_name = $files->getClientOriginalName();
+    //         $files->move($path, $files_name);
+    //         $info->info_img= $files_name;
+    //     }
+    //     $info->update();
+
+    //     return redirect('/coach/dashboard');
+    // }
+    // public function deleteInfoadmin($info_id)
+    // {
+    //    $data ['extracurricular']= InformationExtracurriculars::where('info_id', $info_id)
+    //     ->join('users','information_extracurriculars.info_usr_id','=','users.usr_id')
+    //     ->join('extracurriculars','information_extracurriculars.info_esc_id','=','extracurriculars.esc_id')
+
+
+    //     ->delete();
+
+    //     return back();
+    // }
   
 }
