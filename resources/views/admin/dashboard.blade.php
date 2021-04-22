@@ -5,6 +5,55 @@
                 </div>
  --> 
 
+       <div class="row">
+         <div class="col-md-3 col-sm-6 col-xs-12">
+            <!-- small box -->
+            <div class="info-box">
+            <span class="info-box-icon bg-primary"><i class="fa fa-user"></i></span>
+              <div class="inner">
+                <div class="info-box-content
+                ">
+                <h3>11</h3>
+
+                <p>Total pembina</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-stats-bars"></i>
+              </div>
+          </div>
+            </div>
+        </div>
+          <!-- ./col -->
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <!-- small box -->
+            <div class="info-box">
+            <span class="info-box-icon bg-yellow"><i class="fa fa-user"></i></span>
+              <div class="inner">
+                <div class="info-box-content
+                ">
+                <h3>12</h3>
+
+                <p>Total Siswa</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-stats-bars"></i>
+              </div>
+          </div>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+           <!--  -->
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+           
+          </div>
+          <!-- ./col -->
+        </div>
+
 
   <div class="card">
               <div class="card-header p-2">

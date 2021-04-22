@@ -9,5 +9,6 @@ class Student extends Model
 	protected $primaryKey = 'std_id';
     protected $guarded=[];
     protected $dates = ['deleted_at'];
+    protected $table = 'students';
 
 }
