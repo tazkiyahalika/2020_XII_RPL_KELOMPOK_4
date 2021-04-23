@@ -366,12 +366,11 @@ class ExtracurricularController extends Controller
         }
         $info->save();
 
-        return redirect('/coach/dashboard');
+        return redirect('/coach/dashboard')->withSuccess('Berhasil Di Tambah');
     }
     public function EditInfo($info_id)
     {
-
-        
+ 
         $data ['extracurricular']= DB::table('information_extracurriculars')->where('info_id', $info_id)
         ->join('users','information_extracurriculars.info_usr_id','=','users.usr_id')
         ->join('extracurriculars','information_extracurriculars.info_esc_id','=','extracurriculars.esc_id')
@@ -397,7 +396,7 @@ class ExtracurricularController extends Controller
         }
         $info->update();
 
-        return redirect('/coach/dashboard');
+        return redirect('/coach/dashboard')->withSuccess('Berhasil Di Edit');
     }
     public function deleteInfo($info_id)
     {
@@ -408,7 +407,7 @@ class ExtracurricularController extends Controller
 
         ->delete();
 
-        return back();
+        return back()->withToastError('berhasil di Hapus');
     }
 
     public function ListEskulWajib()
@@ -424,9 +423,12 @@ class ExtracurricularController extends Controller
 
     public function CreateEskulWajib()
     {
-        $data ['extracurricular']= extracurricular::all();
+     $extracurricular = DB::table('extracurriculars')
+        ->leftjoin('extracurricular_obligate','extracurricular_obligate.obligate_esc_id','=','extracurriculars.esc_id')
+        ->where('obligate_esc_id','=',null)
+        ->get();
         
-        return view('admin.add-obligate', $data);
+        return view('admin.add-obligate', compact('extracurricular'));
     }
 
     public function AddEskulWajib(Request $request)
@@ -474,17 +476,27 @@ class ExtracurricularController extends Controller
         ->get();
         return view('student.list-eskul-wajib', $data);
     }
-    public function createinfoadmin()
+    public function ListInfoAdmin()
     {
-        $data ['extracurricular']= DB::table('coaches')
-        ->join('extracurriculars','coaches.coc_esc_id','=','extracurriculars.esc_id')
-        ->join('users','coaches.coc_usr_id','=','users.usr_id')
-        ->where('coc_esc_id','esc_name')
+        $data ['extracurricular']= DB::table('information_extracurriculars')
+        ->join('extracurriculars','information_extracurriculars.info_esc_id','=','extracurriculars.esc_id')
+        ->join('users','information_extracurriculars.info_usr_id','=','users.usr_id')
+        ->where('information_extracurriculars.deleted_at', null)
 
         ->get();
-        
-        return view('admin.add-info', $data);
+        return view('admin.list-informasi', $data);
     }
+    // public function createinfoadmin()
+    // {
+    //     $data ['extracurricular']= DB::table('coaches')
+    //     ->join('extracurriculars','coaches.coc_esc_id','=','extracurriculars.esc_id')
+    //     ->join('users','coaches.coc_usr_id','=','users.usr_id')
+    //     ->where('coc_esc_id','esc_name')
+
+    //     ->get();
+        
+    //     return view('admin.add-info', $data);
+    // }
     // public function addinfoadmin(Request $request)
     // {
     //     $info = new InformationExtracurriculars();
@@ -501,12 +513,10 @@ class ExtracurricularController extends Controller
     //     }
     //     $info->save();
 
-    //     return redirect('/admin/dashboard');
+    //     return redirect('/admin/dashboard')->withSuccess('Berhasil Di Tambah');
     // }
     // public function EditInfoadmin($info_id)
-    // {
-
-        
+    // {        
     //     $data ['extracurricular']= DB::table('information_extracurriculars')->where('info_id', $info_id)
     //     ->join('users','information_extracurriculars.info_usr_id','=','users.usr_id')
     //     ->join('extracurriculars','information_extracurriculars.info_esc_id','=','extracurriculars.esc_id')
@@ -514,7 +524,7 @@ class ExtracurricularController extends Controller
 
     //     ->get();
         
-    //     return view('coach.update-info', $data);
+    //     return view('admin.update-info', $data);
     // }
     // public function UpdateInfoadmin(Request $request, $info_id)
     // {
@@ -532,7 +542,7 @@ class ExtracurricularController extends Controller
     //     }
     //     $info->update();
 
-    //     return redirect('/coach/dashboard');
+    //     return redirect('/coach/dashboard')->withSuccess('Berhasil Di Edit');
     // }
     // public function deleteInfoadmin($info_id)
     // {
@@ -543,7 +553,7 @@ class ExtracurricularController extends Controller
 
     //     ->delete();
 
-    //     return back();
+    //     return back()->withToastError('berhasil di Hapus');
     // }
   
 }

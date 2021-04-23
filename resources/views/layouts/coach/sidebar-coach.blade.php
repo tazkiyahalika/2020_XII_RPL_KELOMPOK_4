@@ -6,7 +6,7 @@
           <img src="{{url('/dist/img/Mahaputra.jpg')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">SMK MAHAPUTRA</a>
+          <a href="{{ url('/coach/dashboard') }}" class="d-block">SMK MAHAPUTRA</a>
         </div>
       </div>
 <nav class="mt-2">

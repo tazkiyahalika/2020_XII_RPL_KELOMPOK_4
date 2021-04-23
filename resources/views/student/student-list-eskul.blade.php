@@ -10,7 +10,7 @@
               <td> <a href="{{ url('student/extracurricular_obligate')}}" class="btn btn-primary btn-sm">Ekstrakulikuler Wajib</a></td>
               </tr>
                 <table id="example1" class="table table-bordered table-striped">
-                  <thead>
+                  <thead class="table-primary">
                   <tr>
                     <th>No</th>
                     <th>Ekstrakulikuler</th>

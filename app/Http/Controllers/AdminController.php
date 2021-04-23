@@ -22,19 +22,16 @@ class AdminController extends Controller
     }
     public function index()
     {
-        $data ['extracurricular']= DB::table('information_extracurriculars')
-        ->join('extracurriculars','information_extracurriculars.info_esc_id','=','extracurriculars.esc_id')
-        ->join('users','information_extracurriculars.info_usr_id','=','users.usr_id')
-        ->where('information_extracurriculars.deleted_at', null)
-        ->get();
-        return view('admin.dashboard',$data);
-    }
-    public function count()
-    {
-        $coach = Coach::count();
-        $student= Student::count();
+        $coach   = Coach::count();
+        $student = Student::count();
 
         return view('admin.dashboard',compact('coach','student'));
+        // $data ['extracurricular']= DB::table('information_extracurriculars')
+        // ->join('extracurriculars','information_extracurriculars.info_esc_id','=','extracurriculars.esc_id')
+        // ->join('users','information_extracurriculars.info_usr_id','=','users.usr_id')
+        // ->where('information_extracurriculars.deleted_at', null)
+        // ->get();
+        // return view('admin.dashboard',$data);
     }
     
    

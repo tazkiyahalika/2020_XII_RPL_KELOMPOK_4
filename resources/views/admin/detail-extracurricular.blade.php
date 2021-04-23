@@ -23,7 +23,7 @@
               <div class="card-body box-profile">
                  
                 <div class="text-center">
-                  <img class="img-circle" style="width="300px"; height="150px"  src="{{ url('logo_eskul/'.$extracurricular->esc_logo) }}" alt="pramuka">
+                  <img class="img-box" style="width="300px"; height="150px"  src="{{ url('logo_eskul/'.$extracurricular->esc_logo) }}" alt="pramuka">
                 </div>
                
                 <h3 class="profile-username text-center">{{$extracurricular->esc_name}}</h3><br>

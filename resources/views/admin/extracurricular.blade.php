@@ -12,7 +12,7 @@
                   <tr>
                     <th>No</th>
                     <th>Ekstrakulikuler</th>
-                    <th>Aksi</th>
+                    <th>Action</th>
                   </tr>
                   </thead>
                   <?php $no=1; ?>

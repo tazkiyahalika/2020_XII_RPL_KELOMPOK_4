@@ -57,9 +57,10 @@ Route::group(['middleware'=> ['auth','verified']], function(){
 Route::group(['middleware' => ['role:admin']], function () {
 	Route::get('/admin/dashboard','AdminController@index')->name('dashboard.admin');
 	Route::get('admin/info/create','ExtracurricularController@createinfoadmin');
-	// Route::post('admin/info/add-info', 'ExtracurricularController@addinfoadmin');
-	// Route::get('admin/info/edit/{info_id}', 'ExtracurricularController@EditInfo');
-	// Route::post('admin/info/update/{info_id}', 'ExtracurricularController@UpdateInfo');
+	Route::post('admin/info/add-info', 'ExtracurricularController@addinfoadmin');
+	Route::get('admin/info/edit/{info_id}', 'ExtracurricularController@EditInfo');
+	Route::post('admin/info/update/{info_id}', 'ExtracurricularController@UpdateInfo');
+	Route::get('admin/information', 'ExtracurricularController@ListInfoAdmin');
 	// Route::get('admin/info/{info_id}/delete', 'ExtracurricularController@deleteInfo');
 
 	Route::get('admin/extracurricular', 'ExtracurricularController@list');

@@ -6,7 +6,7 @@
           <img src="{{url('/dist/img/Mahaputra.jpg')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">SMK MAHAPUTRA </a>
+          <a href="{{ url('/admin/dashboard') }}" class="d-block">SMK MAHAPUTRA </a>
         </div>
       </div>
         <nav class="mt-2">
@@ -26,6 +26,17 @@
               </p>
             </a>
           </li>
+
+           <li class="nav-item">
+            <a href="{{ url('/admin/information') }}" class="nav-link">
+              <i class="fas fa-book" style="font-size: 20px;"></i>
+              <p>
+                Informasi Ekstrakulikuler
+                
+              </p>
+            </a>
+          </li>
+
 
            <li class="nav-item">
             <a href="{{ url('/admin/achievement') }}" class="nav-link">

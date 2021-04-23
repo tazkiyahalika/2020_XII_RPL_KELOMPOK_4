@@ -9,7 +9,7 @@
   
     <br>
     <table id="example1" class="table table-bordered table-striped">
-      <thead>
+      <thead class="table-danger">
         <tr>
           <th>No</th>
           <th>Ekstrakulikuler</th>
