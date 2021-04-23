@@ -240,6 +240,7 @@ class ExtracurricularController extends Controller
         $schedule->save();
 
         return redirect('/admin/schedule')->withSuccess('Berhasil Di Tambah');
+
     }
       public function EditSchedule($schedule_id)
     {

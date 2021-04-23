@@ -12,8 +12,8 @@
                   <div class="form-group">
                     <label>Nama EKstrakulikuler</label>
                   <!-- <input name="esc_id" type="text" class="form-control" placeholder="name"> -->
-                  <select class="form-control" name="obligate_esc_id" required="required" placeholder="Extrakulikuler">
-                   <option value="---pilih nama ekstrakulikuler---">---pilih nama ekstrakulikuler---</option>
+                  <select class="form-control" name="obligate_esc_id" required placeholder="Extrakulikuler">
+                   <option value="">---pilih nama ekstrakulikuler---</option>
                    @foreach($extracurricular as $extracurricular)
                       <option value='{{ $extracurricular->esc_id }}'>{{ $extracurricular->esc_name }}</option>
                     @endforeach

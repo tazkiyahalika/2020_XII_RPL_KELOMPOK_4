@@ -31,7 +31,7 @@
             <a href="{{ url('/admin/information') }}" class="nav-link">
               <i class="fas fa-book" style="font-size: 20px;"></i>
               <p>
-                Informasi Ekstrakulikuler
+                Data Info Ekstrakulikuler
                 
               </p>
             </a>

@@ -66,12 +66,12 @@
 
 
                       <!-- /.row -->
+                      @if($information->info_usr_id == Auth::user()->usr_id)
                       <div>
-                        
-
                         <a href='/coach/info/edit/{{$information->info_id}}' class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Edit"> <i class="fa fa-edit"></i></a>
                         <a href="{{ url('coach/info/'.$information->info_id.'/delete' ) }}" class="btn  btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onclick="return confirm('Yakin Mau Hapus ?');"> <i class="fa fa-trash"></i></a>
                     </div>
+                    @endif
                     </div>
                     <!-- /.post -->
     

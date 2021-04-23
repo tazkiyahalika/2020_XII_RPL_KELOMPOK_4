@@ -59,8 +59,8 @@
                   </div>
                   <div class="form-group">
                     <label>Pendidikan</label>
-                    <select name="coc_study" class="form-control" required="required" placeholder="Pendidikan">
-                      <option value="">---pilihlah---</option>
+                    <select name="coc_study" class="form-control" required placeholder="Pendidikan">
+                      <option value=""></option>
                       <option value="sd">SD</option>
                       <option value="smp">SMP</option>
                       <option value="sma/smk">SMA/SMK</option>

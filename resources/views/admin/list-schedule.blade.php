@@ -38,6 +38,7 @@
       </tr>
 
       <?php $no++ ;?>
+      @include('sweetalert::alert')
     
         </tbody>
           @endforeach

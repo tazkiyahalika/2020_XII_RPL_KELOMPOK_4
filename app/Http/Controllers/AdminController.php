@@ -24,8 +24,9 @@ class AdminController extends Controller
     {
         $coach   = Coach::count();
         $student = Student::count();
+        $eskul = extracurricular::count();
 
-        return view('admin.dashboard',compact('coach','student'));
+        return view('admin.dashboard',compact('coach','student','eskul'));
         // $data ['extracurricular']= DB::table('information_extracurriculars')
         // ->join('extracurriculars','information_extracurriculars.info_esc_id','=','extracurriculars.esc_id')
         // ->join('users','information_extracurriculars.info_usr_id','=','users.usr_id')

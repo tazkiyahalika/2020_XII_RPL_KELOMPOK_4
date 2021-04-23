@@ -1,6 +1,19 @@
 @extends('layouts.admin-master')
 @section('content')
 
+ <!-- <div class="text-center">
+                  <img class="" src="../../dist/img/logo4.jpg" alt="Mahaputra">
+                </div> --><br>
+
+
+                <div class="card">
+              <div class="card-header p-2">
+                <ul class="nav nav-pills">
+       
+
+                </ul>
+              </div><!-- /.card-header -->
+              
                     <!-- Post -->
                     @foreach($extracurricular as $information)
               <div class="card-body">
@@ -48,9 +61,9 @@
 
                       <!-- /.row -->
 
-                    </div>
+                    </div><br><br>
                     <!-- /.post -->
-    
+    @include('sweetalert::alert')
                     @endforeach
                   </div>
                   <!-- /.tab-pane -->
