@@ -53,10 +53,10 @@
                         </div>
                         <!-- /.col -->
                       </div>
-                      <div class="card-footer">
+                     <!--  <div class="card-footer">
                             Di Posting Pada {{ $information->created_at }}
                         
-                      </div>
+                      </div> -->
 
 
                       <!-- /.row -->

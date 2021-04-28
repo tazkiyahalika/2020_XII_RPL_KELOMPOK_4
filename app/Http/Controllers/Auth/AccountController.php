@@ -161,6 +161,7 @@ class AccountController extends Controller
 
         $profilestudent = Student::where('std_usr_id' ,$profile->usr_id)->first();
         $profilestudent->std_gender = $request->std_gender;
+        $profilestudent->std_class = $request->std_class;
         $profilestudent->std_address = $request->std_address;
         
         $profilestudent->update();

@@ -32,7 +32,7 @@
                             value='{{ $extracurricular->usr_name }}' >
                     </div>
                     <div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label">Information</label>
+                        <label for="exampleFormControlTextarea1" class="form-label">Informasi</label>
                         <textarea name="information" class="form-control" required="required" placeholder="Informasi" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
                     <div class="mb-3">
